@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  WristBand
+//
+//  Created by zhuzhi on 14/11/2.
+//  Copyright (c) 2014年 WB. All rights reserved.
+//
+
+#ifndef WristBand_PrefixHeader_pch
+#define WristBand_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "WBMacros.h"
+#import "WBCategory.h"
+#import "PureLayout.h"
+#import "GCDObjC.h"
+
+#endif

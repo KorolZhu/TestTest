@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WBMainViewController.h
 //  WristBand
 //
 //  Created by zhuzhi on 14/11/1.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface WBMainViewController : UIViewController
 
 @end
-
