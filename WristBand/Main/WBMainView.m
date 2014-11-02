@@ -238,10 +238,10 @@
                 return [UIColor whiteColor];
                 break;
             case WBSleepInfoStateInbed:
-                return [UIColor lightGrayColor];
+                return RGB(175,176,160);
                 break;
             case WBSleepInfoStateFallAsleep:
-                return [UIColor blueColor];
+                return RGB(63,164,191);
                 break;
             default:
                 break;
