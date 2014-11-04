@@ -23,6 +23,30 @@
 		CE5414371A0624010013A450 /* WBTotalSleepTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5414361A0624010013A450 /* WBTotalSleepTimeCell.m */; };
 		CE54143A1A0626C60013A450 /* icon_total_sleep_time.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5414381A0626C60013A450 /* icon_total_sleep_time.png */; };
 		CE54143B1A0626C60013A450 /* icon_total_sleep_time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5414391A0626C60013A450 /* icon_total_sleep_time@2x.png */; };
+		CEAA43371A07C99900EDBAF3 /* WBImprovementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA43361A07C99900EDBAF3 /* WBImprovementViewController.m */; };
+		CEAA433A1A07CB8800EDBAF3 /* tip_icon_sheep.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43381A07CB8800EDBAF3 /* tip_icon_sheep.png */; };
+		CEAA433B1A07CB8800EDBAF3 /* tip_icon_sheep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43391A07CB8800EDBAF3 /* tip_icon_sheep@2x.png */; };
+		CEAA433E1A07CB9C00EDBAF3 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA433C1A07CB9C00EDBAF3 /* icon_back.png */; };
+		CEAA433F1A07CB9C00EDBAF3 /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA433D1A07CB9C00EDBAF3 /* icon_back@2x.png */; };
+		CEAA43421A07CC8700EDBAF3 /* tip_icon_fitness.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43401A07CC8700EDBAF3 /* tip_icon_fitness.png */; };
+		CEAA43431A07CC8700EDBAF3 /* tip_icon_fitness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43411A07CC8700EDBAF3 /* tip_icon_fitness@2x.png */; };
+		CEAA43461A07DAAA00EDBAF3 /* WBSettingPersonalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA43451A07DAAA00EDBAF3 /* WBSettingPersonalInfoCell.m */; };
+		CEAA43491A07DACA00EDBAF3 /* WBSettingSleepGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA43481A07DACA00EDBAF3 /* WBSettingSleepGoalCell.m */; };
+		CEAA434C1A07DAEE00EDBAF3 /* WBSettingSleepTipsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA434B1A07DAEE00EDBAF3 /* WBSettingSleepTipsCell.m */; };
+		CEAA434F1A07DB0A00EDBAF3 /* WBSettingVersionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA434E1A07DB0A00EDBAF3 /* WBSettingVersionCell.m */; };
+		CEAA43521A07DD8000EDBAF3 /* icon_acount.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43501A07DD8000EDBAF3 /* icon_acount.png */; };
+		CEAA43531A07DD8000EDBAF3 /* icon_acount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43511A07DD8000EDBAF3 /* icon_acount@2x.png */; };
+		CEAA43561A07DEC900EDBAF3 /* icon_acount_edit_acount.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43541A07DEC900EDBAF3 /* icon_acount_edit_acount.png */; };
+		CEAA43571A07DEC900EDBAF3 /* icon_acount_edit_acount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43551A07DEC900EDBAF3 /* icon_acount_edit_acount@2x.png */; };
+		CEAA435A1A0914FB00EDBAF3 /* WBPersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA43591A0914FB00EDBAF3 /* WBPersonalInfoViewController.m */; };
+		CEAA435D1A09185700EDBAF3 /* WBConnectDeviceView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA435C1A09185700EDBAF3 /* WBConnectDeviceView.m */; };
+		CEAA43601A09188400EDBAF3 /* WBMeasuringView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA435F1A09188400EDBAF3 /* WBMeasuringView.m */; };
+		CEAA43651A09195C00EDBAF3 /* button_background_image_day_act.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43611A09195C00EDBAF3 /* button_background_image_day_act.png */; };
+		CEAA43661A09195C00EDBAF3 /* button_background_image_day_act@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43621A09195C00EDBAF3 /* button_background_image_day_act@2x.png */; };
+		CEAA43671A09195C00EDBAF3 /* button_background_image_day.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43631A09195C00EDBAF3 /* button_background_image_day.png */; };
+		CEAA43681A09195C00EDBAF3 /* button_background_image_day@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43641A09195C00EDBAF3 /* button_background_image_day@2x.png */; };
+		CEAA436A1A092E6700EDBAF3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAA43691A092E6700EDBAF3 /* ExternalAccessory.framework */; };
+		CEAA436C1A092E6D00EDBAF3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAA436B1A092E6D00EDBAF3 /* CoreBluetooth.framework */; };
 		CEB79A7D1A051AAB00714531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79A7C1A051AAB00714531 /* main.m */; };
 		CEB79A801A051AAB00714531 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79A7F1A051AAB00714531 /* AppDelegate.m */; };
 		CEB79A971A051AAB00714531 /* WristBandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79A961A051AAB00714531 /* WristBandTests.m */; };
@@ -84,6 +108,38 @@
 		CE5414361A0624010013A450 /* WBTotalSleepTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTotalSleepTimeCell.m; sourceTree = "<group>"; };
 		CE5414381A0626C60013A450 /* icon_total_sleep_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_total_sleep_time.png; sourceTree = "<group>"; };
 		CE5414391A0626C60013A450 /* icon_total_sleep_time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_total_sleep_time@2x.png"; sourceTree = "<group>"; };
+		CEAA43351A07C99900EDBAF3 /* WBImprovementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBImprovementViewController.h; sourceTree = "<group>"; };
+		CEAA43361A07C99900EDBAF3 /* WBImprovementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBImprovementViewController.m; sourceTree = "<group>"; };
+		CEAA43381A07CB8800EDBAF3 /* tip_icon_sheep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip_icon_sheep.png; sourceTree = "<group>"; };
+		CEAA43391A07CB8800EDBAF3 /* tip_icon_sheep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_icon_sheep@2x.png"; sourceTree = "<group>"; };
+		CEAA433C1A07CB9C00EDBAF3 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_back.png; path = ../../icon_back.png; sourceTree = "<group>"; };
+		CEAA433D1A07CB9C00EDBAF3 /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_back@2x.png"; path = "../../icon_back@2x.png"; sourceTree = "<group>"; };
+		CEAA43401A07CC8700EDBAF3 /* tip_icon_fitness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip_icon_fitness.png; sourceTree = "<group>"; };
+		CEAA43411A07CC8700EDBAF3 /* tip_icon_fitness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_icon_fitness@2x.png"; sourceTree = "<group>"; };
+		CEAA43441A07DAAA00EDBAF3 /* WBSettingPersonalInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSettingPersonalInfoCell.h; sourceTree = "<group>"; };
+		CEAA43451A07DAAA00EDBAF3 /* WBSettingPersonalInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSettingPersonalInfoCell.m; sourceTree = "<group>"; };
+		CEAA43471A07DACA00EDBAF3 /* WBSettingSleepGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSettingSleepGoalCell.h; sourceTree = "<group>"; };
+		CEAA43481A07DACA00EDBAF3 /* WBSettingSleepGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSettingSleepGoalCell.m; sourceTree = "<group>"; };
+		CEAA434A1A07DAEE00EDBAF3 /* WBSettingSleepTipsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSettingSleepTipsCell.h; sourceTree = "<group>"; };
+		CEAA434B1A07DAEE00EDBAF3 /* WBSettingSleepTipsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSettingSleepTipsCell.m; sourceTree = "<group>"; };
+		CEAA434D1A07DB0A00EDBAF3 /* WBSettingVersionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSettingVersionCell.h; sourceTree = "<group>"; };
+		CEAA434E1A07DB0A00EDBAF3 /* WBSettingVersionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSettingVersionCell.m; sourceTree = "<group>"; };
+		CEAA43501A07DD8000EDBAF3 /* icon_acount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_acount.png; sourceTree = "<group>"; };
+		CEAA43511A07DD8000EDBAF3 /* icon_acount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_acount@2x.png"; sourceTree = "<group>"; };
+		CEAA43541A07DEC900EDBAF3 /* icon_acount_edit_acount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_acount_edit_acount.png; sourceTree = "<group>"; };
+		CEAA43551A07DEC900EDBAF3 /* icon_acount_edit_acount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_acount_edit_acount@2x.png"; sourceTree = "<group>"; };
+		CEAA43581A0914FB00EDBAF3 /* WBPersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBPersonalInfoViewController.h; sourceTree = "<group>"; };
+		CEAA43591A0914FB00EDBAF3 /* WBPersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBPersonalInfoViewController.m; sourceTree = "<group>"; };
+		CEAA435B1A09185700EDBAF3 /* WBConnectDeviceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBConnectDeviceView.h; sourceTree = "<group>"; };
+		CEAA435C1A09185700EDBAF3 /* WBConnectDeviceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBConnectDeviceView.m; sourceTree = "<group>"; };
+		CEAA435E1A09188400EDBAF3 /* WBMeasuringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMeasuringView.h; sourceTree = "<group>"; };
+		CEAA435F1A09188400EDBAF3 /* WBMeasuringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMeasuringView.m; sourceTree = "<group>"; };
+		CEAA43611A09195C00EDBAF3 /* button_background_image_day_act.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_background_image_day_act.png; sourceTree = "<group>"; };
+		CEAA43621A09195C00EDBAF3 /* button_background_image_day_act@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_background_image_day_act@2x.png"; sourceTree = "<group>"; };
+		CEAA43631A09195C00EDBAF3 /* button_background_image_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_background_image_day.png; sourceTree = "<group>"; };
+		CEAA43641A09195C00EDBAF3 /* button_background_image_day@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_background_image_day@2x.png"; sourceTree = "<group>"; };
+		CEAA43691A092E6700EDBAF3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		CEAA436B1A092E6D00EDBAF3 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		CEB79A771A051AAB00714531 /* WristBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB79A7B1A051AAB00714531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB79A7C1A051AAB00714531 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -150,6 +206,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAA436C1A092E6D00EDBAF3 /* CoreBluetooth.framework in Frameworks */,
+				CEAA436A1A092E6700EDBAF3 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +221,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEAA43341A07C95B00EDBAF3 /* Improvement */ = {
+			isa = PBXGroup;
+			children = (
+				CEAA43351A07C99900EDBAF3 /* WBImprovementViewController.h */,
+				CEAA43361A07C99900EDBAF3 /* WBImprovementViewController.m */,
+			);
+			path = Improvement;
+			sourceTree = "<group>";
+		};
+		CEAA436D1A09318A00EDBAF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEAA436B1A092E6D00EDBAF3 /* CoreBluetooth.framework */,
+				CEAA43691A092E6700EDBAF3 /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CEB79A6E1A051AAB00714531 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +249,7 @@
 				CEB79AB91A0523B600714531 /* ThirdLibrary */,
 				CEB79A791A051AAB00714531 /* WristBand */,
 				CEB79A931A051AAB00714531 /* WristBandTests */,
+				CEAA436D1A09318A00EDBAF3 /* Frameworks */,
 				CEB79A781A051AAB00714531 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -191,6 +268,7 @@
 			children = (
 				CEB79ACF1A05285B00714531 /* Main */,
 				CEB79ACB1A0527E300714531 /* Setting */,
+				CEAA43341A07C95B00EDBAF3 /* Improvement */,
 				CEB79A7E1A051AAB00714531 /* AppDelegate.h */,
 				CEB79A7F1A051AAB00714531 /* AppDelegate.m */,
 				CEB79A7A1A051AAB00714531 /* Supporting Files */,
@@ -228,6 +306,12 @@
 		CEB79AAB1A051D9900714531 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CEAA43611A09195C00EDBAF3 /* button_background_image_day_act.png */,
+				CEAA43621A09195C00EDBAF3 /* button_background_image_day_act@2x.png */,
+				CEAA43631A09195C00EDBAF3 /* button_background_image_day.png */,
+				CEAA43641A09195C00EDBAF3 /* button_background_image_day@2x.png */,
+				CEAA433C1A07CB9C00EDBAF3 /* icon_back.png */,
+				CEAA433D1A07CB9C00EDBAF3 /* icon_back@2x.png */,
 				CEB79AD61A05288000714531 /* Images.xcassets */,
 				CEB79AB51A05238A00714531 /* timeline_40@2x.png */,
 				CEB79AB61A05238A00714531 /* timeline_60@2x.png */,
@@ -253,6 +337,14 @@
 				CE5414321A0623010013A450 /* icon_arrow_right_white@2x.png */,
 				CE5414381A0626C60013A450 /* icon_total_sleep_time.png */,
 				CE5414391A0626C60013A450 /* icon_total_sleep_time@2x.png */,
+				CEAA43381A07CB8800EDBAF3 /* tip_icon_sheep.png */,
+				CEAA43391A07CB8800EDBAF3 /* tip_icon_sheep@2x.png */,
+				CEAA43401A07CC8700EDBAF3 /* tip_icon_fitness.png */,
+				CEAA43411A07CC8700EDBAF3 /* tip_icon_fitness@2x.png */,
+				CEAA43501A07DD8000EDBAF3 /* icon_acount.png */,
+				CEAA43511A07DD8000EDBAF3 /* icon_acount@2x.png */,
+				CEAA43541A07DEC900EDBAF3 /* icon_acount_edit_acount.png */,
+				CEAA43551A07DEC900EDBAF3 /* icon_acount_edit_acount@2x.png */,
 			);
 			name = Resource;
 			path = WristBand/Resource;
@@ -299,6 +391,16 @@
 			children = (
 				CEB79ACC1A0527E300714531 /* WBSettingViewController.h */,
 				CEB79ACD1A0527E300714531 /* WBSettingViewController.m */,
+				CEAA43441A07DAAA00EDBAF3 /* WBSettingPersonalInfoCell.h */,
+				CEAA43451A07DAAA00EDBAF3 /* WBSettingPersonalInfoCell.m */,
+				CEAA43471A07DACA00EDBAF3 /* WBSettingSleepGoalCell.h */,
+				CEAA43481A07DACA00EDBAF3 /* WBSettingSleepGoalCell.m */,
+				CEAA434A1A07DAEE00EDBAF3 /* WBSettingSleepTipsCell.h */,
+				CEAA434B1A07DAEE00EDBAF3 /* WBSettingSleepTipsCell.m */,
+				CEAA434D1A07DB0A00EDBAF3 /* WBSettingVersionCell.h */,
+				CEAA434E1A07DB0A00EDBAF3 /* WBSettingVersionCell.m */,
+				CEAA43581A0914FB00EDBAF3 /* WBPersonalInfoViewController.h */,
+				CEAA43591A0914FB00EDBAF3 /* WBPersonalInfoViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -315,6 +417,10 @@
 				CEB79AD91A0528F300714531 /* WBMainView.m */,
 				CEB79AD21A05285B00714531 /* WBMainViewController.h */,
 				CEB79AD31A05285B00714531 /* WBMainViewController.m */,
+				CEAA435B1A09185700EDBAF3 /* WBConnectDeviceView.h */,
+				CEAA435C1A09185700EDBAF3 /* WBConnectDeviceView.m */,
+				CEAA435E1A09188400EDBAF3 /* WBMeasuringView.h */,
+				CEAA435F1A09188400EDBAF3 /* WBMeasuringView.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -455,14 +561,20 @@
 				CEB79B3A1A05E4A900714531 /* center_image_pressed.png in Resources */,
 				CE5414211A06082F0013A450 /* score_breakdown.png in Resources */,
 				CE54142D1A06200D0013A450 /* checkbox_smart_normal_disabled.png in Resources */,
+				CEAA43561A07DEC900EDBAF3 /* icon_acount_edit_acount.png in Resources */,
 				CEB79AD71A05288000714531 /* Images.xcassets in Resources */,
 				CEB79B381A05E4A900714531 /* center_image_default.png in Resources */,
+				CEAA43651A09195C00EDBAF3 /* button_background_image_day_act.png in Resources */,
+				CEAA43681A09195C00EDBAF3 /* button_background_image_day@2x.png in Resources */,
+				CEAA43531A07DD8000EDBAF3 /* icon_acount@2x.png in Resources */,
 				CEB79AB71A05238A00714531 /* timeline_40@2x.png in Resources */,
 				CE54141C1A06079C0013A450 /* icon_x.png in Resources */,
 				CE5414341A0623010013A450 /* icon_arrow_right_white@2x.png in Resources */,
 				CEB79B391A05E4A900714531 /* center_image_default@2x.png in Resources */,
 				CE54143B1A0626C60013A450 /* icon_total_sleep_time@2x.png in Resources */,
+				CEAA43671A09195C00EDBAF3 /* button_background_image_day.png in Resources */,
 				CE5414301A06200D0013A450 /* checkbox_smart_normal@2x.png in Resources */,
+				CEAA433A1A07CB8800EDBAF3 /* tip_icon_sheep.png in Resources */,
 				CE54142E1A06200D0013A450 /* checkbox_smart_normal_disabled@2x.png in Resources */,
 				CEB79AB81A05238A00714531 /* timeline_60@2x.png in Resources */,
 				CEB79B2F1A05D75300714531 /* sleep_achievement_icon.png in Resources */,
@@ -470,12 +582,20 @@
 				CE5414201A06082F0013A450 /* score_breakdown@2x.png in Resources */,
 				CE54142F1A06200D0013A450 /* checkbox_smart_normal.png in Resources */,
 				CE5414331A0623010013A450 /* icon_arrow_right_white.png in Resources */,
+				CEAA43521A07DD8000EDBAF3 /* icon_acount.png in Resources */,
 				CE5414281A061D870013A450 /* icon_idea@2x.png in Resources */,
+				CEAA43431A07CC8700EDBAF3 /* tip_icon_fitness@2x.png in Resources */,
+				CEAA433F1A07CB9C00EDBAF3 /* icon_back@2x.png in Resources */,
+				CEAA433E1A07CB9C00EDBAF3 /* icon_back.png in Resources */,
+				CEAA433B1A07CB8800EDBAF3 /* tip_icon_sheep@2x.png in Resources */,
 				CE5414271A061D870013A450 /* icon_idea.png in Resources */,
 				CEB79AAE1A051DA200714531 /* icon_user.png in Resources */,
 				CEB79B301A05D75300714531 /* sleep_achievement_icon@2x.png in Resources */,
+				CEAA43421A07CC8700EDBAF3 /* tip_icon_fitness.png in Resources */,
 				CEB79B3B1A05E4A900714531 /* center_image_pressed@2x.png in Resources */,
 				CE54141D1A06079C0013A450 /* icon_x@2x.png in Resources */,
+				CEAA43571A07DEC900EDBAF3 /* icon_acount_edit_acount@2x.png in Resources */,
+				CEAA43661A09195C00EDBAF3 /* button_background_image_day_act@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,14 +613,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAA43371A07C99900EDBAF3 /* WBImprovementViewController.m in Sources */,
 				CEB79B3E1A05F92300714531 /* UIColor+WB.m in Sources */,
 				CEB79A801A051AAB00714531 /* AppDelegate.m in Sources */,
+				CEAA434C1A07DAEE00EDBAF3 /* WBSettingSleepTipsCell.m in Sources */,
 				CEB79AC41A0523E800714531 /* ALView+PureLayout.m in Sources */,
 				CE5414241A061B920013A450 /* WBImprovementIdeaCell.m in Sources */,
 				CEB79B2A1A05D4E900714531 /* GCDQueue.m in Sources */,
+				CEAA43601A09188400EDBAF3 /* WBMeasuringView.m in Sources */,
+				CEAA43491A07DACA00EDBAF3 /* WBSettingSleepGoalCell.m in Sources */,
 				CEB79B451A06046600714531 /* WBScoreDetailCell.m in Sources */,
 				CEB79B331A05DA8900714531 /* UIView+WB.m in Sources */,
 				CEB79ADD1A05374200714531 /* WBCircleView.m in Sources */,
+				CEAA435A1A0914FB00EDBAF3 /* WBPersonalInfoViewController.m in Sources */,
+				CEAA435D1A09185700EDBAF3 /* WBConnectDeviceView.m in Sources */,
 				CEB79AD41A05285B00714531 /* WBLineChartView.m in Sources */,
 				CEB79ACE1A0527E300714531 /* WBSettingViewController.m in Sources */,
 				CE5414371A0624010013A450 /* WBTotalSleepTimeCell.m in Sources */,
@@ -511,6 +637,8 @@
 				CEB79ACA1A05249200714531 /* WBSleepInfo.m in Sources */,
 				CEB79B291A05D4E900714531 /* GCDGroup.m in Sources */,
 				CEB79AC51A0523E800714531 /* NSArray+PureLayout.m in Sources */,
+				CEAA43461A07DAAA00EDBAF3 /* WBSettingPersonalInfoCell.m in Sources */,
+				CEAA434F1A07DB0A00EDBAF3 /* WBSettingVersionCell.m in Sources */,
 				CEB79A7D1A051AAB00714531 /* main.m in Sources */,
 				CEB79B2B1A05D4E900714531 /* GCDSemaphore.m in Sources */,
 			);

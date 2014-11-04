@@ -13,6 +13,7 @@
 #import "WBTotalSleepTimeCell.h"
 #import "WBLineChartView.h"
 #import "WBSleepInfo.h"
+#import "WBImprovementViewController.h"
 
 @interface WBMainView ()<UITableViewDataSource,UITableViewDelegate,WBLineChartViewDataSource>
 {
@@ -68,6 +69,11 @@
     return self;
 }
 
+- (void)improvementClick {
+    WBImprovementViewController *viewController = [[WBImprovementViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGRect frame = tableHeaderView.frame;
     if (scrollView.contentOffset.y < 0) {
@@ -80,7 +86,9 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (indexPath.row == 2) {
+        [self improvementClick];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -122,6 +130,7 @@
     if (indexPath.row == 2) {
         if (!improvementCell) {
             improvementCell = [[WBImprovementIdeaCell alloc] init];
+            [improvementCell.button addTarget:self action:@selector(improvementClick) forControlEvents:UIControlEventTouchUpInside];
             improvementCell.selectionStyle = UITableViewCellSelectionStyleNone;
 
         }
@@ -190,32 +199,36 @@
 - (void)initDummyData {
     NSMutableArray *array = [NSMutableArray array];
     
-    NSMutableArray *normalArray = [NSMutableArray array];
     NSMutableArray *inbedArray = [NSMutableArray array];
-    NSMutableArray *fallAsleepArray = [NSMutableArray array];
-    
+    NSMutableArray *fallAsleepArray1 = [NSMutableArray array];
+    NSMutableArray *normalArray = [NSMutableArray array];
+    NSMutableArray *fallAsleepArray2 = [NSMutableArray array];
+
     NSDate *date = [NSDate dateWithTimeInterval:-28 * 3600 sinceDate:[NSDate date]];
     for (int i = 0; i  < 15 * 60; i+=10) {
         WBSleepInfo *sleepInfo = [[WBSleepInfo alloc] init];
         sleepInfo.time = [[date dateByAddingTimeInterval:i * 60] timeIntervalSince1970];
-        if (i < 160) {
-            sleepInfo.state = WBSleepInfoStateNormal;
-            [normalArray addObject:sleepInfo];
-        } else if (i < 320) {
+        if (i < 100) {
             sleepInfo.state = WBSleepInfoStateInbed;
             [inbedArray addObject:sleepInfo];
+        } else if (i < 600) {
+            sleepInfo.state = WBSleepInfoStateFallAsleep;
+            [fallAsleepArray1 addObject:sleepInfo];
+        } else if (i < 800){
+            sleepInfo.state = WBSleepInfoStateNormal;
+            [normalArray addObject:sleepInfo];
         } else {
             sleepInfo.state = WBSleepInfoStateFallAsleep;
-            [fallAsleepArray addObject:sleepInfo];
+            [fallAsleepArray2 addObject:sleepInfo];
         }
         
-        sleepInfo.sleepValue = arc4random() % 30;
+        sleepInfo.sleepValue = arc4random() % 20 + 10;
         NSLog(@"sleep value = %f", sleepInfo.sleepValue);
     }
-    [array addObject:normalArray];
     [array addObject:inbedArray];
-    [array addObject:fallAsleepArray];
-    
+    [array addObject:fallAsleepArray1];
+    [array addObject:normalArray];
+    [array addObject:fallAsleepArray2];
     
     self.lineChardataSource = [NSArray arrayWithArray:array];
 }

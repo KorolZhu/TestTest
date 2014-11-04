@@ -9,8 +9,12 @@
 #import "WBMainViewController.h"
 #import "WBSettingViewController.h"
 #import "WBMainView.h"
+#import "WBConnectDeviceView.h"
 
 @interface WBMainViewController ()<UIScrollViewDelegate>
+
+@property (nonatomic,strong)WBConnectDeviceView *connectDeviceView;
+@property (nonatomic,strong)NSLayoutConstraint *topConstraint;
 
 @property (nonatomic,strong)UIScrollView *pagingScrollView;
 @property (nonatomic,strong)WBMainView *mainView;
@@ -51,16 +55,23 @@
     [self.view addSubview:_pagingScrollView];
     
     self.mainView = [[WBMainView alloc] init];
+    self.mainView.navigationController = self.navigationController;
     [_pagingScrollView addSubview:self.mainView];
     [self.mainView autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [self.mainView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
     [self.mainView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:_pagingScrollView];
     [self.mainView autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:_pagingScrollView];
+    
+    _connectDeviceView = [[WBConnectDeviceView alloc] init];
+    [_connectDeviceView.startSleepingButton addTarget:self action:@selector(startSleepingClick) forControlEvents:UIControlEventTouchUpInside];
+    [_connectDeviceView.cancelButton addTarget:self action:@selector(cancelConnectClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.view addSubview:_connectDeviceView];
+    _topConstraint = [_connectDeviceView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:IPHONE_HEIGHT - 43.0f];
+    [_connectDeviceView autoSetDimension:ALDimensionHeight toSize:IPHONE_HEIGHT + 43.0f];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +82,32 @@
 - (void)userSettingClick {
     WBSettingViewController *settingViewController = [[WBSettingViewController alloc] init];
     [self.navigationController pushViewController:settingViewController animated:YES];
+}
+
+#pragma mark - connect device
+
+- (void)startSleepingClick {
+    self.topConstraint.constant = -43.0f;
+    [UIView animateWithDuration:0.35f
+                          delay:0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         [self.navigationController.view layoutIfNeeded];
+                     } completion:^(BOOL finished) {
+                     }
+     ];
+}
+
+- (void)cancelConnectClick {
+    self.topConstraint.constant =  IPHONE_HEIGHT - 43.0f;
+    [UIView animateWithDuration:0.35f
+                          delay:0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         [self.navigationController.view layoutIfNeeded];
+                     } completion:^(BOOL finished) {
+                     }
+     ];
 }
 
 @end

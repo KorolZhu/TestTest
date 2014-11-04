@@ -10,6 +10,8 @@
 
 @interface WBImprovementIdeaCell : UITableViewCell
 
+@property (nonatomic,strong)    UIButton *button;
+
 - (void)configCell;
 - (CGFloat)cellHeight;
 

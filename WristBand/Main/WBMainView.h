@@ -10,4 +10,6 @@
 
 @interface WBMainView : UITableView
 
+@property (nonatomic,weak)UINavigationController *navigationController;
+
 @end

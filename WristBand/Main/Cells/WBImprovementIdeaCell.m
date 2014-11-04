@@ -12,7 +12,6 @@
 {
     UIImageView *bulbView;
     UILabel *titleLabel;
-    UIButton *button;
     UIImageView *arrowRightView;
 }
 
@@ -41,38 +40,38 @@
         
         UIImage *image = [[UIImage imageNamed:@"checkbox_smart_normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f)];
         UIImage *highLightImage = [[UIImage imageNamed:@"checkbox_smart_normal_disabled"] resizableImageWithCapInsets:UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f)];
-        button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button.titleLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
-        [button setTitleEdgeInsets:UIEdgeInsetsMake(0.0f, 12.0f, 0.0f, 0.0f)];
-        [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-        [button setBackgroundImage:image forState:UIControlStateNormal];
-        [button setBackgroundImage:highLightImage forState:UIControlStateHighlighted];
-        button.layer.cornerRadius = 5.0f;
-        button.clipsToBounds = YES;
-        [self.contentView addSubview:button];
-        [button autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:titleLabel withOffset:10.0f];
-        [button autoSetDimension:ALDimensionHeight toSize:80.0f];
-        [button autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10.0f];
-        [button autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10.0f];
+        _button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_button.titleLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
+        [_button setTitleEdgeInsets:UIEdgeInsetsMake(0.0f, 12.0f, 0.0f, 0.0f)];
+        [_button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+        [_button setBackgroundImage:image forState:UIControlStateNormal];
+        [_button setBackgroundImage:highLightImage forState:UIControlStateHighlighted];
+        _button.layer.cornerRadius = 5.0f;
+        _button.clipsToBounds = YES;
+        [self.contentView addSubview:_button];
+        [_button autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:titleLabel withOffset:10.0f];
+        [_button autoSetDimension:ALDimensionHeight toSize:80.0f];
+        [_button autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10.0f];
+        [_button autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10.0f];
         
         arrowRightView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_arrow_right_white"]];
         [self.contentView addSubview:arrowRightView];
-        [arrowRightView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:button withOffset:-10.0f];
-        [arrowRightView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:button];
+        [arrowRightView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:_button withOffset:-10.0f];
+        [arrowRightView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:_button];
     }
     
     return self;
 }
 
 - (void)configCell {
-    [button setTitle:NSLocalizedString(@"Excrcise regularly", nil) forState:UIControlStateNormal];
+    [_button setTitle:NSLocalizedString(@"Excrcise regularly", nil) forState:UIControlStateNormal];
 }
 
 - (CGFloat)cellHeight {
     [self configCell];
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    return button.bottom + 20.0f;
+    return _button.bottom + 20.0f;
 }
 
 @end
