@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class WBConnectDeviceView;
+
+@protocol WBConnectDeviceViewDelegate <NSObject>
+
+- (void)connectDeviceViewDidConnected:(WBConnectDeviceView *)view;
+
+@end
+
 @interface WBConnectDeviceView : UIView
 
 @property (nonatomic,strong)UIButton *startSleepingButton;
 @property (nonatomic,strong)UIButton *cancelButton;
+
+@property (nonatomic,weak)id<WBConnectDeviceViewDelegate> delegate;
 
 @end

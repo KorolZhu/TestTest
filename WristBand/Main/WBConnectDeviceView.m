@@ -9,6 +9,23 @@
 #import "WBConnectDeviceView.h"
 #import <ExternalAccessory/ExternalAccessory.h>
 
+typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
+    WBConnectDeviceStateNormal,
+    WBConnectDeviceStateConnecting,
+    WBConnectDeviceStateConnected,
+};
+
+@interface WBConnectDeviceView ()
+{
+    UIView *barView;
+    UIButton *connectDeviceButton;
+    UIActivityIndicatorView *activityIndicatorView;
+}
+
+@property (nonatomic)WBConnectDeviceState state;
+
+@end
+
 @implementation WBConnectDeviceView
 
 - (instancetype)init {
@@ -35,7 +52,7 @@
         [self addSubview:backgroundView];
         [backgroundView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(43.0f, 0.0f, 0.0f, 0.0f)];
         
-        UIView *barView = [[UIView alloc] init];
+        barView = [[UIView alloc] init];
         barView.backgroundColor = [UIColor clearColor];
         [backgroundView addSubview:barView];
         [barView autoPinEdgeToSuperviewEdge:ALEdgeTop];
@@ -65,7 +82,7 @@
         [barView addSubview:lineView];
         [lineView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(63.5f, 0.0f, 0.0f, 0.0f)];
         
-        UIButton *connectDeviceButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        connectDeviceButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [connectDeviceButton setBackgroundColor:[UIColor whiteColor]];
         [connectDeviceButton setTitleColor:RGB(33,39,40) forState:UIControlStateNormal];
         [connectDeviceButton.titleLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
@@ -75,6 +92,12 @@
         [connectDeviceButton autoSetDimensionsToSize:CGSizeMake(240.0f, 40.0f)];
         [connectDeviceButton autoCenterInSuperview];
         
+        activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        activityIndicatorView.hidesWhenStopped = YES;
+        [connectDeviceButton addSubview:activityIndicatorView];
+        [activityIndicatorView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:15.0f];
+        [activityIndicatorView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+        
         [self layoutIfNeeded];
     }
     
@@ -82,9 +105,41 @@
 }
 
 - (void)connectDeviceClick {
-    [[EAAccessoryManager sharedAccessoryManager] showBluetoothAccessoryPickerWithNameFilter:nil completion:^(NSError *error) {
-        
-    }];
+    self.state = WBConnectDeviceStateConnecting;
 }
+
+- (void)setState:(WBConnectDeviceState)state {
+    _state = state;
+    
+    switch (state) {
+        case WBConnectDeviceStateNormal: {
+            [UIView animateWithDuration:0.2f animations:^{
+                connectDeviceButton.backgroundColor = [UIColor whiteColor];
+                [activityIndicatorView stopAnimating];
+                self.top += barView.height;
+            } completion:^(BOOL finished) {
+                barView.hidden = NO;
+            }];
+        }
+            break;
+        case WBConnectDeviceStateConnecting: {
+            [UIView animateWithDuration:0.2f animations:^{
+                barView.hidden = YES;
+                connectDeviceButton.backgroundColor = RGB(131,135,136);
+                [activityIndicatorView startAnimating];
+                self.top -= barView.height;
+            } completion:^(BOOL finished) {
+            }];
+        }
+            break;
+        case WBConnectDeviceStateConnected:
+            
+            break;
+        default:
+            break;
+    }
+}
+
+
 
 @end

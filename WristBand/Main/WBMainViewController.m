@@ -10,11 +10,14 @@
 #import "WBSettingViewController.h"
 #import "WBMainView.h"
 #import "WBConnectDeviceView.h"
+#import "WBMeasuringView.h"
 
-@interface WBMainViewController ()<UIScrollViewDelegate>
+@interface WBMainViewController ()<UIScrollViewDelegate,WBConnectDeviceViewDelegate>
 
 @property (nonatomic,strong)WBConnectDeviceView *connectDeviceView;
 @property (nonatomic,strong)NSLayoutConstraint *topConstraint;
+
+@property (nonatomic,strong)WBMeasuringView *measuringView;
 
 @property (nonatomic,strong)UIScrollView *pagingScrollView;
 @property (nonatomic,strong)WBMainView *mainView;
@@ -63,11 +66,14 @@
     [self.mainView autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:_pagingScrollView];
     
     _connectDeviceView = [[WBConnectDeviceView alloc] init];
+    _connectDeviceView.delegate = self;
     [_connectDeviceView.startSleepingButton addTarget:self action:@selector(startSleepingClick) forControlEvents:UIControlEventTouchUpInside];
     [_connectDeviceView.cancelButton addTarget:self action:@selector(cancelConnectClick) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationController.view addSubview:_connectDeviceView];
     _topConstraint = [_connectDeviceView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:IPHONE_HEIGHT - 43.0f];
-    [_connectDeviceView autoSetDimension:ALDimensionHeight toSize:IPHONE_HEIGHT + 43.0f];
+    [_connectDeviceView autoSetDimension:ALDimensionHeight toSize:IPHONE_HEIGHT + 43.0f + 64.0f];
+//    _measuringView = [[WBMeasuringView alloc] init];
+//    [self.navigationController.view addSubview:_measuringView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -108,6 +114,14 @@
                      } completion:^(BOOL finished) {
                      }
      ];
+}
+
+- (void)connectDeviceViewDidConnected:(WBConnectDeviceView *)view {
+    if (!_measuringView) {
+        _measuringView = [[WBMeasuringView alloc] init];
+        [self.navigationController.view addSubview:_measuringView];
+        
+    }
 }
 
 @end

@@ -23,6 +23,10 @@
 		CE5414371A0624010013A450 /* WBTotalSleepTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5414361A0624010013A450 /* WBTotalSleepTimeCell.m */; };
 		CE54143A1A0626C60013A450 /* icon_total_sleep_time.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5414381A0626C60013A450 /* icon_total_sleep_time.png */; };
 		CE54143B1A0626C60013A450 /* icon_total_sleep_time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5414391A0626C60013A450 /* icon_total_sleep_time@2x.png */; };
+		CE559C831A0E27D9000F3D66 /* icon_measuring_spinner.png in Resources */ = {isa = PBXBuildFile; fileRef = CE559C811A0E27D9000F3D66 /* icon_measuring_spinner.png */; };
+		CE559C841A0E27D9000F3D66 /* icon_measuring_spinner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE559C821A0E27D9000F3D66 /* icon_measuring_spinner@2x.png */; };
+		CE559C871A0E2A3C000F3D66 /* button_background_image_night.png in Resources */ = {isa = PBXBuildFile; fileRef = CE559C851A0E2A3C000F3D66 /* button_background_image_night.png */; };
+		CE559C881A0E2A3C000F3D66 /* button_background_image_night@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE559C861A0E2A3C000F3D66 /* button_background_image_night@2x.png */; };
 		CEAA43371A07C99900EDBAF3 /* WBImprovementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA43361A07C99900EDBAF3 /* WBImprovementViewController.m */; };
 		CEAA433A1A07CB8800EDBAF3 /* tip_icon_sheep.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43381A07CB8800EDBAF3 /* tip_icon_sheep.png */; };
 		CEAA433B1A07CB8800EDBAF3 /* tip_icon_sheep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43391A07CB8800EDBAF3 /* tip_icon_sheep@2x.png */; };
@@ -47,6 +51,7 @@
 		CEAA43681A09195C00EDBAF3 /* button_background_image_day@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43641A09195C00EDBAF3 /* button_background_image_day@2x.png */; };
 		CEAA436A1A092E6700EDBAF3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAA43691A092E6700EDBAF3 /* ExternalAccessory.framework */; };
 		CEAA436C1A092E6D00EDBAF3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAA436B1A092E6D00EDBAF3 /* CoreBluetooth.framework */; };
+		CEB503281A0E66350037E5EA /* WBContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB503271A0E66350037E5EA /* WBContainViewController.m */; };
 		CEB79A7D1A051AAB00714531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79A7C1A051AAB00714531 /* main.m */; };
 		CEB79A801A051AAB00714531 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79A7F1A051AAB00714531 /* AppDelegate.m */; };
 		CEB79A971A051AAB00714531 /* WristBandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79A961A051AAB00714531 /* WristBandTests.m */; };
@@ -108,6 +113,10 @@
 		CE5414361A0624010013A450 /* WBTotalSleepTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTotalSleepTimeCell.m; sourceTree = "<group>"; };
 		CE5414381A0626C60013A450 /* icon_total_sleep_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_total_sleep_time.png; sourceTree = "<group>"; };
 		CE5414391A0626C60013A450 /* icon_total_sleep_time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_total_sleep_time@2x.png"; sourceTree = "<group>"; };
+		CE559C811A0E27D9000F3D66 /* icon_measuring_spinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_measuring_spinner.png; sourceTree = "<group>"; };
+		CE559C821A0E27D9000F3D66 /* icon_measuring_spinner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_measuring_spinner@2x.png"; sourceTree = "<group>"; };
+		CE559C851A0E2A3C000F3D66 /* button_background_image_night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_background_image_night.png; sourceTree = "<group>"; };
+		CE559C861A0E2A3C000F3D66 /* button_background_image_night@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_background_image_night@2x.png"; sourceTree = "<group>"; };
 		CEAA43351A07C99900EDBAF3 /* WBImprovementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBImprovementViewController.h; sourceTree = "<group>"; };
 		CEAA43361A07C99900EDBAF3 /* WBImprovementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBImprovementViewController.m; sourceTree = "<group>"; };
 		CEAA43381A07CB8800EDBAF3 /* tip_icon_sheep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip_icon_sheep.png; sourceTree = "<group>"; };
@@ -140,6 +149,8 @@
 		CEAA43641A09195C00EDBAF3 /* button_background_image_day@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_background_image_day@2x.png"; sourceTree = "<group>"; };
 		CEAA43691A092E6700EDBAF3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		CEAA436B1A092E6D00EDBAF3 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CEB503261A0E66350037E5EA /* WBContainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBContainViewController.h; sourceTree = "<group>"; };
+		CEB503271A0E66350037E5EA /* WBContainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBContainViewController.m; sourceTree = "<group>"; };
 		CEB79A771A051AAB00714531 /* WristBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB79A7B1A051AAB00714531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB79A7C1A051AAB00714531 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -345,6 +356,10 @@
 				CEAA43511A07DD8000EDBAF3 /* icon_acount@2x.png */,
 				CEAA43541A07DEC900EDBAF3 /* icon_acount_edit_acount.png */,
 				CEAA43551A07DEC900EDBAF3 /* icon_acount_edit_acount@2x.png */,
+				CE559C811A0E27D9000F3D66 /* icon_measuring_spinner.png */,
+				CE559C821A0E27D9000F3D66 /* icon_measuring_spinner@2x.png */,
+				CE559C851A0E2A3C000F3D66 /* button_background_image_night.png */,
+				CE559C861A0E2A3C000F3D66 /* button_background_image_night@2x.png */,
 			);
 			name = Resource;
 			path = WristBand/Resource;
@@ -421,6 +436,8 @@
 				CEAA435C1A09185700EDBAF3 /* WBConnectDeviceView.m */,
 				CEAA435E1A09188400EDBAF3 /* WBMeasuringView.h */,
 				CEAA435F1A09188400EDBAF3 /* WBMeasuringView.m */,
+				CEB503261A0E66350037E5EA /* WBContainViewController.h */,
+				CEB503271A0E66350037E5EA /* WBContainViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -563,6 +580,7 @@
 				CE54142D1A06200D0013A450 /* checkbox_smart_normal_disabled.png in Resources */,
 				CEAA43561A07DEC900EDBAF3 /* icon_acount_edit_acount.png in Resources */,
 				CEB79AD71A05288000714531 /* Images.xcassets in Resources */,
+				CE559C831A0E27D9000F3D66 /* icon_measuring_spinner.png in Resources */,
 				CEB79B381A05E4A900714531 /* center_image_default.png in Resources */,
 				CEAA43651A09195C00EDBAF3 /* button_background_image_day_act.png in Resources */,
 				CEAA43681A09195C00EDBAF3 /* button_background_image_day@2x.png in Resources */,
@@ -572,11 +590,13 @@
 				CE5414341A0623010013A450 /* icon_arrow_right_white@2x.png in Resources */,
 				CEB79B391A05E4A900714531 /* center_image_default@2x.png in Resources */,
 				CE54143B1A0626C60013A450 /* icon_total_sleep_time@2x.png in Resources */,
+				CE559C871A0E2A3C000F3D66 /* button_background_image_night.png in Resources */,
 				CEAA43671A09195C00EDBAF3 /* button_background_image_day.png in Resources */,
 				CE5414301A06200D0013A450 /* checkbox_smart_normal@2x.png in Resources */,
 				CEAA433A1A07CB8800EDBAF3 /* tip_icon_sheep.png in Resources */,
 				CE54142E1A06200D0013A450 /* checkbox_smart_normal_disabled@2x.png in Resources */,
 				CEB79AB81A05238A00714531 /* timeline_60@2x.png in Resources */,
+				CE559C841A0E27D9000F3D66 /* icon_measuring_spinner@2x.png in Resources */,
 				CEB79B2F1A05D75300714531 /* sleep_achievement_icon.png in Resources */,
 				CE54143A1A0626C60013A450 /* icon_total_sleep_time.png in Resources */,
 				CE5414201A06082F0013A450 /* score_breakdown@2x.png in Resources */,
@@ -584,6 +604,7 @@
 				CE5414331A0623010013A450 /* icon_arrow_right_white.png in Resources */,
 				CEAA43521A07DD8000EDBAF3 /* icon_acount.png in Resources */,
 				CE5414281A061D870013A450 /* icon_idea@2x.png in Resources */,
+				CE559C881A0E2A3C000F3D66 /* button_background_image_night@2x.png in Resources */,
 				CEAA43431A07CC8700EDBAF3 /* tip_icon_fitness@2x.png in Resources */,
 				CEAA433F1A07CB9C00EDBAF3 /* icon_back@2x.png in Resources */,
 				CEAA433E1A07CB9C00EDBAF3 /* icon_back.png in Resources */,
@@ -633,6 +654,7 @@
 				CEB79AD51A05285B00714531 /* WBMainViewController.m in Sources */,
 				CEB79B1F1A05D35E00714531 /* UIDevice+WB.m in Sources */,
 				CEB79AC61A0523E800714531 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				CEB503281A0E66350037E5EA /* WBContainViewController.m in Sources */,
 				CEB79ADA1A0528F300714531 /* WBMainView.m in Sources */,
 				CEB79ACA1A05249200714531 /* WBSleepInfo.m in Sources */,
 				CEB79B291A05D4E900714531 /* GCDGroup.m in Sources */,
