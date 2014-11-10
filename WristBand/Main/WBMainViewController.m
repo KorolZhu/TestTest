@@ -8,6 +8,7 @@
 
 #import "WBMainViewController.h"
 #import "WBHitTestView.h"
+#import "WBCollectionViewCell.h"
 #import "WBSettingViewController.h"
 #import "WBMainView.h"
 #import "WBConnectDeviceView.h"
@@ -15,10 +16,13 @@
 #import "WBSleepInfo.h"
 #import "WBSleepPoint.h"
 
-@interface WBMainViewController ()<UIScrollViewDelegate,WBConnectDeviceViewDelegate,WBMainViewDelegate>
+static NSString *CollectionCellIdentifier = @"collectionCellIdentifier";
+
+@interface WBMainViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,WBConnectDeviceViewDelegate,WBMainViewDelegate>
 
 @property (nonatomic,strong)UINavigationBar *navigationBar;
-@property (nonatomic,strong)UIScrollView *pagingScrollView;
+@property (nonatomic,strong)UICollectionView *collectionView;
+@property (nonatomic)BOOL scrollToRight;
 
 @property (nonatomic,strong)NSArray *sleepInfos;
 
@@ -59,20 +63,25 @@
     [button setFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
     navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
-    _pagingScrollView = [[UIScrollView alloc] init];
-    _pagingScrollView.scrollsToTop = NO;
-    _pagingScrollView.pagingEnabled = YES;
-    _pagingScrollView.alwaysBounceHorizontal = YES;
-    _pagingScrollView.directionalLockEnabled = YES;
-    _pagingScrollView.delegate = self;
-    _pagingScrollView.showsHorizontalScrollIndicator = NO;
-    _pagingScrollView.showsVerticalScrollIndicator = NO;
-    _pagingScrollView.backgroundColor = RGB(215,222,223);
-    [self.view addSubview:_pagingScrollView];
-    [_pagingScrollView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_navigationBar];
-    [_pagingScrollView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_pagingScrollView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [_pagingScrollView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.itemSize = CGSizeMake(IPHONE_WIDTH, IPHONE_HEIGHT_WITHOUTTOPBAR);
+    [layout setMinimumInteritemSpacing:0.0f];
+    [layout setMinimumLineSpacing:0.0f];
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    _collectionView.scrollsToTop = NO;
+    _collectionView.backgroundColor = RGB(215,222,223);
+    _collectionView.dataSource = self;
+    _collectionView.delegate = self;
+    _collectionView.pagingEnabled = YES;
+    [_collectionView registerClass:[WBCollectionViewCell class] forCellWithReuseIdentifier:CollectionCellIdentifier];
+    [self.view addSubview:self.collectionView];
+    
+    [_collectionView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_navigationBar];
+    [_collectionView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_collectionView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_collectionView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
     
     _connectDeviceView = [[WBConnectDeviceView alloc] init];
     _connectDeviceView.delegate = self;
@@ -84,38 +93,18 @@
     [_connectDeviceView autoSetDimension:ALDimensionHeight toSize:IPHONE_HEIGHT + 43.0f + 64.0f];
     
     [self test];
+    
 }
 
 - (void)test {
     [self initDummyData];
-    
-    _pagingScrollView.contentSize = CGSizeMake(IPHONE_WIDTH * _sleepInfos.count, IPHONE_HEIGHT_WITHOUTTOPBAR);
-    
-    NSMutableArray *mainViews = [NSMutableArray array];
-    for (WBSleepInfo *sleepInfo in _sleepInfos) {
-        WBMainView *mainView = [[WBMainView alloc] init];
-        mainView.scrollDelegate = self;
-        mainView.superViewController = self;
-        mainView.sleepInfo = sleepInfo;
-        [_pagingScrollView addSubview:mainView];
-        [mainViews addObject:mainView];
-        if ([_sleepInfos indexOfObject:sleepInfo] == 0) {
-            mainView.scrollsToTop = YES;
-        } else {
-            mainView.scrollsToTop = NO;
-        }
-            
+}
+
+- (void)viewDidLayoutSubviews {
+    if (!_scrollToRight) {
+        [_collectionView setContentOffset:CGPointMake(self.sleepInfos.count * IPHONE_WIDTH, 0) animated:NO];
+        _scrollToRight = YES;
     }
-    
-    WBMainView *mainView = mainViews.firstObject;
-    [mainView autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [mainView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:_pagingScrollView];
-    [mainView autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:_pagingScrollView];
-    [mainViews autoMatchViewsDimension:ALDimensionWidth];
-    [mainViews autoMatchViewsDimension:ALDimensionHeight];
-    [mainViews autoAlignViewsToEdge:ALEdgeTop];
-    
-    [mainViews autoDistributeViewsAlongAxis:ALAxisHorizontal alignedTo:ALAttributeTop withFixedSpacing:0.0f];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -149,15 +138,17 @@
         
         WBSleepScore *score = [[WBSleepScore alloc] init];
         score.amountOfSleep = 68 + i * 18;
-        score.gotupFromBed = 10;
-        score.sleepVSAwake = -5;
-        score.sleepLatency = -8;
+        score.gotupFromBed = 10 + i * 1;
+        score.sleepVSAwake = -5 - i * 3;
+        score.wakingEvents = - i;
+        score.sleepLatency = -8 + i * 4;
+        score.snoring = - i;
         sleepInfo.sleepScore = score;
         
-        sleepInfo.improvementIdeas = @"Exercise regularly";
-        sleepInfo.improvementIdeasDetail = @"Aerobic exercise in the afternoon or at least 3 hours efore going to bed is good for sleep";
+        sleepInfo.improvementIdeas = [NSString stringWithFormat:@"%d Exercise regularly", i];
+        sleepInfo.improvementIdeasDetail = [NSString stringWithFormat:@"%d Aerobic exercise in the afternoon or at least 3 hours efore going to bed is good for sleep", i];
         
-        sleepInfo.totalSleepTime = 4 * 3600 + 47 * 60;
+        sleepInfo.totalSleepTime = (4 + i) * 3600 + 47 * 60;
         
         NSMutableArray *array = [NSMutableArray array];
         
@@ -216,6 +207,25 @@
     } else {
         _connectDeviceView.enabled = YES;
     }
+}
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.sleepInfos.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    WBCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionCellIdentifier forIndexPath:indexPath];
+    cell.scrollDelegate = self;
+    cell.superViewController = self;
+    cell.sleepInfo = [self.sleepInfos objectAtIndex:indexPath.row];
+    [cell configCell];
+    return cell;
 }
 
 #pragma mark - Connect device

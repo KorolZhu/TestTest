@@ -37,6 +37,7 @@
 		CE559C841A0E27D9000F3D66 /* icon_measuring_spinner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE559C821A0E27D9000F3D66 /* icon_measuring_spinner@2x.png */; };
 		CE559C871A0E2A3C000F3D66 /* button_background_image_night.png in Resources */ = {isa = PBXBuildFile; fileRef = CE559C851A0E2A3C000F3D66 /* button_background_image_night.png */; };
 		CE559C881A0E2A3C000F3D66 /* button_background_image_night@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE559C861A0E2A3C000F3D66 /* button_background_image_night@2x.png */; };
+		CE6DCB6B1A10EDF600F49843 /* WBCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6DCB6A1A10EDF600F49843 /* WBCollectionViewCell.m */; };
 		CEAA43371A07C99900EDBAF3 /* WBImprovementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAA43361A07C99900EDBAF3 /* WBImprovementViewController.m */; };
 		CEAA433A1A07CB8800EDBAF3 /* tip_icon_sheep.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43381A07CB8800EDBAF3 /* tip_icon_sheep.png */; };
 		CEAA433B1A07CB8800EDBAF3 /* tip_icon_sheep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEAA43391A07CB8800EDBAF3 /* tip_icon_sheep@2x.png */; };
@@ -140,6 +141,8 @@
 		CE559C821A0E27D9000F3D66 /* icon_measuring_spinner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_measuring_spinner@2x.png"; sourceTree = "<group>"; };
 		CE559C851A0E2A3C000F3D66 /* button_background_image_night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_background_image_night.png; sourceTree = "<group>"; };
 		CE559C861A0E2A3C000F3D66 /* button_background_image_night@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_background_image_night@2x.png"; sourceTree = "<group>"; };
+		CE6DCB691A10EDF600F49843 /* WBCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBCollectionViewCell.h; sourceTree = "<group>"; };
+		CE6DCB6A1A10EDF600F49843 /* WBCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBCollectionViewCell.m; sourceTree = "<group>"; };
 		CEAA43351A07C99900EDBAF3 /* WBImprovementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBImprovementViewController.h; sourceTree = "<group>"; };
 		CEAA43361A07C99900EDBAF3 /* WBImprovementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBImprovementViewController.m; sourceTree = "<group>"; };
 		CEAA43381A07CB8800EDBAF3 /* tip_icon_sheep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip_icon_sheep.png; sourceTree = "<group>"; };
@@ -522,6 +525,8 @@
 		CEB79B421A06044500714531 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CE6DCB691A10EDF600F49843 /* WBCollectionViewCell.h */,
+				CE6DCB6A1A10EDF600F49843 /* WBCollectionViewCell.m */,
 				CE4553F21A0F721C00E417B7 /* WBBaseCell.h */,
 				CE4553F31A0F721C00E417B7 /* WBBaseCell.m */,
 				CEB79B431A06046600714531 /* WBScoreDetailCell.h */,
@@ -676,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6DCB6B1A10EDF600F49843 /* WBCollectionViewCell.m in Sources */,
 				CEAA43371A07C99900EDBAF3 /* WBImprovementViewController.m in Sources */,
 				CE4553E81A0F4E8200E417B7 /* WBHitTestView.m in Sources */,
 				CEB79B3E1A05F92300714531 /* UIColor+WB.m in Sources */,

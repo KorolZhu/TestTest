@@ -12,6 +12,10 @@
 
 @property (nonatomic,assign)int totalScore;
 
-- (void)startAnimating;
+@property (nonatomic,strong)UIImageView *backImageView;
+@property (nonatomic,strong)UITapGestureRecognizer *tapGestureRecognizer;
+
+- (void)reloadData;
+- (void)invalidate;
 
 @end

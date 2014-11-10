@@ -22,7 +22,6 @@
     UIBezierPath *bezierPath2;
     CAShapeLayer *arcLayer2;
     
-    UIImageView *backImageView;
     UIImageView *achievementView;
     UILabel *totalScoreLabel;
     UILabel *scroeDetailLabel;
@@ -36,12 +35,15 @@
     self = [super init];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"center_image_default"]];
-        backImageView.userInteractionEnabled = YES;
-        [backImageView setHighlightedImage:[UIImage imageNamed:@"center_image_pressed"]];
-        [self addSubview:backImageView];
-        [backImageView autoAlignAxisToSuperviewAxis:ALAxisVertical];
-        [backImageView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self withOffset:KVerticalPadding];
+        _backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"center_image_default"]];
+        _backImageView.userInteractionEnabled = YES;
+        [_backImageView setHighlightedImage:[UIImage imageNamed:@"center_image_pressed"]];
+        [self addSubview:_backImageView];
+        [_backImageView autoAlignAxisToSuperviewAxis:ALAxisVertical];
+        [_backImageView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self withOffset:KVerticalPadding];
+        
+        _tapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
+        [_backImageView addGestureRecognizer:_tapGestureRecognizer];
         
         achievementView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sleep_achievement_icon"]];
         [self addSubview:achievementView];
@@ -70,7 +72,6 @@
         [scroeDetailLabel autoSetDimension:ALDimensionWidth toSize:2 * KCircleRadius - 40.0f];
         [scroeDetailLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:totalScoreLabel withOffset:10.0f];
         [scroeDetailLabel autoAlignAxisToSuperviewAxis:ALAxisVertical];
-    
     }
     return self;
 }
@@ -78,6 +79,25 @@
 - (void)setTotalScore:(int)totalScore {
     _totalScore = totalScore;
     totalScoreLabel.text = @(totalScore).stringValue;
+}
+
+- (void)reloadData {
+    totalScoreLabel.text = @(_totalScore).stringValue;
+    [self startAnimating];
+}
+
+- (void)invalidate {
+    totalScoreLabel.text = nil;
+    achievementView.hidden = YES;
+
+    [arcLayer removeFromSuperlayer];
+    [arcLayer2 removeFromSuperlayer];
+    
+    arcLayer = nil;
+    arcLayer2 = nil;
+    
+    bezierPath = nil;
+    bezierPath2 = nil;
 }
 
 - (void)startAnimating {
@@ -88,7 +108,7 @@
         } else {
             firstEndAngle = self.totalScore / 100.0f * M_PI * 2 - M_PI_2;
         }
-        [bezierPath addArcWithCenter:CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f + KVerticalPadding) radius:87.0f + 6.0f startAngle:- M_PI_2 endAngle:firstEndAngle  clockwise:YES];
+        [bezierPath addArcWithCenter:CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f + KVerticalPadding) radius:87.0f + 5.0f startAngle:- M_PI_2 endAngle:firstEndAngle  clockwise:YES];
     }
     
     if (!arcLayer) {
@@ -112,7 +132,7 @@
             return;
         }
         
-        [bezierPath2 addArcWithCenter:CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f + KVerticalPadding) radius:87.0f + 6.0f startAngle:startAngle endAngle:endAngle  clockwise:YES];
+        [bezierPath2 addArcWithCenter:CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f + KVerticalPadding) radius:87.0f + 5.0f startAngle:startAngle endAngle:endAngle  clockwise:YES];
     }
     
     if (!arcLayer2) {

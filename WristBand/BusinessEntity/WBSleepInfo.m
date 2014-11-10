@@ -15,10 +15,6 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     _timeString = [dateFormatter stringFromDate:date];
-    
-    _improvementIdeas = @"Exercise regularly";
-    _improvementIdeasDetail = @"Aerobic exercise in the afternoon or at least 3 hours efore going to bed is good for sleep";
-    
     _goalPercent = _totalSleepTime / (7.0f * 3600);
     int hour = _totalSleepTime / 3600;
     int minute = (long)_totalSleepTime % 3600 / 60.0f;

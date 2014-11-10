@@ -28,6 +28,7 @@
     WBTotalSleepTimeCell *sleepTimeCell;
     UITableViewCell *chartCell;
     WBLineChartView *lineChartView;
+    WBCircleView *circleView;
     
     BOOL showScoreDetail;
 }
@@ -62,8 +63,6 @@
         
         [self addSubview:tableHeaderView];
         [self setScrollIndicatorInsets:UIEdgeInsetsMake(44.0f, 0.0f, 0.0f, 0.0f)];
-        
-        showScoreDetail = YES;
     }
     return self;
 }
@@ -78,6 +77,11 @@
     } completion:NULL];
 }
 
+- (void)circleClick {
+    showScoreDetail = !showScoreDetail;
+    [self reloadData];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGRect frame = tableHeaderView.frame;
     if (scrollView.contentOffset.y < 0) {
@@ -90,6 +94,15 @@
     [self.scrollDelegate mainViewDidScroll:self];
 }
 
+- (void)prepareForReuse {
+    [circleView invalidate];
+    showScoreDetail = NO;
+}
+
+- (void)reuse {
+    circleView.totalScore = _sleepInfo.sleepScore.totalScore;
+    [circleView reloadData];
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 2) {
@@ -112,7 +125,8 @@
             circleCell.backgroundColor = [UIColor clearColor];
             circleCell.contentView.backgroundColor = [UIColor clearColor];
             circleCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            WBCircleView *circleView = [[WBCircleView alloc] init];
+            circleView = [[WBCircleView alloc] init];
+            [circleView.tapGestureRecognizer addTarget:self action:@selector(circleClick)];
             [circleCell.contentView addSubview:circleView];
             [circleView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10.0f];
             [circleView autoSetDimensionsToSize:CGSizeMake(220.0f, 220.0f)];
@@ -121,7 +135,7 @@
             [circleCell layoutIfNeeded];
             
             circleView.totalScore = self.sleepInfo.sleepScore.totalScore;
-            [circleView startAnimating];
+            [circleView reloadData];
         }
         
         return circleCell;
@@ -178,8 +192,10 @@
     
     if (indexPath.row == 1) {
         if (!showScoreDetail) {
+            scoreDetailCell.hidden = YES;
             return 0.0f;
         } else {
+            scoreDetailCell.hidden = NO;
             scoreDetailCell.sleepInfo = self.sleepInfo;
             [scoreDetailCell configCell];
             return [scoreDetailCell cellHeight];
