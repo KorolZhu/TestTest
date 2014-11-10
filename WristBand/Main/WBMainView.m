@@ -12,8 +12,9 @@
 #import "WBImprovementIdeaCell.h"
 #import "WBTotalSleepTimeCell.h"
 #import "WBLineChartView.h"
-#import "WBSleepInfo.h"
 #import "WBImprovementViewController.h"
+#import "WBSleepInfo.h"
+#import "WBSleepPoint.h"
 
 @interface WBMainView ()<UITableViewDataSource,UITableViewDelegate,WBLineChartViewDataSource>
 {
@@ -30,8 +31,6 @@
     
     BOOL showScoreDetail;
 }
-
-@property (nonatomic,strong)NSArray *lineChardataSource;
 
 @end
 
@@ -71,7 +70,12 @@
 
 - (void)improvementClick {
     WBImprovementViewController *viewController = [[WBImprovementViewController alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self.superViewController.containViewController addChildViewController:viewController];
+    [viewController willMoveToParentViewController:self.superViewController.containViewController];
+    
+    [self.superViewController.containViewController transitionFromViewController:self.superViewController toViewController:viewController duration:0.55f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+        
+    } completion:NULL];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -82,6 +86,8 @@
         frame.origin.y = 0.0f;
     }
     tableHeaderView.frame = frame;
+    
+    [self.scrollDelegate mainViewDidScroll:self];
 }
 
 
@@ -114,8 +120,10 @@
             [circleCell setNeedsLayout];
             [circleCell layoutIfNeeded];
             
+            circleView.totalScore = self.sleepInfo.sleepScore.totalScore;
             [circleView startAnimating];
         }
+        
         return circleCell;
     }
     
@@ -151,8 +159,6 @@
             chartCell.selectionStyle = UITableViewCellSelectionStyleNone;
             chartCell.backgroundColor = [UIColor clearColor];
             
-            [self initDummyData];
-            
             lineChartView = [[WBLineChartView alloc] initWithFrame:CGRectMake(10.0f, 5.0f, IPHONE_WIDTH - 20.0f, 0.0f)];
             lineChartView.dataSource = self;
             lineChartView.title = NSLocalizedString(@"Night overview", nil);
@@ -174,15 +180,21 @@
         if (!showScoreDetail) {
             return 0.0f;
         } else {
+            scoreDetailCell.sleepInfo = self.sleepInfo;
+            [scoreDetailCell configCell];
             return [scoreDetailCell cellHeight];
         }
     }
     
     if (indexPath.row == 2) {
+        improvementCell.sleepInfo = self.sleepInfo;
+        [improvementCell configCell];
         return [improvementCell cellHeight];
     }
     
     if (indexPath.row == 3) {
+        sleepTimeCell.sleepInfo = self.sleepInfo;
+        [sleepTimeCell configCell];
         return [sleepTimeCell cellHeight];
     }
     
@@ -194,66 +206,29 @@
     return 40.0f;
 }
 
-#pragma mark - Line chart
-
-- (void)initDummyData {
-    NSMutableArray *array = [NSMutableArray array];
-    
-    NSMutableArray *inbedArray = [NSMutableArray array];
-    NSMutableArray *fallAsleepArray1 = [NSMutableArray array];
-    NSMutableArray *normalArray = [NSMutableArray array];
-    NSMutableArray *fallAsleepArray2 = [NSMutableArray array];
-
-    NSDate *date = [NSDate dateWithTimeInterval:-28 * 3600 sinceDate:[NSDate date]];
-    for (int i = 0; i  < 15 * 60; i+=10) {
-        WBSleepInfo *sleepInfo = [[WBSleepInfo alloc] init];
-        sleepInfo.time = [[date dateByAddingTimeInterval:i * 60] timeIntervalSince1970];
-        if (i < 100) {
-            sleepInfo.state = WBSleepInfoStateInbed;
-            [inbedArray addObject:sleepInfo];
-        } else if (i < 600) {
-            sleepInfo.state = WBSleepInfoStateFallAsleep;
-            [fallAsleepArray1 addObject:sleepInfo];
-        } else if (i < 800){
-            sleepInfo.state = WBSleepInfoStateNormal;
-            [normalArray addObject:sleepInfo];
-        } else {
-            sleepInfo.state = WBSleepInfoStateFallAsleep;
-            [fallAsleepArray2 addObject:sleepInfo];
-        }
-        
-        sleepInfo.sleepValue = arc4random() % 20 + 10;
-        NSLog(@"sleep value = %f", sleepInfo.sleepValue);
-    }
-    [array addObject:inbedArray];
-    [array addObject:fallAsleepArray1];
-    [array addObject:normalArray];
-    [array addObject:fallAsleepArray2];
-    
-    self.lineChardataSource = [NSArray arrayWithArray:array];
-}
+#pragma mark - Line chart data
 
 - (NSInteger)numberOfSectionsInLineChartView:(WBLineChartView *)lineChartView {
-    return self.lineChardataSource.count;
+    return self.sleepInfo.sleepPoints.count;
 }
 
 - (NSArray *)lineChartView:(WBLineChartView *)lineChartView sleepInfosAtSection:(NSUInteger)section {
-    NSArray *array = [self.lineChardataSource objectAtIndex:section];
+    NSArray *array = [self.sleepInfo.sleepPoints objectAtIndex:section];
     return array;
 }
 
 - (UIColor *)lineChartView:(WBLineChartView *)lineChartView fillColorAtSection:(NSUInteger)section {
-    NSArray *array = [self.lineChardataSource objectAtIndex:section];
+    NSArray *array = [self.sleepInfo.sleepPoints objectAtIndex:section];
     if (array.count > 0) {
-        WBSleepInfo *info = array.firstObject;
-        switch (info.state) {
-            case WBSleepInfoStateNormal:
+        WBSleepPoint *point = array.firstObject;
+        switch (point.state) {
+            case WBSleepPointStateNormal:
                 return [UIColor whiteColor];
                 break;
-            case WBSleepInfoStateInbed:
+            case WBSleepPointStateInbed:
                 return RGB(175,176,160);
                 break;
-            case WBSleepInfoStateFallAsleep:
+            case WBSleepPointStateFallAsleep:
                 return RGB(63,164,191);
                 break;
             default:

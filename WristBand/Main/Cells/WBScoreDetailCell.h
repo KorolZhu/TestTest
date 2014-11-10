@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WBBaseCell.h"
 
-@interface WBScoreDetailCell : UITableViewCell
-
-- (CGFloat)cellHeight;
-- (void)configCell;
+@interface WBScoreDetailCell : WBBaseCell
 
 @end

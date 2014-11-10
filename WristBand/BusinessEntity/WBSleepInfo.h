@@ -1,25 +1,27 @@
 //
 //  WBSleepInfo.h
-//  ChartViewController
+//  WristBand
 //
-//  Created by zhuzhi on 14/11/1.
-//  Copyright (c) 2014年 ZZ. All rights reserved.
+//  Created by zhuzhi on 14/11/9.
+//  Copyright (c) 2014年 WB. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
-typedef NS_ENUM(NSUInteger, WBSleepInfoState) {
-    WBSleepInfoStateNormal = 0,      // start sleep, but not in bed
-    WBSleepInfoStateInbed,           // in bed , but not fall asleep
-    WBSleepInfoStateFallAsleep,      // fall asleep
-};
+#import "WBSleepScore.h"
 
 @interface WBSleepInfo : NSObject
 
-@property (nonatomic)NSTimeInterval time;
-@property (nonatomic)NSInteger hour;
-@property (nonatomic)NSInteger minute;
-@property (nonatomic)float sleepValue;
-@property (nonatomic)WBSleepInfoState state;
+@property (nonatomic,assign)NSTimeInterval time;
+@property (nonatomic,readonly)NSString *timeString;
+@property (nonatomic,strong)WBSleepScore *sleepScore;
+@property (nonatomic,copy)NSString *improvementIdeas;
+@property (nonatomic,copy)NSString *improvementIdeasDetail;
+@property (nonatomic,assign)NSTimeInterval totalSleepTime;
+@property (nonatomic,assign)float goalPercent;
+@property (nonatomic,readonly)NSString *totalSleepTimeString;
+@property (nonatomic,readonly)NSString *goalPercentString;
+@property (nonatomic,strong)NSArray *sleepPoints;
+
+- (void)setup;
 
 @end

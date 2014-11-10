@@ -20,10 +20,8 @@
 @implementation WBImprovementIdeaCell
 
 - (instancetype)init {
-    self = [super initWithFrame:CGRectMake(0.0f, 0.0f, IPHONE_WIDTH, 0.0f)];
-    if (self) {
-        self.backgroundColor = [UIColor clearColor];
-        
+    self = [super init];
+    if (self) {        
         bulbView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_idea"]];
         [self.contentView addSubview:bulbView];
         [bulbView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10.0f];
@@ -64,13 +62,12 @@
 }
 
 - (void)configCell {
-    [_button setTitle:NSLocalizedString(@"Excrcise regularly", nil) forState:UIControlStateNormal];
+    [_button setTitle:self.sleepInfo.improvementIdeas forState:UIControlStateNormal];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 - (CGFloat)cellHeight {
-    [self configCell];
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
     return _button.bottom + 20.0f;
 }
 

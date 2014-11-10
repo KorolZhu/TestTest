@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WBBaseCell.h"
 
-@interface WBImprovementIdeaCell : UITableViewCell
+@interface WBImprovementIdeaCell : WBBaseCell
 
-@property (nonatomic,strong)    UIButton *button;
-
-- (void)configCell;
-- (CGFloat)cellHeight;
+@property (nonatomic,strong)UIButton *button;
 
 @end

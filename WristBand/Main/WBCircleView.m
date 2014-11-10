@@ -11,10 +11,16 @@
 #define KCircleRadius 87.0f
 #define KVerticalPadding 10.0f
 
+#define KPaddingAngle M_PI_2 / 30.0f
+
 @interface WBCircleView ()
 {
     UIBezierPath *bezierPath;
     CAShapeLayer *arcLayer;
+    CGFloat firstEndAngle;
+    
+    UIBezierPath *bezierPath2;
+    CAShapeLayer *arcLayer2;
     
     UIImageView *backImageView;
     UIImageView *achievementView;
@@ -48,7 +54,6 @@
         totalScoreLabel.backgroundColor = [UIColor clearColor];
         totalScoreLabel.font = [UIFont systemFontOfSize:52.0f];
         totalScoreLabel.textColor = RGB(87,104,106);
-        totalScoreLabel.text = @"112";
         [self addSubview:totalScoreLabel];
         [totalScoreLabel autoSetDimension:ALDimensionWidth toSize:2 * KCircleRadius];
         [totalScoreLabel autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
@@ -70,10 +75,20 @@
     return self;
 }
 
+- (void)setTotalScore:(int)totalScore {
+    _totalScore = totalScore;
+    totalScoreLabel.text = @(totalScore).stringValue;
+}
+
 - (void)startAnimating {
     if (!bezierPath) {
         bezierPath = [UIBezierPath bezierPath];
-        [bezierPath addArcWithCenter:CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f + KVerticalPadding) radius:87.0f + 6.0f startAngle:- M_PI_2 endAngle:M_PI_2 * 3 clockwise:YES];
+        if (self.totalScore >= 100) {
+            firstEndAngle = M_PI * 3;
+        } else {
+            firstEndAngle = self.totalScore / 100.0f * M_PI * 2 - M_PI_2;
+        }
+        [bezierPath addArcWithCenter:CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f + KVerticalPadding) radius:87.0f + 6.0f startAngle:- M_PI_2 endAngle:firstEndAngle  clockwise:YES];
     }
     
     if (!arcLayer) {
@@ -88,19 +103,63 @@
     }
 }
 
+- (void)startAnimating2 {
+    if (!bezierPath2) {
+        bezierPath2 = [UIBezierPath bezierPath];
+        CGFloat startAngle = firstEndAngle + KPaddingAngle;
+        CGFloat endAngle = M_PI_2 * 3 - KPaddingAngle;
+        if (endAngle <= startAngle) {
+            return;
+        }
+        
+        [bezierPath2 addArcWithCenter:CGPointMake(self.bounds.size.width / 2.0f, self.bounds.size.height / 2.0f + KVerticalPadding) radius:87.0f + 6.0f startAngle:startAngle endAngle:endAngle  clockwise:YES];
+    }
+    
+    if (!arcLayer2) {
+        arcLayer2=[CAShapeLayer layer];
+        arcLayer2.path = bezierPath2.CGPath;
+        arcLayer2.fillColor = [[UIColor clearColor] CGColor];
+        arcLayer2.strokeColor = [RGB(122,128,141) CGColor];
+        arcLayer2.lineWidth = 10.0f;
+        arcLayer2.frame=self.bounds;
+        [self.layer insertSublayer:arcLayer2 below:achievementView.layer];
+        [self drawLineAnimation2:arcLayer2];
+    }
+}
+
 
 -(void)drawLineAnimation:(CALayer*)layer
 {
-    CABasicAnimation *bas=[CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    bas.duration = 0.7f;
-    bas.delegate = self;
-    bas.fromValue = [NSNumber numberWithInteger:0];
-    bas.toValue = [NSNumber numberWithInteger:1];
-    [layer addAnimation:bas forKey:@"key"];
+    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    basicAnimation.removedOnCompletion = NO;
+    basicAnimation.duration = 0.7f;
+    basicAnimation.delegate = self;
+    basicAnimation.fromValue = [NSNumber numberWithInteger:0];
+    basicAnimation.toValue = [NSNumber numberWithInteger:1];
+    [layer addAnimation:basicAnimation forKey:@"key"];
+}
+
+-(void)drawLineAnimation2:(CALayer*)layer
+{
+    CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    basicAnimation.duration = 0.7f;
+    basicAnimation.delegate = self;
+    basicAnimation.fromValue = [NSNumber numberWithInteger:0];
+    basicAnimation.toValue = [NSNumber numberWithInteger:1];
+    [layer addAnimation:basicAnimation forKey:@"key2"];
+    
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    achievementView.hidden = NO;
+    if ([arcLayer animationForKey:@"key"] == anim) {
+        if (self.totalScore >= 100) {
+            achievementView.hidden = NO;
+        } else {
+            [self startAnimating2];
+        }
+        
+        [arcLayer removeAllAnimations];
+    }
 }
 
 @end

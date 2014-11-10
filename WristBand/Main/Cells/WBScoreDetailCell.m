@@ -31,10 +31,8 @@
 @implementation WBScoreDetailCell
 
 - (instancetype)init {
-    self = [super initWithFrame:CGRectMake(0.0f, 0.0f, IPHONE_WIDTH, 0.0f)];
-    if (self) {
-        self.backgroundColor = [UIColor clearColor];
-        
+    self = [super init];
+    if (self) {        
         UIImage *image = [[UIImage imageNamed:@"score_breakdown"] resizableImageWithCapInsets:UIEdgeInsetsMake(50.0f, 13.0f, 30.0f, 33.0f)];
         topBackView = [[UIImageView alloc] initWithImage:image];
         [self.contentView addSubview:topBackView];
@@ -228,28 +226,80 @@
 }
 
 - (CGFloat)cellHeight {
-    [self configCell];
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
     return backView.bottom + 15.0f;
 }
 
 - (void)configCell {
     titleLabel.text = NSLocalizedString(@"Sleep score breakdown", nil);
     amoutOfSleepLabel.text = NSLocalizedString(@"Amout of sleep", nil);
-    amoutOfSleepValueLabel.text = @"100";
+    amoutOfSleepValueLabel.text = @(self.sleepInfo.sleepScore.amountOfSleep).stringValue;
+    
     sleepVSAwakeLabel.text = NSLocalizedString(@"Sleep vs. awake time", nil);
-    sleepVSAwakeValueLabel.text = @"+10";
+    int sleepVSAwake = self.sleepInfo.sleepScore.sleepVSAwake;
+    NSString *sleepVSAwakeString = @"";
+    if (sleepVSAwake > 0) {
+        sleepVSAwakeString = [NSString stringWithFormat:@"+%d", sleepVSAwake];
+    } else if (sleepVSAwake < 0){
+        sleepVSAwakeString = [NSString stringWithFormat:@"-%d", sleepVSAwake];
+    } else {
+        sleepVSAwakeString = @"0";
+    }
+    sleepVSAwakeValueLabel.text = sleepVSAwakeString;
+    
     sleepLatencyLabel.text = NSLocalizedString(@"Sleep latency", nil);
-    sleepLatencyValueLabel.text = @"+2";
+    int sleepLatency = self.sleepInfo.sleepScore.sleepLatency;
+    NSString *sleepLatencyString = @"";
+    if (sleepLatency > 0) {
+        sleepLatencyString = [NSString stringWithFormat:@"+%d", sleepLatency];
+    } else if (sleepVSAwake < 0){
+        sleepLatencyString = [NSString stringWithFormat:@"-%d", sleepLatency];
+    } else {
+        sleepLatencyString = @"0";
+    }
+    sleepLatencyValueLabel.text = sleepLatencyString;
+    
     gotupLabel.text = NSLocalizedString(@"Got up from bed", nil);
-    gotupValueLabel.text = @"0";
+    int gotup = self.sleepInfo.sleepScore.gotupFromBed;
+    NSString *gotupString = @"";
+    if (gotup > 0) {
+        gotupString = [NSString stringWithFormat:@"+%d", gotup];
+    } else if (gotup < 0){
+        gotupString = [NSString stringWithFormat:@"-%d", gotup];
+    } else {
+        gotupString = @"0";
+    }
+    gotupValueLabel.text = gotupString;
+    
     wakingEventsLabel.text = NSLocalizedString(@"Waking events", nil);
-    wakingEventsValueLabel.text = @"0";
+    int wakingEvents = self.sleepInfo.sleepScore.wakingEvents;
+    NSString *wakingEventsString = @"";
+    if (wakingEvents > 0) {
+        wakingEventsString = [NSString stringWithFormat:@"+%d", wakingEvents];
+    } else if (wakingEvents < 0){
+        wakingEventsString = [NSString stringWithFormat:@"-%d", wakingEvents];
+    } else {
+        wakingEventsString = @"0";
+    }
+    wakingEventsValueLabel.text = wakingEventsString;
+    
+    
     snoringLabel.text = NSLocalizedString(@"Snoring", nil);
-    snoringValueLabel.text = @"0";
+    int snoring = self.sleepInfo.sleepScore.snoring;
+    NSString *snoringString = @"";
+    if (snoring > 0) {
+        snoringString = [NSString stringWithFormat:@"+%d", snoring];
+    } else if (snoring < 0){
+        snoringString = [NSString stringWithFormat:@"-%d", snoring];
+    } else {
+        snoringString = @"0";
+    }
+    snoringValueLabel.text = snoringString;
+    
     totalLabel.text = NSLocalizedString(@"Total", nil);
-    totalValueLabel.text = @"112";
+    totalValueLabel.text = @(self.sleepInfo.sleepScore.totalScore).stringValue;
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 @end

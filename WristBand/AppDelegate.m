@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "WBMainViewController.h"
+#import "WBContainViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,9 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    WBMainViewController *rootViewController = [[WBMainViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
-    self.window.rootViewController = navigationController;
+    WBContainViewController *rootViewController = [[WBContainViewController alloc] init];
+    self.window.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }

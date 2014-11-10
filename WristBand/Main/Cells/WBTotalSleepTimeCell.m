@@ -24,10 +24,8 @@
 @implementation WBTotalSleepTimeCell
 
 - (instancetype)init {
-    self = [super initWithFrame:CGRectMake(0.0f, 0.0f, IPHONE_WIDTH, 0.0f)];
-    if (self) {
-        self.backgroundColor = [UIColor clearColor];
-        
+    self = [super init];
+    if (self) {        
         backView = [[UIView alloc] init];
         backView.backgroundColor = [UIColor whiteColor];
         backView.layer.cornerRadius = 5.0f;
@@ -41,6 +39,7 @@
         [self.contentView addSubview:imageView];
         [imageView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:backView withOffset:10.0f];
         [imageView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:backView];
+        [imageView autoSetDimension:ALDimensionWidth toSize:43.0f];
         
         sleepTimeLabel = [[UILabel alloc] init];
         sleepTimeLabel.backgroundColor = [UIColor clearColor];
@@ -64,7 +63,6 @@
         [progressView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:progressBackView];
         [progressView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:progressBackView];
         [progressView autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:progressBackView];
-        progressLabelWidthConstraint = [progressView autoSetDimension:ALDimensionWidth toSize:20.0f];
         
         sleepDescLabel = [[UILabel alloc] init];
         sleepDescLabel.backgroundColor = [UIColor clearColor];
@@ -89,15 +87,15 @@
 }
 
 - (void)configCell {
-    sleepTimeLabel.text = @"7 h 10 min";
-    progressLabelWidthConstraint.constant = 60.0f;
-    goalLabel.text = @"102% of goal";
+    sleepTimeLabel.text = self.sleepInfo.totalSleepTimeString;
+    goalLabel.text = self.sleepInfo.goalPercentString;
+    [progressView removeConstraint:progressLabelWidthConstraint];
+    progressLabelWidthConstraint = [progressView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:progressBackView withMultiplier:self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 - (CGFloat)cellHeight {
-    [self configCell];
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
     return backView.bottom + 0.0f;
 }
 

@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WBBaseCell.h"
 
-@interface WBTotalSleepTimeCell : UITableViewCell
-
-- (void)configCell;
-- (CGFloat)cellHeight;
+@interface WBTotalSleepTimeCell : WBBaseCell
 
 @end

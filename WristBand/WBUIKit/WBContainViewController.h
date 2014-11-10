@@ -10,4 +10,8 @@
 
 @interface WBContainViewController : UIViewController
 
+@property (nonatomic,strong)NSArray *viewControllers;
+@property (nonatomic,strong)UIViewController *currentViewController;
+@property (nonatomic,strong)UIViewController *lastViewController;
+
 @end

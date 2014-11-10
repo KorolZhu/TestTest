@@ -10,6 +10,8 @@
 
 @interface WBCircleView : UIView
 
+@property (nonatomic,assign)int totalScore;
+
 - (void)startAnimating;
 
 @end

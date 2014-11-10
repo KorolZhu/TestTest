@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WBImprovementViewController : UITableViewController
+@interface WBImprovementViewController : UIViewController
 
 @end

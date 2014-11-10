@@ -47,6 +47,9 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
         [_startSleepingButton autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [_startSleepingButton autoSetDimension:ALDimensionHeight toSize:43.0f];
         
+        _panGestureRecognizer = [[UIPanGestureRecognizer alloc] init];
+        [_startSleepingButton addGestureRecognizer:_panGestureRecognizer];
+        
         UIView *backgroundView = [[UIView alloc] init];
         backgroundView.backgroundColor = RGB(33,39,40);
         [self addSubview:backgroundView];
@@ -106,6 +109,8 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 
 - (void)connectDeviceClick {
     self.state = WBConnectDeviceStateConnecting;
+    
+    
 }
 
 - (void)setState:(WBConnectDeviceState)state {
@@ -129,6 +134,8 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
                 [activityIndicatorView startAnimating];
                 self.top -= barView.height;
             } completion:^(BOOL finished) {
+                
+                self.state = WBConnectDeviceStateNormal;
             }];
         }
             break;
@@ -139,7 +146,6 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
             break;
     }
 }
-
 
 
 @end

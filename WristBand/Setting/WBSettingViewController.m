@@ -12,27 +12,74 @@
 #import "WBSettingSleepTipsCell.h"
 #import "WBPersonalInfoViewController.h"
 
-@interface WBSettingViewController ()
+@interface WBSettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     WBSettingSleepGoalCell *sleepGoalCell;
     WBSettingSleepTipsCell *sleepTipsCell;
 }
+
+@property (nonatomic,strong)UITableView *tableView;
+
 @end
 
 @implementation WBSettingViewController
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.extendedLayoutIncludesOpaqueBars = YES;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.view setBackgroundColor:RGB(33,39,40)];
-    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    self.navigationItem.title = NSLocalizedString(@"User", nil);
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"dark_navigation_bar"] forBarMetrics:UIBarMetricsDefault];
     
+    UIView *lineView = [[UIView alloc] init];
+    lineView.backgroundColor = [UIColor blackColor];
+    [self.navigationController.navigationBar addSubview:lineView];
+    [lineView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(42.5f, 0.0f, 0.0f, 0.0f)];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont systemFontOfSize:17.0f];
+    label.textColor = [UIColor whiteColor];
+    label.text = @"User";
+    [label sizeToFit];
+    self.navigationItem.titleView = label;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[UIImage imageNamed:@"icon_back"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(backButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    [button setFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    _tableView = [[UITableView alloc] init];
+    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.backgroundView = nil;
+    [self.view addSubview:_tableView];
+    [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)backButtonClick {
+    [self.navigationController.containViewController transitionFromViewController:self.navigationController toViewController:self.navigationController.containViewController.lastViewController duration:0.55f options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+
+    } completion:^(BOOL finished) {
+        [self.navigationController removeFromParentViewController];
+        [self.navigationController.view removeFromSuperview];
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,6 +107,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:imageCellIdentifier];
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.backgroundColor = [UIColor clearColor];
             UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_acount"]];
             [cell.contentView addSubview:imageView];

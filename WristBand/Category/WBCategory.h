@@ -12,5 +12,6 @@
 #import "UIDevice+WB.h"
 #import "UIView+WB.h"
 #import "UIColor+WB.h"
+#import "UIViewController+Container.h"
 
 #endif

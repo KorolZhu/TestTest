@@ -8,7 +8,7 @@
 
 #import "WBLineChartView.h"
 #import "PureLayout.h"
-#import "WBSleepInfo.h"
+#import "WBSleepPoint.h"
 
 CGFloat static const kWBChartViewLeft = 40.0f;
 CGFloat static const kWBChartViewWidth = 60.0f;
@@ -69,13 +69,13 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
     NSInteger section = [self.dataSource numberOfSectionsInLineChartView:self];
     NSArray *array = [self.dataSource lineChartView:self sleepInfosAtSection:0];
     if (array.count > 0) {
-        WBSleepInfo *sleepInfo = array.firstObject;
+        WBSleepPoint *sleepInfo = array.firstObject;
         self.startHour = sleepInfo.hour;
     }
     
     array = [self.dataSource lineChartView:self sleepInfosAtSection:section - 1];
     if (array.count > 0) {
-        WBSleepInfo *sleepInfo = array.lastObject;
+        WBSleepPoint *sleepInfo = array.lastObject;
         if (sleepInfo.minute > 0) {
             self.endHour = sleepInfo.hour + 1;
         } else {
@@ -115,7 +115,7 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
     return CGPointMake((p1.x + p2.x) / 2.0, (p1.y + p2.y) / 2.0);
 }
 
-- (CGPoint)pointForSleepInfo:(WBSleepInfo *)info {
+- (CGPoint)pointForSleepInfo:(WBSleepPoint *)info {
     CGPoint point = CGPointZero;
     point.x = kWBChartViewLeft + kWBChartViewWidth / 30.0f * info.sleepValue;
     
@@ -142,7 +142,7 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
     for (int i = 0; i < [self.dataSource numberOfSectionsInLineChartView:self]; i++) {
         NSArray *arr = [self.dataSource lineChartView:self sleepInfosAtSection:i];
         if (arr.count >= 1) {
-            WBSleepInfo *info = arr.firstObject;
+            WBSleepPoint *info = arr.firstObject;
             CGPoint point = [self pointForSleepInfo:info];
             UILabel *label = [[UILabel alloc] init];
             label.textAlignment = NSTextAlignmentCenter;
@@ -193,7 +193,7 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
     __block CGFloat lastYPosition;
     
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        WBSleepInfo *info = obj;
+        WBSleepPoint *info = obj;
         CGPoint point = [self pointForSleepInfo:info];
         
         if (idx == 0) {
@@ -244,7 +244,7 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
         
         NSArray *sleepInfos = [self.dataSource lineChartView:self sleepInfosAtSection:i];
         [sleepInfos enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            WBSleepInfo *info = obj;
+            WBSleepPoint *info = obj;
             CGPoint point = [self pointForSleepInfo:info];
             
             if (idx == 0) {

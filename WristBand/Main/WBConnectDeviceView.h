@@ -20,6 +20,8 @@
 
 @property (nonatomic,strong)UIButton *startSleepingButton;
 @property (nonatomic,strong)UIButton *cancelButton;
+@property (nonatomic,strong)UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic)BOOL enabled;
 
 @property (nonatomic,weak)id<WBConnectDeviceViewDelegate> delegate;
 
