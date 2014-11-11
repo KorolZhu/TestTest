@@ -39,10 +39,10 @@
     [self.view setBackgroundColor:RGB(33,39,40)];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"dark_navigation_bar"] forBarMetrics:UIBarMetricsDefault];
     
-    UIView *lineView = [[UIView alloc] init];
-    lineView.backgroundColor = [UIColor blackColor];
-    [self.navigationController.navigationBar addSubview:lineView];
-    [lineView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(42.5f, 0.0f, 0.0f, 0.0f)];
+//    UIView *lineView = [[UIView alloc] init];
+//    lineView.backgroundColor = [UIColor blackColor];
+//    [self.navigationController.navigationBar addSubview:lineView];
+//    [lineView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(42.5f, 0.0f, 0.0f, 0.0f)];
     
     UILabel *label = [[UILabel alloc] init];
     label.backgroundColor = [UIColor clearColor];

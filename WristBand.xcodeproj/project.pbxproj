@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45B75E6E1A11F1D0001AF044 /* UINavigationBar+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */; };
+		45EC076A1A11F6E80013E3D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EC07681A11F6E80013E3D1 /* Default-568h@2x.png */; };
+		45EC076B1A11F6E80013E3D1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EC07691A11F6E80013E3D1 /* Default@2x.png */; };
 		CE4553E31A0F4E3300E417B7 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4553E11A0F4E3300E417B7 /* icon_back.png */; };
 		CE4553E41A0F4E3300E417B7 /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4553E21A0F4E3300E417B7 /* icon_back@2x.png */; };
 		CE4553E81A0F4E8200E417B7 /* WBHitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553E71A0F4E8200E417B7 /* WBHitTestView.m */; };
@@ -103,6 +106,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45B75E6C1A11F1D0001AF044 /* UINavigationBar+WB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+WB.h"; sourceTree = "<group>"; };
+		45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+WB.m"; sourceTree = "<group>"; };
+		45EC07681A11F6E80013E3D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		45EC07691A11F6E80013E3D1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CE4553E11A0F4E3300E417B7 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
 		CE4553E21A0F4E3300E417B7 /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back@2x.png"; sourceTree = "<group>"; };
 		CE4553E61A0F4E8200E417B7 /* WBHitTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHitTestView.h; sourceTree = "<group>"; };
@@ -352,6 +359,8 @@
 		CEB79AAB1A051D9900714531 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				45EC07681A11F6E80013E3D1 /* Default-568h@2x.png */,
+				45EC07691A11F6E80013E3D1 /* Default@2x.png */,
 				CE4553E11A0F4E3300E417B7 /* icon_back.png */,
 				CE4553E21A0F4E3300E417B7 /* icon_back@2x.png */,
 				CE5218441A0F18D700650FB1 /* dark_navigation_bar.png */,
@@ -502,6 +511,8 @@
 				CEB79B3D1A05F92300714531 /* UIColor+WB.m */,
 				CE52184D1A0F3B4500650FB1 /* UIViewController+Container.h */,
 				CE52184E1A0F3B4500650FB1 /* UIViewController+Container.m */,
+				45B75E6C1A11F1D0001AF044 /* UINavigationBar+WB.h */,
+				45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */,
 			);
 			name = Category;
 			path = WristBand/Category;
@@ -625,6 +636,7 @@
 				CE5218461A0F18D700650FB1 /* dark_navigation_bar.png in Resources */,
 				CE54142D1A06200D0013A450 /* checkbox_smart_normal_disabled.png in Resources */,
 				CEAA43561A07DEC900EDBAF3 /* icon_acount_edit_acount.png in Resources */,
+				45EC076B1A11F6E80013E3D1 /* Default@2x.png in Resources */,
 				CEB79AD71A05288000714531 /* Images.xcassets in Resources */,
 				CE559C831A0E27D9000F3D66 /* icon_measuring_spinner.png in Resources */,
 				CEB79B381A05E4A900714531 /* center_image_default.png in Resources */,
@@ -636,6 +648,7 @@
 				CE5414341A0623010013A450 /* icon_arrow_right_white@2x.png in Resources */,
 				CEB79B391A05E4A900714531 /* center_image_default@2x.png in Resources */,
 				CE54143B1A0626C60013A450 /* icon_total_sleep_time@2x.png in Resources */,
+				45EC076A1A11F6E80013E3D1 /* Default-568h@2x.png in Resources */,
 				CE559C871A0E2A3C000F3D66 /* button_background_image_night.png in Resources */,
 				CEAA43671A09195C00EDBAF3 /* button_background_image_day.png in Resources */,
 				CE5414301A06200D0013A450 /* checkbox_smart_normal@2x.png in Resources */,
@@ -711,6 +724,7 @@
 				CEB79ACA1A05249200714531 /* WBSleepPoint.m in Sources */,
 				CEB79B291A05D4E900714531 /* GCDGroup.m in Sources */,
 				CEB79AC51A0523E800714531 /* NSArray+PureLayout.m in Sources */,
+				45B75E6E1A11F1D0001AF044 /* UINavigationBar+WB.m in Sources */,
 				CEAA43461A07DAAA00EDBAF3 /* WBSettingPersonalInfoCell.m in Sources */,
 				CEAA434F1A07DB0A00EDBAF3 /* WBSettingVersionCell.m in Sources */,
 				CE4553EB1A0F5D7800E417B7 /* WBContainViewController.m in Sources */,

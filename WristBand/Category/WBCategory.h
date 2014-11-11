@@ -13,5 +13,6 @@
 #import "UIView+WB.h"
 #import "UIColor+WB.h"
 #import "UIViewController+Container.h"
+#import "UINavigationBar+WB.h"
 
 #endif

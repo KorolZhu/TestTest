@@ -15,8 +15,6 @@
     UILabel *sleepTimeLabel;
     UIView *progressBackView, *progressView;
     UILabel *sleepDescLabel, *goalLabel;
-    
-    NSLayoutConstraint *progressLabelWidthConstraint;
 }
 
 @end
@@ -60,10 +58,7 @@
         progressView = [[UIView alloc] init];
         progressView.backgroundColor = RGB(97,159,189);
         [backView addSubview:progressView];
-        [progressView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:imageView];
-        [progressView autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:imageView withOffset:7.0f];
-        [progressView autoSetDimension:ALDimensionHeight toSize:14.0f];
-        
+		
         sleepDescLabel = [[UILabel alloc] init];
         sleepDescLabel.backgroundColor = [UIColor clearColor];
         sleepDescLabel.font = [UIFont systemFontOfSize:12.0f];
@@ -92,10 +87,10 @@
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    
-//    [progressView removeConstraint:progressLabelWidthConstraint];
-//    progressLabelWidthConstraint = [progressView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:progressBackView withMultiplier:self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent];
-    progressView.width = progressBackView.width * (self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent);
+	
+	CGRect frame = progressBackView.frame;
+	frame.size.width = progressBackView.width * (self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent);
+    progressView.frame = frame;
     
 }
 

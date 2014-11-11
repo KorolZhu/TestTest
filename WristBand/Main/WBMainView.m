@@ -63,6 +63,27 @@
         
         [self addSubview:tableHeaderView];
         [self setScrollIndicatorInsets:UIEdgeInsetsMake(44.0f, 0.0f, 0.0f, 0.0f)];
+		
+		scoreDetailCell = [[WBScoreDetailCell alloc] init];
+		scoreDetailCell.selectionStyle = UITableViewCellSelectionStyleNone;
+		
+		improvementCell = [[WBImprovementIdeaCell alloc] init];
+		[improvementCell.button addTarget:self action:@selector(improvementClick) forControlEvents:UIControlEventTouchUpInside];
+		improvementCell.selectionStyle = UITableViewCellSelectionStyleNone;
+		
+		sleepTimeCell = [[WBTotalSleepTimeCell alloc] init];
+		sleepTimeCell.selectionStyle = UITableViewCellSelectionStyleNone;
+		
+		chartCell = [[UITableViewCell alloc] init];
+		chartCell.selectionStyle = UITableViewCellSelectionStyleNone;
+		chartCell.backgroundColor = [UIColor clearColor];
+		
+		lineChartView = [[WBLineChartView alloc] initWithFrame:CGRectMake(10.0f, 5.0f, IPHONE_WIDTH - 20.0f, 0.0f)];
+		lineChartView.dataSource = self;
+		lineChartView.title = NSLocalizedString(@"Night overview", nil);
+		
+		[chartCell.contentView addSubview:lineChartView];
+
     }
     return self;
 }
@@ -128,7 +149,7 @@
             circleView = [[WBCircleView alloc] init];
             [circleView.tapGestureRecognizer addTarget:self action:@selector(circleClick)];
             [circleCell.contentView addSubview:circleView];
-            [circleView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10.0f];
+			[circleView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:44.0f];
             [circleView autoSetDimensionsToSize:CGSizeMake(220.0f, 220.0f)];
             [circleView autoAlignAxisToSuperviewAxis:ALAxisVertical];
             [circleCell setNeedsLayout];
@@ -142,43 +163,18 @@
     }
     
     if (indexPath.row == 1) {
-        if (!scoreDetailCell) {
-            scoreDetailCell = [[WBScoreDetailCell alloc] init];
-            scoreDetailCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
         return scoreDetailCell;
     }
     
     if (indexPath.row == 2) {
-        if (!improvementCell) {
-            improvementCell = [[WBImprovementIdeaCell alloc] init];
-            [improvementCell.button addTarget:self action:@selector(improvementClick) forControlEvents:UIControlEventTouchUpInside];
-            improvementCell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-        }
         return improvementCell;
     }
     
     if (indexPath.row == 3) {
-        if (!sleepTimeCell) {
-            sleepTimeCell = [[WBTotalSleepTimeCell alloc] init];
-            sleepTimeCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
         return sleepTimeCell;
     }
     
     if (indexPath.row == 4) {
-        if (!chartCell) {
-            chartCell = [[UITableViewCell alloc] init];
-            chartCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            chartCell.backgroundColor = [UIColor clearColor];
-            
-            lineChartView = [[WBLineChartView alloc] initWithFrame:CGRectMake(10.0f, 5.0f, IPHONE_WIDTH - 20.0f, 0.0f)];
-            lineChartView.dataSource = self;
-            lineChartView.title = NSLocalizedString(@"Night overview", nil);
-            
-            [chartCell.contentView addSubview:lineChartView];
-        }
         return chartCell;
     }
     
@@ -187,7 +183,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return 230.0f;
+        return 264.0f;
     }
     
     if (indexPath.row == 1) {
@@ -220,6 +216,14 @@
     }
     
     return 40.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 0.1f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+	return 0.1f;
 }
 
 #pragma mark - Line chart data
