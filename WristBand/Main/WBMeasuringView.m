@@ -12,9 +12,11 @@
 {
     UIView *alarmView;
     UILabel *alarmoffLabel;
+    UIView *lineView;
     UIView *backView;
     UILabel *measuringLabel;
     UIImageView *animationView;
+    UIButton *stopMeasuringButton;
     CABasicAnimation *rotationAnimation;
     
     NSLayoutConstraint *backViewTopConstraint;
@@ -41,7 +43,7 @@
         alarmoffLabel.text = NSLocalizedString(@"ALARM OFF", nil);
         [alarmView addSubview:alarmoffLabel];
         
-        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 173.0f, IPHONE_WIDTH, 0.5f)];
+        lineView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 173.0f, IPHONE_WIDTH, 0.5f)];
         lineView.backgroundColor = [UIColor whiteColor];
         [alarmView addSubview:lineView];
         
@@ -73,7 +75,7 @@
         rotationAnimation.cumulative = YES;
         rotationAnimation.repeatCount = HUGE_VALF;
         
-        UIButton *stopMeasuringButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        stopMeasuringButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [stopMeasuringButton addTarget:self action:@selector(stopMeasuringButtonClick) forControlEvents:UIControlEventTouchUpInside];
         [stopMeasuringButton setTitleColor:RGB(149,164,165) forState:UIControlStateNormal];
         stopMeasuringButton.titleLabel.font = [UIFont boldSystemFontOfSize:16.0f];
@@ -85,12 +87,20 @@
         [stopMeasuringButton autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [stopMeasuringButton autoSetDimension:ALDimensionHeight toSize:43.0f];
         
-        [self startAnimation];
     }
-    
     
     return self;
     
+}
+
+- (void)reset {
+    self.top = 0.0f;
+    alarmView.hidden = NO;
+    measuringLabel.text = NSLocalizedString(@"Measuring", nil);
+    backViewTopConstraint.constant = lineView.bottom;
+    stopMeasuringButton.enabled = YES;
+    
+    [self updateConstraintsIfNeeded];
 }
 
 - (void)startAnimation {
@@ -102,11 +112,41 @@
 }
 
 - (void)stopMeasuringButtonClick {
+    stopMeasuringButton.enabled = NO;
+    [[BLEShareInstance CM] cancelPeripheralConnection:BLEShareInstance.activePeripheral];
+    
     alarmView.hidden = YES;
     measuringLabel.text = NSLocalizedString(@"Analyzing", nil);
     backViewTopConstraint.constant = 0.0f;
     
     [self updateConstraintsIfNeeded];
+    
+    [self performSelector:@selector(alertView:clickedButtonAtIndex:) withObject:nil afterDelay:1.5f];
+}
+
+- (void)bleDidDisconnect {
+    if (!stopMeasuringButton.enabled) {
+        return;
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:@"Measurements were stopped due to lost sensor connection" delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
+    alert.delegate = self;
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [UIView animateWithDuration:0.35f
+                          delay:0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.superview.top = 0;
+                     } completion:^(BOOL finished) {
+                         [self removeFromSuperview];
+                         
+                         [self stopAnimation];
+                         [self reset];
+                     }
+     ];
 }
 
 @end

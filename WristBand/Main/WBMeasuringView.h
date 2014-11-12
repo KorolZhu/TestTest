@@ -10,4 +10,7 @@
 
 @interface WBMeasuringView : UIView
 
+- (void)startAnimation;
+- (void)bleDidDisconnect;
+
 @end

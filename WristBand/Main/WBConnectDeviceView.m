@@ -7,6 +7,7 @@
 //
 
 #import "WBConnectDeviceView.h"
+#import "WBMeasuringView.h"
 #import <ExternalAccessory/ExternalAccessory.h>
 
 typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
@@ -15,11 +16,15 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     WBConnectDeviceStateConnected,
 };
 
-@interface WBConnectDeviceView ()
+@interface WBConnectDeviceView ()<BLEDelegate>
 {
     UIView *barView;
     UIButton *connectDeviceButton;
     UIActivityIndicatorView *activityIndicatorView;
+    
+    WBMeasuringView *measuringView;
+    
+    NSTimer *writeTimer;
 }
 
 @property (nonatomic)WBConnectDeviceState state;
@@ -34,6 +39,8 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
         self.userInteractionEnabled = YES;
         
         self.backgroundColor = [UIColor clearColor];
+        
+        _enabled = YES;
         
         _startSleepingButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_startSleepingButton setTitleColor:RGB(149,164,165) forState:UIControlStateNormal];
@@ -102,15 +109,12 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
         [activityIndicatorView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         
         [self layoutIfNeeded];
+        
+        [BLEShareInstance controlSetup];
+        BLEShareInstance.delegate = self;
     }
     
     return self;
-}
-
-- (void)connectDeviceClick {
-    self.state = WBConnectDeviceStateConnecting;
-    
-    
 }
 
 - (void)setState:(WBConnectDeviceState)state {
@@ -124,18 +128,18 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
                 self.top += barView.height;
             } completion:^(BOOL finished) {
                 barView.hidden = NO;
+                connectDeviceButton.enabled = YES;
             }];
         }
             break;
         case WBConnectDeviceStateConnecting: {
             [UIView animateWithDuration:0.2f animations:^{
                 barView.hidden = YES;
+                connectDeviceButton.enabled = NO;
                 connectDeviceButton.backgroundColor = RGB(131,135,136);
                 [activityIndicatorView startAnimating];
                 self.top -= barView.height;
             } completion:^(BOOL finished) {
-                
-                self.state = WBConnectDeviceStateNormal;
             }];
         }
             break;
@@ -147,5 +151,81 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     }
 }
 
+- (void)connectDeviceClick {
+    self.state = WBConnectDeviceStateConnecting;
+    
+    if (BLEShareInstance.activePeripheral)
+        if([BLE shareInstance].activePeripheral.state == CBPeripheralStateConnected)
+        {
+            [[BLEShareInstance CM] cancelPeripheralConnection:BLEShareInstance.activePeripheral];
+            return;
+        }
+    
+    if (BLEShareInstance.peripherals)
+        BLEShareInstance.peripherals = nil;
+    
+    [BLEShareInstance findBLEPeripherals:2];
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(scanPeripheraTimer) userInfo:nil repeats:NO];
+}
+
+- (void)scanPeripheraTimer {
+    if (BLEShareInstance.peripherals.count > 0) {
+        [BLEShareInstance connectPeripheral:[BLEShareInstance.peripherals objectAtIndex:0]];
+    } else {
+        self.state = WBConnectDeviceStateNormal;
+    }
+}
+
+#pragma mark - BLEDelegate
+
+- (void)bleDidConnect {
+    if (!measuringView) {
+        measuringView = [[WBMeasuringView alloc] init];
+    }
+    
+    if (!measuringView.superview) {
+        self.superview.top = IPHONE_HEIGHT;
+        measuringView.top = -IPHONE_HEIGHT;
+        [self.superview addSubview:measuringView];
+        [measuringView startAnimation];
+    }
+    
+    self.state = WBConnectDeviceStateNormal;
+    
+    writeTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(writeTimer:) userInfo:nil repeats:YES];
+}
+
+-(void)bleDidUpdateRSSI:(NSNumber *)rssi {
+    NSLog(@"rssi = %d", rssi.intValue);
+}
+
+-(void)writeTimer:(NSTimer *)timer {
+    UInt8 buf[] = {0x07};
+    NSData *data = [[NSData alloc] initWithBytes:buf length:1];
+    [BLEShareInstance write:data];
+    
+    [BLEShareInstance readRSSI];
+}
+
+- (void)bleDidDisconnect {
+    [writeTimer invalidate];
+    [measuringView bleDidDisconnect];
+    self.state = WBConnectDeviceStateNormal;
+}
+
+- (void)bleDidWriteValue {
+    [BLEShareInstance read];
+}
+
+- (void)bleDidReceiveData:(unsigned char *)data length:(int)length {
+    if (length >= 3) {
+        UInt8 replyCmd = data[0];
+        UInt8 data1 = data[1];
+        UInt8 data2 = data[2];
+        UInt16 value = data1 * 100 + data2;
+        
+        NSLog(@"cmd = %d, value = %d, length: %d", replyCmd, value, length);
+    }
+}
 
 @end

@@ -15,5 +15,6 @@
 #import "WBCategory.h"
 #import "PureLayout.h"
 #import "GCDObjC.h"
+#import "BLE.h"
 
 #endif
