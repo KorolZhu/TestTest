@@ -11,6 +11,8 @@
 #import "WBScoreDetailCell.h"
 #import "WBImprovementIdeaCell.h"
 #import "WBTotalSleepTimeCell.h"
+#import "WBHeartRateCell.h"
+#import "WBBreathRateCell.h"
 #import "WBLineChartView.h"
 #import "WBImprovementViewController.h"
 #import "WBSleepInfo.h"
@@ -26,6 +28,8 @@
     WBScoreDetailCell *scoreDetailCell;
     WBImprovementIdeaCell *improvementCell;
     WBTotalSleepTimeCell *sleepTimeCell;
+    WBHeartRateCell *heartRateCell;
+    WBBreathRateCell *breathRateCell;
     UITableViewCell *chartCell;
     WBLineChartView *lineChartView;
     WBCircleView *circleView;
@@ -74,6 +78,12 @@
 		sleepTimeCell = [[WBTotalSleepTimeCell alloc] init];
 		sleepTimeCell.selectionStyle = UITableViewCellSelectionStyleNone;
 		
+        heartRateCell = [[WBHeartRateCell alloc] init];
+        heartRateCell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        breathRateCell = [[WBBreathRateCell alloc] init];
+        breathRateCell.selectionStyle = UITableViewCellSelectionStyleNone;
+
 		chartCell = [[UITableViewCell alloc] init];
 		chartCell.selectionStyle = UITableViewCellSelectionStyleNone;
 		chartCell.backgroundColor = [UIColor clearColor];
@@ -101,6 +111,9 @@
 - (void)circleClick {
     showScoreDetail = !showScoreDetail;
     [self reloadData];
+    if (showScoreDetail) {
+        [self scrollRectToVisible:CGRectMake(0.0f, circleCell.centerY + 45.0f, IPHONE_WIDTH, self.height) animated:YES];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -136,7 +149,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 7;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -175,6 +188,14 @@
     }
     
     if (indexPath.row == 4) {
+        return heartRateCell;
+    }
+    
+    if (indexPath.row == 5) {
+        return breathRateCell;
+    }
+    
+    if (indexPath.row == 6) {
         return chartCell;
     }
     
@@ -211,6 +232,18 @@
     }
     
     if (indexPath.row == 4) {
+        heartRateCell.sleepInfo = self.sleepInfo;
+        [heartRateCell configCell];
+        return [heartRateCell cellHeight];
+    }
+    
+    if (indexPath.row == 5) {
+        breathRateCell.sleepInfo = self.sleepInfo;
+        [breathRateCell configCell];
+        return [breathRateCell cellHeight];
+    }
+    
+    if (indexPath.row == 6) {
         [lineChartView reloadData];
         return lineChartView.height + 10.0f;
     }

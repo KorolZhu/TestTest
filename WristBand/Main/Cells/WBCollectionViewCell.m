@@ -10,9 +10,6 @@
 #import "WBSleepInfo.h"
 
 @interface WBCollectionViewCell ()
-{
-    WBMainView *mainView;
-}
 
 @end
 
@@ -21,9 +18,9 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        mainView = [[WBMainView alloc] init];
-        [self.contentView addSubview:mainView];
-        [mainView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        _mainView = [[WBMainView alloc] init];
+        [self.contentView addSubview:_mainView];
+        [_mainView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
     }
     
     return self;
@@ -31,32 +28,32 @@
 
 - (void)setScrollDelegate:(id<WBMainViewDelegate>)scrollDelegate {
     _scrollDelegate = scrollDelegate;
-    mainView.scrollDelegate = _scrollDelegate;
+    _mainView.scrollDelegate = _scrollDelegate;
 }
 
 - (void)setSuperViewController:(UIViewController *)superViewController {
     _superViewController = superViewController;
-    mainView.superViewController = superViewController;
+    _mainView.superViewController = superViewController;
 }
 
 - (void)setSleepInfo:(WBSleepInfo *)sleepInfo {
     _sleepInfo = sleepInfo;
-    mainView.sleepInfo = sleepInfo;
+    _mainView.sleepInfo = sleepInfo;
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
     
-    mainView.sleepInfo = nil;
-    if (!CGPointEqualToPoint(mainView.contentOffset, CGPointZero)) {
-        [mainView setContentOffset:CGPointZero animated:NO];
+    _mainView.sleepInfo = nil;
+    if (!CGPointEqualToPoint(_mainView.contentOffset, CGPointZero)) {
+        [_mainView setContentOffset:CGPointZero animated:NO];
     }
-    [mainView prepareForReuse];
+    [_mainView prepareForReuse];
 }
 
 - (void)configCell {
-    [mainView reuse];
-    [mainView reloadData];
+    [_mainView reuse];
+    [_mainView reloadData];
 }
 
 @end

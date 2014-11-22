@@ -14,6 +14,7 @@
 @interface WBCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic,strong)WBSleepInfo *sleepInfo;
+@property (nonatomic,strong,readonly)WBMainView *mainView;
 @property (nonatomic,weak)UIViewController *superViewController;
 @property (nonatomic,weak)id <WBMainViewDelegate> scrollDelegate;
 

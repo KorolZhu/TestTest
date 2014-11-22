@@ -1,29 +1,39 @@
 //
-//  WBTotalSleepTimeCell.m
+//  WBHeartRateCell.m
 //  WristBand
 //
-//  Created by zhuzhi on 14/11/2.
+//  Created by zhuzhi on 14/11/21.
 //  Copyright (c) 2014年 WB. All rights reserved.
 //
 
-#import "WBTotalSleepTimeCell.h"
+#import "WBHeartRateCell.h"
 
-@interface WBTotalSleepTimeCell ()
+@interface WBHeartRateCell ()
 {
     UIView *backView;
     UIImageView *imageView;
-    UILabel *sleepTimeLabel;
+    UILabel *heartRateLabel;
     UIView *progressBackView, *progressView;
-    UILabel *sleepDescLabel, *goalLabel;
+    UILabel *heartRateDescLabel, *goalLabel;
 }
 
 @end
 
-@implementation WBTotalSleepTimeCell
+@implementation WBHeartRateCell
+
+- (void)awakeFromNib {
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
 
 - (instancetype)init {
     self = [super init];
-    if (self) {        
+    if (self) {
         backView = [[UIView alloc] init];
         backView.backgroundColor = [UIColor whiteColor];
         backView.layer.cornerRadius = 5.0f;
@@ -33,19 +43,19 @@
         [backView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10.0f];
         [backView autoSetDimension:ALDimensionHeight toSize:80.0f];
         
-        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_total_sleep_time"]];
+        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_heart_wide"]];
         [backView addSubview:imageView];
         [imageView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10.0f];
         [imageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-        [imageView autoSetDimensionsToSize:CGSizeMake(43.0f, 43.0f)];
+        [imageView autoSetDimensionsToSize:CGSizeMake(44.0f, 36.0f)];
         
-        sleepTimeLabel = [[UILabel alloc] init];
-        sleepTimeLabel.backgroundColor = [UIColor clearColor];
-        sleepTimeLabel.font = [UIFont systemFontOfSize:15.0f];
-        sleepTimeLabel.textColor = RGB(87,104,106);
-        [backView addSubview:sleepTimeLabel];
-        [sleepTimeLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10.0f];
-        [sleepTimeLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:imageView withOffset:7.0f];
+        heartRateLabel = [[UILabel alloc] init];
+        heartRateLabel.backgroundColor = [UIColor clearColor];
+        heartRateLabel.font = [UIFont systemFontOfSize:15.0f];
+        heartRateLabel.textColor = RGB(87,104,106);
+        [backView addSubview:heartRateLabel];
+        [heartRateLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10.0f];
+        [heartRateLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:imageView withOffset:7.0f];
         
         progressBackView = [[UIView alloc] init];
         progressBackView.backgroundColor = RGB(214,218,219);
@@ -56,17 +66,17 @@
         [progressBackView autoSetDimension:ALDimensionHeight toSize:14.0f];
         
         progressView = [[UIView alloc] init];
-        progressView.backgroundColor = RGB(97,159,189);
+        progressView.backgroundColor = RGB(248,30,44);
         [backView addSubview:progressView];
-		
-        sleepDescLabel = [[UILabel alloc] init];
-        sleepDescLabel.backgroundColor = [UIColor clearColor];
-        sleepDescLabel.font = [UIFont systemFontOfSize:12.0f];
-        sleepDescLabel.textColor = [UIColor lightGrayColor];
-        sleepDescLabel.text = NSLocalizedString(@"Total sleep time", nil);
-        [backView addSubview:sleepDescLabel];
-        [sleepDescLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:progressBackView withOffset:5.0f];
-        [sleepDescLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:imageView withOffset:7.0f];
+        
+        heartRateDescLabel = [[UILabel alloc] init];
+        heartRateDescLabel.backgroundColor = [UIColor clearColor];
+        heartRateDescLabel.font = [UIFont systemFontOfSize:12.0f];
+        heartRateDescLabel.textColor = [UIColor lightGrayColor];
+        heartRateDescLabel.text = NSLocalizedString(@"Resting heart rate", nil);
+        [backView addSubview:heartRateDescLabel];
+        [heartRateDescLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:progressBackView withOffset:5.0f];
+        [heartRateDescLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:imageView withOffset:7.0f];
         
         goalLabel = [[UILabel alloc] init];
         goalLabel.backgroundColor = [UIColor clearColor];
@@ -82,14 +92,14 @@
 }
 
 - (void)configCell {
-    sleepTimeLabel.text = self.sleepInfo.totalSleepTimeString;
-    goalLabel.text = self.sleepInfo.goalPercentString;
+    heartRateLabel.text = @"47bpm";
+    goalLabel.text = @"Usual level";
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
-	
-	CGRect frame = progressBackView.frame;
-	frame.size.width = progressBackView.width * (self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent);
+    
+    CGRect frame = progressBackView.frame;
+    frame.size.width = progressBackView.width * (self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent);
     progressView.frame = frame;
     
 }

@@ -184,7 +184,7 @@ WB_DEF_SINGLETON(BLE, shareInstance);
     if (self.CM.state != CBCentralManagerStatePoweredOn)
     {
         NSLog(@"CoreBluetooth not correctly initialized !");
-        NSLog(@"State = %d (%s)\r\n", self.CM.state, [self centralManagerStateToString:self.CM.state]);
+        NSLog(@"State = %d (%s)\r\n", (int)self.CM.state, [self centralManagerStateToString:self.CM.state]);
         return -1;
     }
     
@@ -412,7 +412,7 @@ WB_DEF_SINGLETON(BLE, shareInstance);
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
 #if TARGET_OS_IPHONE
-    NSLog(@"Status of CoreBluetooth central manager changed %d (%s)", central.state, [self centralManagerStateToString:central.state]);
+    NSLog(@"Status of CoreBluetooth central manager changed %d (%s)", (int)central.state, [self centralManagerStateToString:central.state]);
 #else
     [self isLECapableHardware];
 #endif

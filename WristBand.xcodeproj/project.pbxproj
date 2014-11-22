@@ -94,6 +94,14 @@
 		CEB79B3B1A05E4A900714531 /* center_image_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB79B371A05E4A900714531 /* center_image_pressed@2x.png */; };
 		CEB79B3E1A05F92300714531 /* UIColor+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79B3D1A05F92300714531 /* UIColor+WB.m */; };
 		CEB79B451A06046600714531 /* WBScoreDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79B441A06046600714531 /* WBScoreDetailCell.m */; };
+		CED526811A1F885700016B4D /* WBHeartRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526801A1F885700016B4D /* WBHeartRateCell.m */; };
+		CED526841A1F888800016B4D /* WBBreathRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526831A1F888800016B4D /* WBBreathRateCell.m */; };
+		CED526891A1F89B500016B4D /* icon_average_respiration_rate.png in Resources */ = {isa = PBXBuildFile; fileRef = CED526851A1F89B500016B4D /* icon_average_respiration_rate.png */; };
+		CED5268A1A1F89B500016B4D /* icon_average_respiration_rate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED526861A1F89B500016B4D /* icon_average_respiration_rate@2x.png */; };
+		CED5268B1A1F89B500016B4D /* icon_heart_extreme.png in Resources */ = {isa = PBXBuildFile; fileRef = CED526871A1F89B500016B4D /* icon_heart_extreme.png */; };
+		CED5268C1A1F89B500016B4D /* icon_heart_extreme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED526881A1F89B500016B4D /* icon_heart_extreme@2x.png */; };
+		CED5268F1A1F8FE400016B4D /* icon_heart_wide.png in Resources */ = {isa = PBXBuildFile; fileRef = CED5268D1A1F8FE400016B4D /* icon_heart_wide.png */; };
+		CED526901A1F8FE400016B4D /* icon_heart_wide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED5268E1A1F8FE400016B4D /* icon_heart_wide@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +252,16 @@
 		CEB79B3D1A05F92300714531 /* UIColor+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WB.m"; sourceTree = "<group>"; };
 		CEB79B431A06046600714531 /* WBScoreDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBScoreDetailCell.h; sourceTree = "<group>"; };
 		CEB79B441A06046600714531 /* WBScoreDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBScoreDetailCell.m; sourceTree = "<group>"; };
+		CED5267F1A1F885700016B4D /* WBHeartRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHeartRateCell.h; sourceTree = "<group>"; };
+		CED526801A1F885700016B4D /* WBHeartRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBHeartRateCell.m; sourceTree = "<group>"; };
+		CED526821A1F888800016B4D /* WBBreathRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBreathRateCell.h; sourceTree = "<group>"; };
+		CED526831A1F888800016B4D /* WBBreathRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBreathRateCell.m; sourceTree = "<group>"; };
+		CED526851A1F89B500016B4D /* icon_average_respiration_rate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_average_respiration_rate.png; sourceTree = "<group>"; };
+		CED526861A1F89B500016B4D /* icon_average_respiration_rate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_average_respiration_rate@2x.png"; sourceTree = "<group>"; };
+		CED526871A1F89B500016B4D /* icon_heart_extreme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_heart_extreme.png; sourceTree = "<group>"; };
+		CED526881A1F89B500016B4D /* icon_heart_extreme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_heart_extreme@2x.png"; sourceTree = "<group>"; };
+		CED5268D1A1F8FE400016B4D /* icon_heart_wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_heart_wide.png; sourceTree = "<group>"; };
+		CED5268E1A1F8FE400016B4D /* icon_heart_wide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_heart_wide@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +441,12 @@
 				CE559C821A0E27D9000F3D66 /* icon_measuring_spinner@2x.png */,
 				CE559C851A0E2A3C000F3D66 /* button_background_image_night.png */,
 				CE559C861A0E2A3C000F3D66 /* button_background_image_night@2x.png */,
+				CED526851A1F89B500016B4D /* icon_average_respiration_rate.png */,
+				CED526861A1F89B500016B4D /* icon_average_respiration_rate@2x.png */,
+				CED526871A1F89B500016B4D /* icon_heart_extreme.png */,
+				CED526881A1F89B500016B4D /* icon_heart_extreme@2x.png */,
+				CED5268D1A1F8FE400016B4D /* icon_heart_wide.png */,
+				CED5268E1A1F8FE400016B4D /* icon_heart_wide@2x.png */,
 			);
 			name = Resource;
 			path = WristBand/Resource;
@@ -564,6 +588,10 @@
 				CE5414231A061B920013A450 /* WBImprovementIdeaCell.m */,
 				CE5414351A0624010013A450 /* WBTotalSleepTimeCell.h */,
 				CE5414361A0624010013A450 /* WBTotalSleepTimeCell.m */,
+				CED5267F1A1F885700016B4D /* WBHeartRateCell.h */,
+				CED526801A1F885700016B4D /* WBHeartRateCell.m */,
+				CED526821A1F888800016B4D /* WBBreathRateCell.h */,
+				CED526831A1F888800016B4D /* WBBreathRateCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -669,10 +697,14 @@
 				CEB79AB71A05238A00714531 /* timeline_40@2x.png in Resources */,
 				CE54141C1A06079C0013A450 /* icon_x.png in Resources */,
 				CE5414341A0623010013A450 /* icon_arrow_right_white@2x.png in Resources */,
+				CED5268B1A1F89B500016B4D /* icon_heart_extreme.png in Resources */,
 				CEB79B391A05E4A900714531 /* center_image_default@2x.png in Resources */,
 				CE54143B1A0626C60013A450 /* icon_total_sleep_time@2x.png in Resources */,
 				45EC076A1A11F6E80013E3D1 /* Default-568h@2x.png in Resources */,
+				CED526891A1F89B500016B4D /* icon_average_respiration_rate.png in Resources */,
 				CE559C871A0E2A3C000F3D66 /* button_background_image_night.png in Resources */,
+				CED5268F1A1F8FE400016B4D /* icon_heart_wide.png in Resources */,
+				CED5268C1A1F89B500016B4D /* icon_heart_extreme@2x.png in Resources */,
 				CEAA43671A09195C00EDBAF3 /* button_background_image_day.png in Resources */,
 				CE5414301A06200D0013A450 /* checkbox_smart_normal@2x.png in Resources */,
 				CEAA433A1A07CB8800EDBAF3 /* tip_icon_sheep.png in Resources */,
@@ -682,6 +714,7 @@
 				CE559C841A0E27D9000F3D66 /* icon_measuring_spinner@2x.png in Resources */,
 				CEB79B2F1A05D75300714531 /* sleep_achievement_icon.png in Resources */,
 				CE54143A1A0626C60013A450 /* icon_total_sleep_time.png in Resources */,
+				CED5268A1A1F89B500016B4D /* icon_average_respiration_rate@2x.png in Resources */,
 				CE5414201A06082F0013A450 /* score_breakdown@2x.png in Resources */,
 				CE54142F1A06200D0013A450 /* checkbox_smart_normal.png in Resources */,
 				CE4553E41A0F4E3300E417B7 /* icon_back@2x.png in Resources */,
@@ -693,6 +726,7 @@
 				CEAA433B1A07CB8800EDBAF3 /* tip_icon_sheep@2x.png in Resources */,
 				CE5414271A061D870013A450 /* icon_idea.png in Resources */,
 				CEB79AAE1A051DA200714531 /* icon_user.png in Resources */,
+				CED526901A1F8FE400016B4D /* icon_heart_wide@2x.png in Resources */,
 				CE4553E31A0F4E3300E417B7 /* icon_back.png in Resources */,
 				CEB79B301A05D75300714531 /* sleep_achievement_icon@2x.png in Resources */,
 				CEAA43421A07CC8700EDBAF3 /* tip_icon_fitness.png in Resources */,
@@ -736,6 +770,7 @@
 				CEB79ADD1A05374200714531 /* WBCircleView.m in Sources */,
 				CEAA435A1A0914FB00EDBAF3 /* WBPersonalInfoViewController.m in Sources */,
 				CEAA435D1A09185700EDBAF3 /* WBConnectDeviceView.m in Sources */,
+				CED526841A1F888800016B4D /* WBBreathRateCell.m in Sources */,
 				CEB79AD41A05285B00714531 /* WBLineChartView.m in Sources */,
 				CEB79ACE1A0527E300714531 /* WBSettingViewController.m in Sources */,
 				CE5414371A0624010013A450 /* WBTotalSleepTimeCell.m in Sources */,
@@ -754,6 +789,7 @@
 				CE4553EB1A0F5D7800E417B7 /* WBContainViewController.m in Sources */,
 				CEB79A7D1A051AAB00714531 /* main.m in Sources */,
 				CEB79B2B1A05D4E900714531 /* GCDSemaphore.m in Sources */,
+				CED526811A1F885700016B4D /* WBHeartRateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,7 +899,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d89082e9-0065-440a-8c9d-8258683135b8";
+				PROVISIONING_PROFILE = "4707235f-d335-4a3e-b34d-cf06c5cc86c6";
 			};
 			name = Debug;
 		};
@@ -877,7 +913,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d89082e9-0065-440a-8c9d-8258683135b8";
+				PROVISIONING_PROFILE = "4707235f-d335-4a3e-b34d-cf06c5cc86c6";
 			};
 			name = Release;
 		};

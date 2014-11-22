@@ -160,6 +160,22 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
     }
 }
 
+- (NSInteger)sectionForSleepInfo:(WBSleepPoint *)sleepPoint {
+    if (!sleepPoint) {
+        return -1;
+    }
+    
+    NSInteger section = [self.dataSource numberOfSectionsInLineChartView:self];
+    for (int i = 0; i < section; i++) {
+        NSArray *sleepPoints = [self.dataSource lineChartView:self sleepInfosAtSection:i];
+        if (sleepPoints.lastObject == sleepPoint) {
+            return i;
+        }
+    }
+    
+    return -1;
+}
+
 - (void)drawRect:(CGRect)rect {
     // 画深睡垂直线
     UIBezierPath *deepSleepLine = [UIBezierPath bezierPathWithRect:deepSleepVerticalLineFrame];
@@ -179,25 +195,25 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
         [[NSString stringWithFormat:@"%02ld", (long)hour] drawInRect:CGRectMake(5.0f, CGRectGetMinY(deepSleepVerticalLineFrame) + i * kWBChartViewHeight, 30.0f, 20.0f) withAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12.0f]}];
     }
     
-    // 先画一条灰底
     NSMutableArray *array = [NSMutableArray array];
     for (int i = 0; i < [self.dataSource numberOfSectionsInLineChartView:self]; i++) {
         [array addObjectsFromArray:[self.dataSource lineChartView:self sleepInfosAtSection:i]];
     }
     
     UIBezierPath *bezierpath = [UIBezierPath bezierPath];
+    
+    __block CGPoint lastEndPoint;
+    __block CGPoint currentEndPoint;
+    
     __block CGPoint _prePreviousPoint = CGPointZero;
     __block CGPoint _previousPoint = CGPointZero;
-    
-    __block CGFloat firstYPosition;
-    __block CGFloat lastYPosition;
     
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         WBSleepPoint *info = obj;
         CGPoint point = [self pointForSleepInfo:info];
         
         if (idx == 0) {
-            firstYPosition = point.y;
+            lastEndPoint = point;
             
             [bezierpath moveToPoint:point];
             _prePreviousPoint = CGPointMake(kWBChartViewLeft, point.y);
@@ -217,71 +233,26 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
             _prePreviousPoint = _previousPoint;
             _previousPoint = point;
             
-            if (idx == array.count - 1) {
-                lastYPosition = mid2.y;
-            }
+            currentEndPoint = mid2;
+        }
+        
+        NSInteger section = [self sectionForSleepInfo:info];
+        if (section >= 0) {
+            [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, currentEndPoint.y)];
+            [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, lastEndPoint.y)];
+            
+            lastEndPoint = currentEndPoint;
+            
+            [[self.dataSource lineChartView:self fillColorAtSection:section] setFill];
+            [bezierpath closePath];
+            [bezierpath fill];
+            
+            [bezierpath removeAllPoints];
+            [bezierpath moveToPoint:currentEndPoint];
         }
     }];
     
-    [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, lastYPosition)];
-    [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, firstYPosition)];
-    
-    [RGB(175,176,160) setFill];
-    [bezierpath closePath];
-    [bezierpath fill];
-    
-    
-    // 分段画
-    NSInteger section = [self.dataSource numberOfSectionsInLineChartView:self];
-    for (NSInteger i = 0; i < section; i++) {
-        
-        UIBezierPath *bezierpath = [UIBezierPath bezierPath];
-        __block CGPoint _prePreviousPoint = CGPointZero;
-        __block CGPoint _previousPoint = CGPointZero;
-        
-        __block CGFloat firstYPosition;
-        __block CGFloat lastYPosition;
-        
-        NSArray *sleepInfos = [self.dataSource lineChartView:self sleepInfosAtSection:i];
-        [sleepInfos enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            WBSleepPoint *info = obj;
-            CGPoint point = [self pointForSleepInfo:info];
-            
-            if (idx == 0) {
-                firstYPosition = point.y;
-                
-                [bezierpath moveToPoint:point];
-                _prePreviousPoint = CGPointMake(kWBChartViewLeft, point.y);
-                _previousPoint = point;
-
-            } else {
-                CGPoint currentPoint = point;
-                
-                CGPoint mid1 = [self calculateMidPointForPoint:_previousPoint andPoint:_prePreviousPoint];
-                CGPoint mid2 = [self calculateMidPointForPoint:currentPoint andPoint:_previousPoint];
-                
-                if (idx > 1) {
-                    [bezierpath addLineToPoint:mid1];
-                }
-                [bezierpath addQuadCurveToPoint:mid2 controlPoint:_previousPoint];
-                
-                _prePreviousPoint = _previousPoint;
-                _previousPoint = point;
-                
-                if (idx == sleepInfos.count - 1) {
-                    lastYPosition = mid2.y;
-                }
-            }
-        }];
-        
-        [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, lastYPosition)];
-        [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, firstYPosition)];
-        
-        UIColor *fillColor = [self.dataSource lineChartView:self fillColorAtSection:i];
-        [fillColor setFill];
-        [bezierpath closePath];
-        [bezierpath fill];
-    }
+    return;
 }
 
 @end

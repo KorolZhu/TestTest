@@ -1,29 +1,28 @@
 //
-//  WBTotalSleepTimeCell.m
+//  WBBreathRateCell.m
 //  WristBand
 //
-//  Created by zhuzhi on 14/11/2.
+//  Created by zhuzhi on 14/11/21.
 //  Copyright (c) 2014年 WB. All rights reserved.
 //
 
-#import "WBTotalSleepTimeCell.h"
+#import "WBBreathRateCell.h"
 
-@interface WBTotalSleepTimeCell ()
+@interface WBBreathRateCell ()
 {
     UIView *backView;
     UIImageView *imageView;
-    UILabel *sleepTimeLabel;
+    UILabel *breathsRateLabel;
     UIView *progressBackView, *progressView;
-    UILabel *sleepDescLabel, *goalLabel;
+    UILabel *breathsRateDescLabel, *goalLabel;
 }
 
 @end
-
-@implementation WBTotalSleepTimeCell
+@implementation WBBreathRateCell
 
 - (instancetype)init {
     self = [super init];
-    if (self) {        
+    if (self) {
         backView = [[UIView alloc] init];
         backView.backgroundColor = [UIColor whiteColor];
         backView.layer.cornerRadius = 5.0f;
@@ -33,19 +32,19 @@
         [backView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10.0f];
         [backView autoSetDimension:ALDimensionHeight toSize:80.0f];
         
-        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_total_sleep_time"]];
+        imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_average_respiration_rate"]];
         [backView addSubview:imageView];
         [imageView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10.0f];
         [imageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-        [imageView autoSetDimensionsToSize:CGSizeMake(43.0f, 43.0f)];
+        [imageView autoSetDimensionsToSize:CGSizeMake(37.0f, 37.0f)];
         
-        sleepTimeLabel = [[UILabel alloc] init];
-        sleepTimeLabel.backgroundColor = [UIColor clearColor];
-        sleepTimeLabel.font = [UIFont systemFontOfSize:15.0f];
-        sleepTimeLabel.textColor = RGB(87,104,106);
-        [backView addSubview:sleepTimeLabel];
-        [sleepTimeLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10.0f];
-        [sleepTimeLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:imageView withOffset:7.0f];
+        breathsRateLabel = [[UILabel alloc] init];
+        breathsRateLabel.backgroundColor = [UIColor clearColor];
+        breathsRateLabel.font = [UIFont systemFontOfSize:15.0f];
+        breathsRateLabel.textColor = RGB(87,104,106);
+        [backView addSubview:breathsRateLabel];
+        [breathsRateLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10.0f];
+        [breathsRateLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:imageView withOffset:7.0f];
         
         progressBackView = [[UIView alloc] init];
         progressBackView.backgroundColor = RGB(214,218,219);
@@ -56,17 +55,17 @@
         [progressBackView autoSetDimension:ALDimensionHeight toSize:14.0f];
         
         progressView = [[UIView alloc] init];
-        progressView.backgroundColor = RGB(97,159,189);
+        progressView.backgroundColor = RGB(126,78,174);
         [backView addSubview:progressView];
-		
-        sleepDescLabel = [[UILabel alloc] init];
-        sleepDescLabel.backgroundColor = [UIColor clearColor];
-        sleepDescLabel.font = [UIFont systemFontOfSize:12.0f];
-        sleepDescLabel.textColor = [UIColor lightGrayColor];
-        sleepDescLabel.text = NSLocalizedString(@"Total sleep time", nil);
-        [backView addSubview:sleepDescLabel];
-        [sleepDescLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:progressBackView withOffset:5.0f];
-        [sleepDescLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:imageView withOffset:7.0f];
+        
+        breathsRateDescLabel = [[UILabel alloc] init];
+        breathsRateDescLabel.backgroundColor = [UIColor clearColor];
+        breathsRateDescLabel.font = [UIFont systemFontOfSize:12.0f];
+        breathsRateDescLabel.textColor = [UIColor lightGrayColor];
+        breathsRateDescLabel.text = NSLocalizedString(@"Respiration rate", nil);
+        [backView addSubview:breathsRateDescLabel];
+        [breathsRateDescLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:progressBackView withOffset:5.0f];
+        [breathsRateDescLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:imageView withOffset:7.0f];
         
         goalLabel = [[UILabel alloc] init];
         goalLabel.backgroundColor = [UIColor clearColor];
@@ -82,20 +81,20 @@
 }
 
 - (void)configCell {
-    sleepTimeLabel.text = self.sleepInfo.totalSleepTimeString;
-    goalLabel.text = self.sleepInfo.goalPercentString;
+    breathsRateLabel.text = @"16.5 breaths per min";
+    goalLabel.text = @"Usual level";
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
-	
-	CGRect frame = progressBackView.frame;
-	frame.size.width = progressBackView.width * (self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent);
+    
+    CGRect frame = progressBackView.frame;
+    frame.size.width = progressBackView.width * (self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent);
     progressView.frame = frame;
     
 }
 
 - (CGFloat)cellHeight {
-    return backView.bottom + 8.0f;
+    return backView.bottom + 0.0f;
 }
 
 @end

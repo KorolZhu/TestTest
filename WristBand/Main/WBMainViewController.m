@@ -175,7 +175,7 @@ static NSString *CollectionCellIdentifier = @"collectionCellIdentifier";
                 [fallAsleepArray2 addObject:sleepPoint];
             }
             
-            sleepPoint.sleepValue = arc4random() % 20 + 10;
+            sleepPoint.sleepValue = arc4random() % 15 + 15;
         }
         [array addObject:inbedArray];
         [array addObject:fallAsleepArray1];
