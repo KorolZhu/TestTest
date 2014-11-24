@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WBContainViewController.h"
+#import "WBDatabaseService.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [WBDatabaseService defaultService];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     WBContainViewController *rootViewController = [[WBContainViewController alloc] init];

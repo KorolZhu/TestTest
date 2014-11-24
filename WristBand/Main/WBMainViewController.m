@@ -91,6 +91,7 @@ static NSString *CollectionCellIdentifier = @"collectionCellIdentifier";
     [self.view addSubview:_connectDeviceView];
     _topConstraint = [_connectDeviceView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:IPHONE_HEIGHT - 43.0f];
     [_connectDeviceView autoSetDimension:ALDimensionHeight toSize:IPHONE_HEIGHT + 43.0f + 64.0f];
+    [_connectDeviceView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view];
     
     [self test];
     

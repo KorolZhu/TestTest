@@ -1,0 +1,20 @@
+PODS:
+  - FMDB (2.4):
+    - FMDB/standard (= 2.4)
+  - FMDB/common (2.4)
+  - FMDB/standard (2.4):
+    - FMDB/common
+  - GCDObjC (0.2.0)
+  - PureLayout (2.0.3)
+
+DEPENDENCIES:
+  - FMDB (~> 2.4)
+  - GCDObjC (~> 0.2.0)
+  - PureLayout (~> 2.0.3)
+
+SPEC CHECKSUMS:
+  FMDB: 0b2fa25e5264ef177973c0cb8c02c711107979aa
+  GCDObjC: 4221bab8503688aaee67e5930b58fe8c0ed1f9a9
+  PureLayout: 9658675ed95dabfcdf5154c0771ec9ed0980b370
+
+COCOAPODS: 0.35.0
