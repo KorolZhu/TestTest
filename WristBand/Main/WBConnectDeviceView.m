@@ -192,7 +192,7 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     
     self.state = WBConnectDeviceStateNormal;
     
-    writeTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(writeTimer:) userInfo:nil repeats:YES];
+    writeTimer = [NSTimer scheduledTimerWithTimeInterval:0.2f target:self selector:@selector(writeTimer:) userInfo:nil repeats:YES];
 }
 
 -(void)bleDidUpdateRSSI:(NSNumber *)rssi {
@@ -204,7 +204,7 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     NSData *data = [[NSData alloc] initWithBytes:buf length:1];
     [BLEShareInstance write:data];
     
-    [BLEShareInstance readRSSI];
+//    [BLEShareInstance readRSSI];
 }
 
 - (void)bleDidDisconnect {
@@ -214,7 +214,7 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 }
 
 - (void)bleDidWriteValue {
-    [BLEShareInstance read];
+//    [BLEShareInstance read];
 }
 
 - (void)bleDidReceiveData:(unsigned char *)data length:(int)length {
@@ -224,7 +224,8 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
         UInt8 data2 = data[2];
         UInt16 value = data1 * 100 + data2;
         
-        NSLog(@"cmd = %d, value = %d, length: %d", replyCmd, value, length);
+//        NSLog(@"cmd = %d, value = %d, length: %d", replyCmd, value, length);
+        NSLog(@"value = %4d, timestamp = %.3f", value, [[NSDate date] timeIntervalSince1970]);
     }
 }
 

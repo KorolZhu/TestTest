@@ -18,4 +18,6 @@
 - (float)statusbarWidth;
 - (float)statusbarHeight;
 
+- (void)redirectConsoleLog;
+
 @end

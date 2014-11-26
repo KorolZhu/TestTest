@@ -7,6 +7,7 @@
 //
 
 #import "UIDevice+WB.h"
+#import "WBPath.h"
 
 @implementation UIDevice (WB)
 
@@ -94,6 +95,23 @@
     
     
     return [[UIApplication sharedApplication] statusBarFrame].size.height;
+}
+
+- (void)redirectConsoleLog {
+    
+    NSString *consoleLogPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches/Log/console"] copy];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:consoleLogPath]) {
+        [fileManager createDirectoryAtPath:consoleLogPath withIntermediateDirectories:YES attributes:NULL error:NULL];
+    }
+    
+    NSString *date = [[NSDate date] stringWithFormat:@"yyyy-MM-dd"];
+    
+    NSString *logPath = [NSString stringWithFormat:@"%@/%@.txt",consoleLogPath,date];
+    
+    freopen([logPath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stderr);
 }
 
 @end
