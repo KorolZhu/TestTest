@@ -10,33 +10,7 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>02A63D78BAAD91B67C9333E1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-WristBand.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>03145E79DCCC0B58FAFBBAAE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-WristBand-FMDB.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>04996D945E16B33ACEB49855</key>
+		<key>000544313D0B06BD5AAAFD02</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -98,468 +72,58 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>0618E197E0F68C1FECB10512</key>
+		<key>04B9C0F1E36A6739CFE2679E</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>0732073D1D6EDACDF0D20882</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>06392BCA25340C7932AC9A91</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF7274F3552487BA7AFD6E69</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0647F6D2BA734EF1AB965692</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B06ACBC7C485707BEB668647</string>
-				<string>1B1E3867ED46EA51F4FBFB02</string>
-				<string>DB1D8F81BF5041F16CC385C3</string>
-				<string>D3700A171957173D72C05CEB</string>
-				<string>8345D5D128707C4BF8E4DA54</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>064816FA24E322FA35BB5A13</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>394B272F3E8FB84B5179A8F1</string>
-				<string>163527217EF3F38CD2F7A547</string>
-				<string>C26042B875C22E35E549FDCC</string>
-				<string>B34A254646936C288DF1E504</string>
+				<string>16AC2E5688926ECF7CA14A7E</string>
+				<string>B13B2EC8B752FB71055EA78A</string>
+				<string>C13A29DC3F518F58C8A6A45A</string>
+				<string>D11A5835C0E92DDA427D4364</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>0732073D1D6EDACDF0D20882</key>
+		<key>07B3334A509CD08095B20142</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B263387EAEAE7657DA26B9C3</string>
+			<string>F396F77393CD0512CE0AB00C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>0922F945B4DF2B6CCBA18F69</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3CA20E89D7D33EFB8BE78FF1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>098EE0389E8BB20140AC4F71</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>0D0A524CAE587D4BE4C31C66</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>511F20DF98BFCB61C5C53634</string>
-			<key>remoteInfo</key>
-			<string>Pods-WristBand-PureLayout</string>
-		</dict>
-		<key>0B2E8012EBB1B49D334AA056</key>
+		<key>0AE3F00099F66E5FC85B2099</key>
 		<dict>
 			<key>fileRef</key>
-			<string>378E65EDE156777930429E73</string>
+			<string>105E936003D22FE7C9FA0A1A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
 		</dict>
-		<key>0CADB546F2B4DAEC4BDC1866</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>559F3FEA4166F3BD65DFBD7E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>0D0A524CAE587D4BE4C31C66</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>9EAA9CD268B2AA6F58DEFE8B</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>9307D1FE7D1E3F534A0E6B2B</string>
-			<key>productRefGroup</key>
-			<string>8F0E3AAD7AAF8DB1187C6ABF</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>1CC1CE7403B3B0DE252E56DC</string>
-				<string>F7FC4338B1675BD6B10609CC</string>
-				<string>F402DEE60CBF63ED445097A7</string>
-				<string>511F20DF98BFCB61C5C53634</string>
-			</array>
-		</dict>
-		<key>0E6526B8C9A0CB79D7F047FC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>8ACA741DC81F9A97F9B78AD6</string>
-				<string>463F08651065D7469E735F6F</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>105147BFD2C13FE140B4E083</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GCDGroup.h</string>
-			<key>path</key>
-			<string>GCDObjC/GCDGroup.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>11F02599093A23433DD895FA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FMDatabase.h</string>
-			<key>path</key>
-			<string>src/fmdb/FMDatabase.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>134C5F7519715CFFA88DFDE5</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B0870EAABAEAC28F1FA9BADA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-WristBand-PureLayout/Pods-WristBand-PureLayout-prefix.pch</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>1359AE36527D94E8D1DF308E</key>
+		<key>0DDE096E23A35889881B138B</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>6F41ADE701EBA9F07425B57E</string>
-				<string>EF166606EB7EFAB3998955D7</string>
+				<string>991D9EB9F675CEB6C6588FDB</string>
+				<string>5EF904C14D4065DEE08DE059</string>
+				<string>6E101A9F22370C62800B8C56</string>
+				<string>F42E8F1928EB52E5345E7DBA</string>
+				<string>A6CF2600652AF0C1724C804C</string>
+				<string>605B8C14833BA0D083EB4B30</string>
+				<string>F420246AC7F65656645AD21A</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>FMDB</string>
-			<key>path</key>
-			<string>FMDB</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>163527217EF3F38CD2F7A547</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BE22872A3863A7E78A029931</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1771FFA2483BBDB3A523BA50</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B263387EAEAE7657DA26B9C3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>197387E2ACB0E3F1CA016BFF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>FMDatabaseQueue.m</string>
-			<key>path</key>
-			<string>src/fmdb/FMDatabaseQueue.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1B1E3867ED46EA51F4FBFB02</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BDC6A95E79AA19846F3306DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1B99071B08388CF15F840120</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B0870EAABAEAC28F1FA9BADA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-WristBand-PureLayout/Pods-WristBand-PureLayout-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>1C8440D7F015660457B5DE10</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>80C580FADA8516BE97449E3C</string>
-				<string>1F1D0D9C733BB51FEB26FB3C</string>
-				<string>22C9984521D584ACC51CAE2D</string>
-				<string>E1943A3D90CE2CE854021E6D</string>
-				<string>9581D95282149BE321C5C452</string>
-				<string>6250621D11118B30F2DCB8B3</string>
-				<string>6E17789CA2141C44D6BA71F4</string>
-				<string>E3BFA7E168CD65FA3BCB9F57</string>
-				<string>BCFEFC81E3BE6E3CF06A1DC3</string>
-				<string>BD7506DC7E5AE88D5E43ED8D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>PureLayout</string>
-			<key>path</key>
-			<string>PureLayout</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1CC1CE7403B3B0DE252E56DC</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>23B837ACD1DAAD2430D9A3DD</string>
-			<key>buildPhases</key>
-			<array>
-				<string>C5266A6A44756E41CC92D473</string>
-				<string>FE7AAB85D67A03BFB702C278</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>C7EC73E3A1BCC023CF985EA3</string>
-				<string>9789FF50F21448B7391CB155</string>
-				<string>1F8CCAC374E9574EF1C2C331</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
 			<key>name</key>
 			<string>Pods-WristBand</string>
-			<key>productName</key>
-			<string>Pods-WristBand</string>
-			<key>productReference</key>
-			<string>965E0BE7B8231E5081E3534F</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>1DA030F92908CCCD95D41AE3</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>1B99071B08388CF15F840120</string>
-				<string>134C5F7519715CFFA88DFDE5</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>1F1D0D9C733BB51FEB26FB3C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>ALView+PureLayout.m</string>
 			<key>path</key>
-			<string>Source/ALView+PureLayout.m</string>
+			<string>Target Support Files/Pods-WristBand</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>1F8CCAC374E9574EF1C2C331</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-WristBand-PureLayout</string>
-			<key>target</key>
-			<string>511F20DF98BFCB61C5C53634</string>
-			<key>targetProxy</key>
-			<string>098EE0389E8BB20140AC4F71</string>
-		</dict>
-		<key>1FDABD37B9D652777CACD3CA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B9F6B9B34F8A536C34EB2CE3</string>
-				<string>A2CA2285380C09FCF63142A9</string>
-				<string>CA9CBF771B6D2F81C60EA9E6</string>
-				<string>2ED394CFEEFED8A1240A3A31</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-WristBand-GCDObjC</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>203014107C8BA677D152BCA4</key>
+		<key>0F51254D0191FB82165523C9</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>
@@ -568,38 +132,29 @@
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
-			<string>libPods-WristBand-FMDB.a</string>
+			<string>libPods-WristBand-PureLayout.a</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>205E3877DD5E417A7966B833</key>
+		<key>0F59053E1473F3216605777E</key>
 		<dict>
-			<key>fileRef</key>
-			<string>E3BFA7E168CD65FA3BCB9F57</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>EE686AA601B3BB8E8099CCC4</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
-		<key>22C9984521D584ACC51CAE2D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSArray+PureLayout.h</string>
-			<key>path</key>
-			<string>Source/NSArray+PureLayout.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23B837ACD1DAAD2430D9A3DD</key>
+		<key>1036D74F1E544632967076A2</key>
 		<dict>
 			<key>buildConfigurations</key>
 			<array>
-				<string>76A68F1DCC0603D290BD4ABE</string>
-				<string>FA657D635DB5584917C634C4</string>
+				<string>ABB820C4190B27D87E2A30A9</string>
+				<string>649D954C02EA92EDB58FD4B4</string>
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
@@ -608,25 +163,7 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>2D4D0488C81902154A456C51</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CD53DB6EB40EF4EC2398BB8A</string>
-				<string>A6DD2C6E761CFD32ACD65A40</string>
-				<string>A298B3BD3CA559AE98317A44</string>
-				<string>205E3877DD5E417A7966B833</string>
-				<string>B64418FFADE0CE115726DAA4</string>
-				<string>B43FD64099EDB3242D55605E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2D6A33556ACD08672220EEB2</key>
+		<key>105E936003D22FE7C9FA0A1A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -634,25 +171,27 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSArray+PureLayout.m</string>
 			<key>path</key>
-			<string>Pods-WristBand-FMDB-dummy.m</string>
+			<string>Source/NSArray+PureLayout.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2D7C5A23395916CFC5E9D21D</key>
+		<key>10B752D80CA9C89BECED0FE2</key>
 		<dict>
-			<key>containerPortal</key>
-			<string>0D0A524CAE587D4BE4C31C66</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
+			<key>includeInIndex</key>
 			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>F402DEE60CBF63ED445097A7</string>
-			<key>remoteInfo</key>
-			<string>Pods-WristBand-GCDObjC</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-WristBand-PureLayout-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>2ED394CFEEFED8A1240A3A31</key>
+		<key>11D0381F626F2CDC652B4E26</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -660,57 +199,44 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-WristBand-GCDObjC-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2F4699081538308ACCEB0779</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>GCDGroup.m</string>
+			<string>GCDQueue.h</string>
 			<key>path</key>
-			<string>GCDObjC/GCDGroup.m</string>
+			<string>GCDObjC/GCDQueue.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>300D7D2498CC3983BF3A023B</key>
+		<key>134A7C5B61C22B86765EFAA6</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>105147BFD2C13FE140B4E083</string>
-				<string>2F4699081538308ACCEB0779</string>
-				<string>BDC6A95E79AA19846F3306DA</string>
-				<string>E89CDA012CF966E483FAE6B0</string>
-				<string>B85DEDBE9F3E768AB7B50E87</string>
-				<string>BE22872A3863A7E78A029931</string>
-				<string>6880824FD8DF961C5BEB9764</string>
-				<string>56A83EE477A862F470574A4F</string>
-				<string>1FDABD37B9D652777CACD3CA</string>
+				<string>37E0E4DF534DB4CCC3CB946C</string>
+				<string>765AAD4480D8C396DC4F0D46</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>GCDObjC</string>
+			<string>FMDB</string>
 			<key>path</key>
-			<string>GCDObjC</string>
+			<string>FMDB</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>360FC98B6665A0A0368C3971</key>
+		<key>13D09EDA95757424662EEBA4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>426B59F7A59362D3D2E9C6CC</string>
+			<string>458AC0668794CCC61396A694</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>378E65EDE156777930429E73</key>
+		<key>16AC2E5688926ECF7CA14A7E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3F11F79F4D4BC2992D4A66CB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>181D5F91A4C85B2C3B5BDF16</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -725,18 +251,176 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>394B272F3E8FB84B5179A8F1</key>
+		<key>1AA7D840762A0DEBCF27B780</key>
 		<dict>
-			<key>fileRef</key>
-			<string>2F4699081538308ACCEB0779</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FMDatabasePool.h</string>
+			<key>path</key>
+			<string>src/fmdb/FMDatabasePool.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3AF5C623C95C621FB53CEEBE</key>
+		<key>1B5599A10318339B10FE8FF3</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>1771FFA2483BBDB3A523BA50</string>
+				<string>134A7C5B61C22B86765EFAA6</string>
+				<string>29EE95DB09CA6C321E4E7391</string>
+				<string>8CF32F6238433E3FE6218F1B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1D02BA44CBC2A90485C84BCF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-WristBand-GCDObjC-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2141626AD8F496C4EA2C4516</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B22754D0A84C1AC0BBC477F6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>23AF685F82D0E8FBA9CFC316</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1AA7D840762A0DEBCF27B780</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>29E500AC8A42821A7121F3DE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-WristBand-PureLayout-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>29EE95DB09CA6C321E4E7391</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B22754D0A84C1AC0BBC477F6</string>
+				<string>3F11F79F4D4BC2992D4A66CB</string>
+				<string>2DB80AC973AE5CE0A211B7D2</string>
+				<string>DC3E2B5003F44966AFE8CDD9</string>
+				<string>11D0381F626F2CDC652B4E26</string>
+				<string>6E3B3DD205CEE4F927D1BF2E</string>
+				<string>2E3A1C46080E99BC0E3F5F90</string>
+				<string>8E52B3860D97F45BFB7ACBE5</string>
+				<string>97B797599176D26F789C0F39</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>GCDObjC</string>
+			<key>path</key>
+			<string>GCDObjC</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2DB80AC973AE5CE0A211B7D2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GCDMacros.h</string>
+			<key>path</key>
+			<string>GCDObjC/GCDMacros.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2E3A1C46080E99BC0E3F5F90</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GCDSemaphore.h</string>
+			<key>path</key>
+			<string>GCDObjC/GCDSemaphore.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>317B4A481B464F8681694EEE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>DB96324BD9B07A5731B988DA</string>
+				<string>3ECF6985E740C81446914674</string>
+				<string>EA639805D84F9F6BB10E6089</string>
+				<string>0F51254D0191FB82165523C9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>34A66C8147FCAFB37AFCDAFC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSArray+PureLayout.h</string>
+			<key>path</key>
+			<string>Source/NSArray+PureLayout.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3684C753DCF7D7CE6C502D96</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-WristBand-FMDB</string>
+			<key>target</key>
+			<string>6DC0A1F1085ED7C15DFD0B86</string>
+			<key>targetProxy</key>
+			<string>3ADDB932CC49399CD09368A6</string>
+		</dict>
+		<key>374565DE89338AF57E1E7626</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B90415AF8FD3B84BECF65854</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -745,48 +429,64 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3CA20E89D7D33EFB8BE78FF1</key>
+		<key>37E0E4DF534DB4CCC3CB946C</key>
 		<dict>
-			<key>fileRef</key>
-			<string>B263387EAEAE7657DA26B9C3</string>
+			<key>children</key>
+			<array>
+				<string>DB1251164BCE63EF17DA0159</string>
+				<string>A7DDFD6697CA3638B12827CB</string>
+				<string>871E300CBE08E42E1BC1B0CD</string>
+				<string>6AC90AA2E13005497767E6FC</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-WristBand-FMDB</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3F06CD01D5A16403259A85DE</key>
+		<key>3ADDB932CC49399CD09368A6</key>
 		<dict>
 			<key>containerPortal</key>
-			<string>0D0A524CAE587D4BE4C31C66</string>
+			<string>486662558928B3B2081AB636</string>
 			<key>isa</key>
 			<string>PBXContainerItemProxy</string>
 			<key>proxyType</key>
 			<string>1</string>
 			<key>remoteGlobalIDString</key>
-			<string>F7FC4338B1675BD6B10609CC</string>
+			<string>6DC0A1F1085ED7C15DFD0B86</string>
 			<key>remoteInfo</key>
 			<string>Pods-WristBand-FMDB</string>
 		</dict>
-		<key>404B0BEE74367D840AAC2FCC</key>
+		<key>3DD2B9DD9DBCEB2D57DF4DA4</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>E06F8036589D9AF285CB1A84</string>
-				<string>6C89B7AFB50B249CCD34755C</string>
-				<string>426B59F7A59362D3D2E9C6CC</string>
-				<string>DBC4981738B4E6E1683EF901</string>
-				<string>B973F89A94584F3D05354237</string>
-				<string>AC69EF17AB76AFD7D3483C17</string>
-				<string>02A63D78BAAD91B67C9333E1</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-WristBand</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>Target Support Files/Pods-WristBand</string>
+			<string>Pods-WristBand-GCDObjC.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>411DF3AB9844E32D6F1A7430</key>
+		<key>3ECF6985E740C81446914674</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-WristBand-FMDB.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3F11F79F4D4BC2992D4A66CB</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -795,26 +495,53 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>FMDatabase.m</string>
+			<string>GCDGroup.m</string>
 			<key>path</key>
-			<string>src/fmdb/FMDatabase.m</string>
+			<string>GCDObjC/GCDGroup.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>423F21851D8CE97225C592E0</key>
+		<key>43DD13ADE573AE83D5B00CC7</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>404B0BEE74367D840AAC2FCC</string>
-			</array>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXTargetDependency</string>
 			<key>name</key>
-			<string>Targets Support Files</string>
+			<string>Pods-WristBand-PureLayout</string>
+			<key>target</key>
+			<string>792D8560DCA0AF3ECE26E2C1</string>
+			<key>targetProxy</key>
+			<string>8BE3042C0AD641CD53C90AC3</string>
+		</dict>
+		<key>452C9F1BE83E97162249B92A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7B85D1AB1FEAC1E950CFEEC7</string>
+				<string>D5D83C070B37781058FACB72</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>454545B1CB1AEB94BA99D361</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ALView+PureLayout.h</string>
+			<key>path</key>
+			<string>Source/ALView+PureLayout.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>426B59F7A59362D3D2E9C6CC</key>
+		<key>458AC0668794CCC61396A694</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -822,15 +549,105 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSLayoutConstraint+PureLayout.m</string>
 			<key>path</key>
-			<string>Pods-WristBand-dummy.m</string>
+			<string>Source/NSLayoutConstraint+PureLayout.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>463F08651065D7469E735F6F</key>
+		<key>46E88DDF3370592187174AF8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-WristBand-GCDObjC-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4714BEA995601C3B61E825D0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>PureLayout.h</string>
+			<key>path</key>
+			<string>Source/PureLayout.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>486662558928B3B2081AB636</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0510</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>97146D6D7EAFBB8DF7C9807A</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>BD41CEBC4922080097711E5F</string>
+			<key>productRefGroup</key>
+			<string>317B4A481B464F8681694EEE</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>D46FA8A87895B49D10E18213</string>
+				<string>6DC0A1F1085ED7C15DFD0B86</string>
+				<string>64496E7512FD30A6329A87B9</string>
+				<string>792D8560DCA0AF3ECE26E2C1</string>
+			</array>
+		</dict>
+		<key>49DE463BB4B17D68205C993C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>34A66C8147FCAFB37AFCDAFC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4F0FF04B36BA86E542A2C0D1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FBED8D04629595D0EC0298CA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>521DB31163851BE1E36EA1CC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FB75A53F52171C00B6FF0EA7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5A1341122B2B9C2397185CBB</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>E418B2A7819C6B486A7222F4</string>
+			<string>A7DDFD6697CA3638B12827CB</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -877,15 +694,309 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>511F20DF98BFCB61C5C53634</key>
+		<key>5AB0F48E20E8EA15B79BA272</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BF597372BC5B2005BDD57867</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>5EF8227F46AA9DB2C0B3A3E8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FMDatabaseAdditions.h</string>
+			<key>path</key>
+			<string>src/fmdb/FMDatabaseAdditions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EF904C14D4065DEE08DE059</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-WristBand-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>605B8C14833BA0D083EB4B30</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-WristBand.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>64496E7512FD30A6329A87B9</key>
 		<dict>
 			<key>buildConfigurationList</key>
-			<string>1DA030F92908CCCD95D41AE3</string>
+			<string>1036D74F1E544632967076A2</string>
 			<key>buildPhases</key>
 			<array>
-				<string>CE96A7C7302C031D9505AC7C</string>
-				<string>0618E197E0F68C1FECB10512</string>
-				<string>2D4D0488C81902154A456C51</string>
+				<string>04B9C0F1E36A6739CFE2679E</string>
+				<string>0F59053E1473F3216605777E</string>
+				<string>A963CBCBCFD3B25994E922D4</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-WristBand-GCDObjC</string>
+			<key>productName</key>
+			<string>Pods-WristBand-GCDObjC</string>
+			<key>productReference</key>
+			<string>EA639805D84F9F6BB10E6089</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>649D954C02EA92EDB58FD4B4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>CD7815D1F0CF10C5A921D31D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-WristBand-GCDObjC/Pods-WristBand-GCDObjC-prefix.pch</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>672EE53D519D5808F0C93747</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DBAEE65BBB6B7E9E20F546E2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>6AC90AA2E13005497767E6FC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-WristBand-FMDB-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6CD5F252481810B58500D241</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DC3E2B5003F44966AFE8CDD9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6D043FE49D8401329B9BBACC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FMDatabase.h</string>
+			<key>path</key>
+			<string>src/fmdb/FMDatabase.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6DC0A1F1085ED7C15DFD0B86</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>6FD4D8EC565F2386FED89244</string>
+			<key>buildPhases</key>
+			<array>
+				<string>846E97347D2123AEF1057672</string>
+				<string>B10110AFA5331B4C3867B619</string>
+				<string>D97862EA0AD3439EE6709ADF</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-WristBand-FMDB</string>
+			<key>productName</key>
+			<string>Pods-WristBand-FMDB</string>
+			<key>productReference</key>
+			<string>3ECF6985E740C81446914674</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>6E101A9F22370C62800B8C56</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-WristBand-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6E3B3DD205CEE4F927D1BF2E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>GCDQueue.m</string>
+			<key>path</key>
+			<string>GCDObjC/GCDQueue.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6F5921CE04646BEC9706F14E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>PureLayout+Internal.h</string>
+			<key>path</key>
+			<string>Source/PureLayout+Internal.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6FD4D8EC565F2386FED89244</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>EE23DD3D201F9820DF662E6E</string>
+				<string>5A1341122B2B9C2397185CBB</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>765AAD4480D8C396DC4F0D46</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D95755B649F7BD9A92EF3BBA</string>
+				<string>6D043FE49D8401329B9BBACC</string>
+				<string>BF597372BC5B2005BDD57867</string>
+				<string>5EF8227F46AA9DB2C0B3A3E8</string>
+				<string>FDC189A2B9077E4BF57CE104</string>
+				<string>1AA7D840762A0DEBCF27B780</string>
+				<string>181D5F91A4C85B2C3B5BDF16</string>
+				<string>B106CC6F742FAF9AD5CA15CA</string>
+				<string>DBAEE65BBB6B7E9E20F546E2</string>
+				<string>864A7E3640FF9EA0522D7571</string>
+				<string>B66BED9FDD352568A587F776</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>common</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>76CA64994DCA72E44641DE47</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>930EE635948A213B9C879F3A</string>
+				<string>8E29CB4D71A7E2EABB2FA4F3</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>792D8560DCA0AF3ECE26E2C1</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>76CA64994DCA72E44641DE47</string>
+			<key>buildPhases</key>
+			<array>
+				<string>D809F4CF83BE784176A609DC</string>
+				<string>A8A50B0AAE0DF4381A28C1E7</string>
+				<string>ED5450A9FCC8A1C8C1F4FADD</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -898,18 +1009,239 @@
 			<key>productName</key>
 			<string>Pods-WristBand-PureLayout</string>
 			<key>productReference</key>
-			<string>7938A814B39FD4BD9ABD333C</string>
+			<string>0F51254D0191FB82165523C9</string>
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
 		</dict>
-		<key>559F3FEA4166F3BD65DFBD7E</key>
+		<key>7942A6AD5255A883A31936CD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-WristBand-PureLayout.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7B85D1AB1FEAC1E950CFEEC7</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>605B8C14833BA0D083EB4B30</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>824EBA7E9F0C2B426C2642B2</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B263387EAEAE7657DA26B9C3</string>
+			<string>864A7E3640FF9EA0522D7571</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>56A83EE477A862F470574A4F</key>
+		<key>846E97347D2123AEF1057672</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>5AB0F48E20E8EA15B79BA272</string>
+				<string>F7E8A5D478E81EC8621984A4</string>
+				<string>FB6FADDD1036D14C8A2CFF96</string>
+				<string>672EE53D519D5808F0C93747</string>
+				<string>F4BE21D0BB041A392FEA50B6</string>
+				<string>8C4A66E764582FBED5EE6C1E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>864A7E3640FF9EA0522D7571</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FMResultSet.h</string>
+			<key>path</key>
+			<string>src/fmdb/FMResultSet.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>871E300CBE08E42E1BC1B0CD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-WristBand-FMDB-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8836CE6B1B7BEA85B21EF08D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EDF937366C53BA338CCAF480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8BE3042C0AD641CD53C90AC3</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>486662558928B3B2081AB636</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>792D8560DCA0AF3ECE26E2C1</string>
+			<key>remoteInfo</key>
+			<string>Pods-WristBand-PureLayout</string>
+		</dict>
+		<key>8C4A66E764582FBED5EE6C1E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>871E300CBE08E42E1BC1B0CD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8CF32F6238433E3FE6218F1B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>454545B1CB1AEB94BA99D361</string>
+				<string>9AEC038657BAC84108F8F220</string>
+				<string>34A66C8147FCAFB37AFCDAFC</string>
+				<string>105E936003D22FE7C9FA0A1A</string>
+				<string>EDF937366C53BA338CCAF480</string>
+				<string>458AC0668794CCC61396A694</string>
+				<string>4714BEA995601C3B61E825D0</string>
+				<string>6F5921CE04646BEC9706F14E</string>
+				<string>FB75A53F52171C00B6FF0EA7</string>
+				<string>A046DED8411CB4E75F33939A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>PureLayout</string>
+			<key>path</key>
+			<string>PureLayout</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8CFBBA8F3242CBE9BC371A10</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2E3A1C46080E99BC0E3F5F90</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8D4EAF0D3653F9D04B736325</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4714BEA995601C3B61E825D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8E29CB4D71A7E2EABB2FA4F3</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>10B752D80CA9C89BECED0FE2</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-WristBand-PureLayout/Pods-WristBand-PureLayout-prefix.pch</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>8E52B3860D97F45BFB7ACBE5</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -924,14 +1256,101 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>5DB90882A90CB8580BAD322C</key>
+		<key>930EE635948A213B9C879F3A</key>
 		<dict>
-			<key>fileRef</key>
-			<string>1F1D0D9C733BB51FEB26FB3C</string>
+			<key>baseConfigurationReference</key>
+			<string>10B752D80CA9C89BECED0FE2</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-WristBand-PureLayout/Pods-WristBand-PureLayout-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
 		</dict>
-		<key>6250621D11118B30F2DCB8B3</key>
+		<key>97146D6D7EAFBB8DF7C9807A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F409472DC0B0E6470AAFBA76</string>
+				<string>000544313D0B06BD5AAAFD02</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>97B797599176D26F789C0F39</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3DD2B9DD9DBCEB2D57DF4DA4</string>
+				<string>CD7815D1F0CF10C5A921D31D</string>
+				<string>1D02BA44CBC2A90485C84BCF</string>
+				<string>46E88DDF3370592187174AF8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-WristBand-GCDObjC</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>991D9EB9F675CEB6C6588FDB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-WristBand-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9AEC038657BAC84108F8F220</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -940,13 +1359,259 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>NSLayoutConstraint+PureLayout.m</string>
+			<string>ALView+PureLayout.m</string>
 			<key>path</key>
-			<string>Source/NSLayoutConstraint+PureLayout.m</string>
+			<string>Source/ALView+PureLayout.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>641E63CD14FEDE89C24755D4</key>
+		<key>9D3E275F6C125AC55DD05865</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9AEC038657BAC84108F8F220</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A046DED8411CB4E75F33939A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7942A6AD5255A883A31936CD</string>
+				<string>10B752D80CA9C89BECED0FE2</string>
+				<string>FBED8D04629595D0EC0298CA</string>
+				<string>29E500AC8A42821A7121F3DE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Pods-WristBand-PureLayout</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A31FC277ECD6E2548BC38A2E</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>486662558928B3B2081AB636</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>64496E7512FD30A6329A87B9</string>
+			<key>remoteInfo</key>
+			<string>Pods-WristBand-GCDObjC</string>
+		</dict>
+		<key>A32A8E900C38DE208B3D2C46</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EF8227F46AA9DB2C0B3A3E8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A3B89A0D07E759E2B488C6A9</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B830CB938B233C2ACB6680AD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A6CF2600652AF0C1724C804C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-WristBand-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A7DDFD6697CA3638B12827CB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-WristBand-FMDB-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A8A50B0AAE0DF4381A28C1E7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B7858CEFF78F34BC0DC3C284</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A963CBCBCFD3B25994E922D4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2141626AD8F496C4EA2C4516</string>
+				<string>ECF418F0015C272C38B105E0</string>
+				<string>6CD5F252481810B58500D241</string>
+				<string>FF83CFDD5B68109576B582CD</string>
+				<string>8CFBBA8F3242CBE9BC371A10</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>ABB820C4190B27D87E2A30A9</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>CD7815D1F0CF10C5A921D31D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-WristBand-GCDObjC/Pods-WristBand-GCDObjC-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>B10110AFA5331B4C3867B619</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>07B3334A509CD08095B20142</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B106CC6F742FAF9AD5CA15CA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FMDatabaseQueue.h</string>
+			<key>path</key>
+			<string>src/fmdb/FMDatabaseQueue.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B13B2EC8B752FB71055EA78A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6E3B3DD205CEE4F927D1BF2E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B151531FB862C0012C2E3E4C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6F5921CE04646BEC9706F14E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B22754D0A84C1AC0BBC477F6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GCDGroup.h</string>
+			<key>path</key>
+			<string>GCDObjC/GCDGroup.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B52488E1E7E99D94847A80EC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D0A636FDA8CB26D874ABCC12</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B584FCE2ED6E3D568DBD7727</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0DDE096E23A35889881B138B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B66BED9FDD352568A587F776</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -961,14 +1626,239 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6783F9917F9AFD90C38C2758</key>
+		<key>B7858CEFF78F34BC0DC3C284</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B263387EAEAE7657DA26B9C3</string>
+			<string>F396F77393CD0512CE0AB00C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>6880824FD8DF961C5BEB9764</key>
+		<key>B830CB938B233C2ACB6680AD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6E101A9F22370C62800B8C56</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B90415AF8FD3B84BECF65854</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F396F77393CD0512CE0AB00C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9CE246C6B3B240FB6D515B3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D95755B649F7BD9A92EF3BBA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BD41CEBC4922080097711E5F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BFFC9D8834CD9104B9AEE961</string>
+				<string>374565DE89338AF57E1E7626</string>
+				<string>1B5599A10318339B10FE8FF3</string>
+				<string>317B4A481B464F8681694EEE</string>
+				<string>B584FCE2ED6E3D568DBD7727</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BD607EF35B2077F84A6D4F10</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Pods-WristBand-GCDObjC</string>
+			<key>target</key>
+			<string>64496E7512FD30A6329A87B9</string>
+			<key>targetProxy</key>
+			<string>A31FC277ECD6E2548BC38A2E</string>
+		</dict>
+		<key>BF597372BC5B2005BDD57867</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FMDatabase.m</string>
+			<key>path</key>
+			<string>src/fmdb/FMDatabase.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BFFC9D8834CD9104B9AEE961</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>C13A29DC3F518F58C8A6A45A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8E52B3860D97F45BFB7ACBE5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C95BD6BEA1DE71A1D9D65753</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6D043FE49D8401329B9BBACC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C9B46402E11D3486DF2A66E9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>454545B1CB1AEB94BA99D361</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CD7815D1F0CF10C5A921D31D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-WristBand-GCDObjC-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D0A636FDA8CB26D874ABCC12</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F396F77393CD0512CE0AB00C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D11A5835C0E92DDA427D4364</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1D02BA44CBC2A90485C84BCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D46FA8A87895B49D10E18213</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>452C9F1BE83E97162249B92A</string>
+			<key>buildPhases</key>
+			<array>
+				<string>A3B89A0D07E759E2B488C6A9</string>
+				<string>B52488E1E7E99D94847A80EC</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>3684C753DCF7D7CE6C502D96</string>
+				<string>BD607EF35B2077F84A6D4F10</string>
+				<string>43DD13ADE573AE83D5B00CC7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-WristBand</string>
+			<key>productName</key>
+			<string>Pods-WristBand</string>
+			<key>productReference</key>
+			<string>DB96324BD9B07A5731B988DA</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>D5D83C070B37781058FACB72</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>F420246AC7F65656645AD21A</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>D809F4CF83BE784176A609DC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9D3E275F6C125AC55DD05865</string>
+				<string>0AE3F00099F66E5FC85B2099</string>
+				<string>13D09EDA95757424662EEBA4</string>
+				<string>4F0FF04B36BA86E542A2C0D1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D95755B649F7BD9A92EF3BBA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -977,13 +1867,87 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>GCDSemaphore.h</string>
+			<string>FMDB.h</string>
 			<key>path</key>
-			<string>GCDObjC/GCDSemaphore.h</string>
+			<string>src/fmdb/FMDB.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>699FBDC6922C0029C4B41E65</key>
+		<key>D97862EA0AD3439EE6709ADF</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B9CE246C6B3B240FB6D515B3</string>
+				<string>C95BD6BEA1DE71A1D9D65753</string>
+				<string>A32A8E900C38DE208B3D2C46</string>
+				<string>23AF685F82D0E8FBA9CFC316</string>
+				<string>F9890E86AFFE59419E57B2A8</string>
+				<string>824EBA7E9F0C2B426C2642B2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DB1251164BCE63EF17DA0159</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-WristBand-FMDB.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DB96324BD9B07A5731B988DA</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-WristBand.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>DBAEE65BBB6B7E9E20F546E2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FMDatabaseQueue.m</string>
+			<key>path</key>
+			<string>src/fmdb/FMDatabaseQueue.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DC3E2B5003F44966AFE8CDD9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GCDObjC.h</string>
+			<key>path</key>
+			<string>GCDObjC/GCDObjC.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EA639805D84F9F6BB10E6089</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>
@@ -996,20 +1960,32 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>6C89B7AFB50B249CCD34755C</key>
+		<key>ECF418F0015C272C38B105E0</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>2DB80AC973AE5CE0A211B7D2</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-WristBand-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
-		<key>6E17789CA2141C44D6BA71F4</key>
+		<key>ED5450A9FCC8A1C8C1F4FADD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C9B46402E11D3486DF2A66E9</string>
+				<string>49DE463BB4B17D68205C993C</string>
+				<string>8836CE6B1B7BEA85B21EF08D</string>
+				<string>B151531FB862C0012C2E3E4C</string>
+				<string>8D4EAF0D3653F9D04B736325</string>
+				<string>521DB31163851BE1E36EA1CC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>EDF937366C53BA338CCAF480</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1018,31 +1994,82 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>PureLayout.h</string>
+			<string>NSLayoutConstraint+PureLayout.h</string>
 			<key>path</key>
-			<string>Source/PureLayout.h</string>
+			<string>Source/NSLayoutConstraint+PureLayout.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6F41ADE701EBA9F07425B57E</key>
+		<key>EE23DD3D201F9820DF662E6E</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>03145E79DCCC0B58FAFBBAAE</string>
-				<string>E418B2A7819C6B486A7222F4</string>
-				<string>2D6A33556ACD08672220EEB2</string>
-				<string>988772134CF93246319E689E</string>
-			</array>
+			<key>baseConfigurationReference</key>
+			<string>A7DDFD6697CA3638B12827CB</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Pods-WristBand-FMDB/Pods-WristBand-FMDB-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>XCBuildConfiguration</string>
 			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-WristBand-FMDB</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>Debug</string>
 		</dict>
-		<key>70436345C2D07E0D0B8F5869</key>
+		<key>EE686AA601B3BB8E8099CCC4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F396F77393CD0512CE0AB00C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F396F77393CD0512CE0AB00C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>F409472DC0B0E6470AAFBA76</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -1109,54 +2136,20 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>76A68F1DCC0603D290BD4ABE</key>
+		<key>F420246AC7F65656645AD21A</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>AC69EF17AB76AFD7D3483C17</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-WristBand.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>780A198C75F8A4FBE78F7391</key>
+		<key>F42E8F1928EB52E5345E7DBA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1164,200 +2157,15 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FMDB.h</string>
 			<key>path</key>
-			<string>src/fmdb/FMDB.h</string>
+			<string>Pods-WristBand-environment.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7938A814B39FD4BD9ABD333C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-WristBand-PureLayout.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>800E22B1E9F1AFBF48A8A689</key>
+		<key>F4BE21D0BB041A392FEA50B6</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E1943A3D90CE2CE854021E6D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>80C580FADA8516BE97449E3C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ALView+PureLayout.h</string>
-			<key>path</key>
-			<string>Source/ALView+PureLayout.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>82517F44ED615DBFC0F36463</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-WristBand-PureLayout-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8345D5D128707C4BF8E4DA54</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6880824FD8DF961C5BEB9764</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>86260C6450A4DE17B49068C9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E98546EBEE2EC7F2F333A3FB</string>
-				<string>94E85EB5A28CDBC63727233A</string>
-				<string>CD12B5B246EED181B1871A75</string>
-				<string>CC754E7C7BBEDBE3B07690F3</string>
-				<string>9C154AFAD050B22DC3D59FC0</string>
-				<string>97D248ED468CFD2C0CC21127</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8ACA741DC81F9A97F9B78AD6</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E418B2A7819C6B486A7222F4</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-WristBand-FMDB/Pods-WristBand-FMDB-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>8C86AB787F1794C1274CCEED</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1359AE36527D94E8D1DF308E</string>
-				<string>300D7D2498CC3983BF3A023B</string>
-				<string>1C8440D7F015660457B5DE10</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8F0E3AAD7AAF8DB1187C6ABF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>965E0BE7B8231E5081E3534F</string>
-				<string>203014107C8BA677D152BCA4</string>
-				<string>699FBDC6922C0029C4B41E65</string>
-				<string>7938A814B39FD4BD9ABD333C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>91FC159F21D176CE09E1D228</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FMDatabaseQueue.h</string>
-			<key>path</key>
-			<string>src/fmdb/FMDatabaseQueue.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9307D1FE7D1E3F534A0E6B2B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CAB0A9C8EA3BD7C505C06B54</string>
-				<string>3AF5C623C95C621FB53CEEBE</string>
-				<string>8C86AB787F1794C1274CCEED</string>
-				<string>8F0E3AAD7AAF8DB1187C6ABF</string>
-				<string>423F21851D8CE97225C592E0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>934F7BE9DD14E00EAD4D25FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>641E63CD14FEDE89C24755D4</string>
+			<string>B66BED9FDD352568A587F776</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1366,218 +2174,10 @@
 				<string>-DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>94E85EB5A28CDBC63727233A</key>
+		<key>F7E8A5D478E81EC8621984A4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>11F02599093A23433DD895FA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9581D95282149BE321C5C452</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSLayoutConstraint+PureLayout.h</string>
-			<key>path</key>
-			<string>Source/NSLayoutConstraint+PureLayout.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>965E0BE7B8231E5081E3534F</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-WristBand.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>9789FF50F21448B7391CB155</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-WristBand-GCDObjC</string>
-			<key>target</key>
-			<string>F402DEE60CBF63ED445097A7</string>
-			<key>targetProxy</key>
-			<string>2D7C5A23395916CFC5E9D21D</string>
-		</dict>
-		<key>97D248ED468CFD2C0CC21127</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DFB7523126ECD04BA4D3C3DC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>988772134CF93246319E689E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-WristBand-FMDB-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9C154AFAD050B22DC3D59FC0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>91FC159F21D176CE09E1D228</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9EAA9CD268B2AA6F58DEFE8B</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>70436345C2D07E0D0B8F5869</string>
-				<string>04996D945E16B33ACEB49855</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>A298B3BD3CA559AE98317A44</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9581D95282149BE321C5C452</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A2CA2285380C09FCF63142A9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-WristBand-GCDObjC-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A6DD2C6E761CFD32ACD65A40</key>
-		<dict>
-			<key>fileRef</key>
-			<string>22C9984521D584ACC51CAE2D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AC69EF17AB76AFD7D3483C17</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-WristBand.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AF7274F3552487BA7AFD6E69</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-WristBand-PureLayout-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B00899BFA1C1A666B7B82729</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6250621D11118B30F2DCB8B3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B06ACBC7C485707BEB668647</key>
-		<dict>
-			<key>fileRef</key>
-			<string>105147BFD2C13FE140B4E083</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B0870EAABAEAC28F1FA9BADA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-WristBand-PureLayout-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B263387EAEAE7657DA26B9C3</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>B34A254646936C288DF1E504</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CA9CBF771B6D2F81C60EA9E6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B43FD64099EDB3242D55605E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BCFEFC81E3BE6E3CF06A1DC3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B4CB807C6BA3D96D33F04102</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CD3C70351333885AB10EBBB9</string>
-				<string>B9EC650901A6498F3CEC33D5</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>B61FC629C288582C02AF3403</key>
-		<dict>
-			<key>fileRef</key>
-			<string>411DF3AB9844E32D6F1A7430</string>
+			<string>FDC189A2B9077E4BF57CE104</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1586,105 +2186,26 @@
 				<string>-DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>B64418FFADE0CE115726DAA4</key>
+		<key>F9890E86AFFE59419E57B2A8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6E17789CA2141C44D6BA71F4</string>
+			<string>B106CC6F742FAF9AD5CA15CA</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>B85DEDBE9F3E768AB7B50E87</key>
+		<key>FB6FADDD1036D14C8A2CFF96</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>181D5F91A4C85B2C3B5BDF16</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GCDQueue.h</string>
-			<key>path</key>
-			<string>GCDObjC/GCDQueue.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B973F89A94584F3D05354237</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-WristBand-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B9EC650901A6498F3CEC33D5</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>A2CA2285380C09FCF63142A9</string>
-			<key>buildSettings</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
 			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-WristBand-GCDObjC/Pods-WristBand-GCDObjC-prefix.pch</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
+				<key>COMPILER_FLAGS</key>
+				<string>-DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
 		</dict>
-		<key>B9F6B9B34F8A536C34EB2CE3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-WristBand-GCDObjC.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BCFEFC81E3BE6E3CF06A1DC3</key>
+		<key>FB75A53F52171C00B6FF0EA7</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1699,40 +2220,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>BD7506DC7E5AE88D5E43ED8D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CC40CF5E152A253CEA5F83DD</string>
-				<string>B0870EAABAEAC28F1FA9BADA</string>
-				<string>AF7274F3552487BA7AFD6E69</string>
-				<string>82517F44ED615DBFC0F36463</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-WristBand-PureLayout</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BDC6A95E79AA19846F3306DA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GCDMacros.h</string>
-			<key>path</key>
-			<string>GCDObjC/GCDMacros.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BE22872A3863A7E78A029931</key>
+		<key>FBED8D04629595D0EC0298CA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1740,21 +2228,12 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>GCDQueue.m</string>
 			<key>path</key>
-			<string>GCDObjC/GCDQueue.m</string>
+			<string>Pods-WristBand-PureLayout-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C26042B875C22E35E549FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>56A83EE477A862F470574A4F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C32AE991281D14ACD53D200C</key>
+		<key>FDC189A2B9077E4BF57CE104</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1769,494 +2248,15 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C5266A6A44756E41CC92D473</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>360FC98B6665A0A0368C3971</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C7EC73E3A1BCC023CF985EA3</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-WristBand-FMDB</string>
-			<key>target</key>
-			<string>F7FC4338B1675BD6B10609CC</string>
-			<key>targetProxy</key>
-			<string>3F06CD01D5A16403259A85DE</string>
-		</dict>
-		<key>CA9CBF771B6D2F81C60EA9E6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-WristBand-GCDObjC-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CAB0A9C8EA3BD7C505C06B54</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>CC40CF5E152A253CEA5F83DD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-WristBand-PureLayout.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CC754E7C7BBEDBE3B07690F3</key>
+		<key>FF83CFDD5B68109576B582CD</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D0DBB4FD6210521D2A6740B3</string>
+			<string>11D0381F626F2CDC652B4E26</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>CD12B5B246EED181B1871A75</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E36DF76F434F6ACB224D1CD4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CD3C70351333885AB10EBBB9</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>A2CA2285380C09FCF63142A9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-WristBand-GCDObjC/Pods-WristBand-GCDObjC-prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CD53DB6EB40EF4EC2398BB8A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>80C580FADA8516BE97449E3C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE96A7C7302C031D9505AC7C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5DB90882A90CB8580BAD322C</string>
-				<string>800E22B1E9F1AFBF48A8A689</string>
-				<string>B00899BFA1C1A666B7B82729</string>
-				<string>06392BCA25340C7932AC9A91</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D0DBB4FD6210521D2A6740B3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FMDatabasePool.h</string>
-			<key>path</key>
-			<string>src/fmdb/FMDatabasePool.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D3700A171957173D72C05CEB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B85DEDBE9F3E768AB7B50E87</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DB1D8F81BF5041F16CC385C3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E89CDA012CF966E483FAE6B0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DBC4981738B4E6E1683EF901</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-WristBand-environment.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC646074827AE7B1684126BE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2D6A33556ACD08672220EEB2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DFB7523126ECD04BA4D3C3DC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FMResultSet.h</string>
-			<key>path</key>
-			<string>src/fmdb/FMResultSet.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E06F8036589D9AF285CB1A84</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-WristBand-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1943A3D90CE2CE854021E6D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSArray+PureLayout.m</string>
-			<key>path</key>
-			<string>Source/NSArray+PureLayout.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E36DF76F434F6ACB224D1CD4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FMDatabaseAdditions.h</string>
-			<key>path</key>
-			<string>src/fmdb/FMDatabaseAdditions.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E3BFA7E168CD65FA3BCB9F57</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>PureLayout+Internal.h</string>
-			<key>path</key>
-			<string>Source/PureLayout+Internal.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E418B2A7819C6B486A7222F4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-WristBand-FMDB-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E89CDA012CF966E483FAE6B0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GCDObjC.h</string>
-			<key>path</key>
-			<string>GCDObjC/GCDObjC.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E98546EBEE2EC7F2F333A3FB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>780A198C75F8A4FBE78F7391</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>EB1B113CE083590E3BC3A5C8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B61FC629C288582C02AF3403</string>
-				<string>F58DD2956F41119217E67809</string>
-				<string>0B2E8012EBB1B49D334AA056</string>
-				<string>ED2877A8B9D4D6980E434609</string>
-				<string>934F7BE9DD14E00EAD4D25FE</string>
-				<string>DC646074827AE7B1684126BE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>ED2877A8B9D4D6980E434609</key>
-		<dict>
-			<key>fileRef</key>
-			<string>197387E2ACB0E3F1CA016BFF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>EF166606EB7EFAB3998955D7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>780A198C75F8A4FBE78F7391</string>
-				<string>11F02599093A23433DD895FA</string>
-				<string>411DF3AB9844E32D6F1A7430</string>
-				<string>E36DF76F434F6ACB224D1CD4</string>
-				<string>C32AE991281D14ACD53D200C</string>
-				<string>D0DBB4FD6210521D2A6740B3</string>
-				<string>378E65EDE156777930429E73</string>
-				<string>91FC159F21D176CE09E1D228</string>
-				<string>197387E2ACB0E3F1CA016BFF</string>
-				<string>DFB7523126ECD04BA4D3C3DC</string>
-				<string>641E63CD14FEDE89C24755D4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>common</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F402DEE60CBF63ED445097A7</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>B4CB807C6BA3D96D33F04102</string>
-			<key>buildPhases</key>
-			<array>
-				<string>064816FA24E322FA35BB5A13</string>
-				<string>0CADB546F2B4DAEC4BDC1866</string>
-				<string>0647F6D2BA734EF1AB965692</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-WristBand-GCDObjC</string>
-			<key>productName</key>
-			<string>Pods-WristBand-GCDObjC</string>
-			<key>productReference</key>
-			<string>699FBDC6922C0029C4B41E65</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>F58DD2956F41119217E67809</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C32AE991281D14ACD53D200C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>F7FC4338B1675BD6B10609CC</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>0E6526B8C9A0CB79D7F047FC</string>
-			<key>buildPhases</key>
-			<array>
-				<string>EB1B113CE083590E3BC3A5C8</string>
-				<string>0922F945B4DF2B6CCBA18F69</string>
-				<string>86260C6450A4DE17B49068C9</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-WristBand-FMDB</string>
-			<key>productName</key>
-			<string>Pods-WristBand-FMDB</string>
-			<key>productReference</key>
-			<string>203014107C8BA677D152BCA4</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>FA657D635DB5584917C634C4</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>02A63D78BAAD91B67C9333E1</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>INSTALL_PATH</key>
-				<string>$(BUILT_PRODUCTS_DIR)</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_CFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_CPLUSPLUSFLAGS</key>
-				<array>
-					<string>-DNS_BLOCK_ASSERTIONS=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>FE7AAB85D67A03BFB702C278</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6783F9917F9AFD90C38C2758</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
-	<string>0D0A524CAE587D4BE4C31C66</string>
+	<string>486662558928B3B2081AB636</string>
 </dict>
 </plist>
