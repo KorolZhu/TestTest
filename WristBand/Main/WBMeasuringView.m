@@ -7,6 +7,7 @@
 //
 
 #import "WBMeasuringView.h"
+#import "WBDataOperation.h"
 
 @interface WBMeasuringView ()
 {
@@ -112,6 +113,8 @@
 }
 
 - (void)stopMeasuringButtonClick {
+    [[WBDataOperation shareInstance] analysing];
+    
     stopMeasuringButton.enabled = NO;
     [[BLEShareInstance CM] cancelPeripheralConnection:BLEShareInstance.activePeripheral];
     

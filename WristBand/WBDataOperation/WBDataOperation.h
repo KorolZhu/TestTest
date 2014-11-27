@@ -13,4 +13,8 @@
 
 WB_AS_SINGLETON(WBDataOperation, shareInstance)
 
+- (void)bleDidReceiveData:(UInt16)value;
+
+- (void)analysing;
+
 @end

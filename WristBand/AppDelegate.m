@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "WBContainViewController.h"
 #import "WBDatabaseService.h"
+#import "WBDataOperation.h"
 
 @interface AppDelegate ()
 
@@ -18,8 +19,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [[UIDevice currentDevice] redirectConsoleLog];
+    [[UIDevice currentDevice] redirectConsoleLog];
 
+//    [[WBDataOperation shareInstance] analysing];
+    
     [WBDatabaseService defaultService];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

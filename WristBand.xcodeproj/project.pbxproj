@@ -97,6 +97,8 @@
 		CEB79B451A06046600714531 /* WBScoreDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79B441A06046600714531 /* WBScoreDetailCell.m */; };
 		CEBC5C171A239F4B00FCFC0C /* NSDate+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBC5C161A239F4B00FCFC0C /* NSDate+WB.m */; };
 		CED1D14F1A2764B3002C66E9 /* WBDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1D14E1A2764B3002C66E9 /* WBDataOperation.m */; };
+		CED1D1521A276F34002C66E9 /* WBDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1D1511A276F34002C66E9 /* WBDataItem.m */; };
+		CED1D1541A279689002C66E9 /* test2.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CED1D1531A279689002C66E9 /* test2.rtf */; };
 		CED526811A1F885700016B4D /* WBHeartRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526801A1F885700016B4D /* WBHeartRateCell.m */; };
 		CED526841A1F888800016B4D /* WBBreathRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526831A1F888800016B4D /* WBBreathRateCell.m */; };
 		CEDBA15D1A236CA900A28AC4 /* NSString+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDBA15C1A236CA900A28AC4 /* NSString+WB.m */; };
@@ -255,6 +257,9 @@
 		CEBC5C161A239F4B00FCFC0C /* NSDate+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WB.m"; sourceTree = "<group>"; };
 		CED1D14D1A2764B3002C66E9 /* WBDataOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDataOperation.h; sourceTree = "<group>"; };
 		CED1D14E1A2764B3002C66E9 /* WBDataOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDataOperation.m; sourceTree = "<group>"; };
+		CED1D1501A276F34002C66E9 /* WBDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDataItem.h; sourceTree = "<group>"; };
+		CED1D1511A276F34002C66E9 /* WBDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDataItem.m; sourceTree = "<group>"; };
+		CED1D1531A279689002C66E9 /* test2.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test2.rtf; sourceTree = "<group>"; };
 		CED5267F1A1F885700016B4D /* WBHeartRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHeartRateCell.h; sourceTree = "<group>"; };
 		CED526801A1F885700016B4D /* WBHeartRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBHeartRateCell.m; sourceTree = "<group>"; };
 		CED526821A1F888800016B4D /* WBBreathRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBreathRateCell.h; sourceTree = "<group>"; };
@@ -486,6 +491,7 @@
 		CEB79AAB1A051D9900714531 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CED1D1531A279689002C66E9 /* test2.rtf */,
 				451F30421A2713A3002BE9A5 /* test.rtf */,
 				451F2FD71A271377002BE9A5 /* Image */,
 			);
@@ -502,6 +508,8 @@
 				CEB79AC91A05249200714531 /* WBSleepPoint.m */,
 				CE4553EF1A0F68E800E417B7 /* WBSleepScore.h */,
 				CE4553F01A0F68E800E417B7 /* WBSleepScore.m */,
+				CED1D1501A276F34002C66E9 /* WBDataItem.h */,
+				CED1D1511A276F34002C66E9 /* WBDataItem.m */,
 			);
 			name = BusinessEntity;
 			path = WristBand/BusinessEntity;
@@ -776,6 +784,7 @@
 				451F30341A271377002BE9A5 /* icon_x.png in Resources */,
 				451F30181A271377002BE9A5 /* checkbox_smart_normal_disabled.png in Resources */,
 				451F30371A271377002BE9A5 /* score_breakdown@2x.png in Resources */,
+				CED1D1541A279689002C66E9 /* test2.rtf in Resources */,
 				451F30161A271377002BE9A5 /* checkbox_smart_normal.png in Resources */,
 				451F302A1A271377002BE9A5 /* icon_heart_wide.png in Resources */,
 				451F302D1A271377002BE9A5 /* icon_idea@2x.png in Resources */,
@@ -907,6 +916,7 @@
 				CEB79ADA1A0528F300714531 /* WBMainView.m in Sources */,
 				CEB79ACA1A05249200714531 /* WBSleepPoint.m in Sources */,
 				45B75E6E1A11F1D0001AF044 /* UINavigationBar+WB.m in Sources */,
+				CED1D1521A276F34002C66E9 /* WBDataItem.m in Sources */,
 				CEAA43461A07DAAA00EDBAF3 /* WBSettingPersonalInfoCell.m in Sources */,
 				CEAA434F1A07DB0A00EDBAF3 /* WBSettingVersionCell.m in Sources */,
 				CE4553EB1A0F5D7800E417B7 /* WBContainViewController.m in Sources */,

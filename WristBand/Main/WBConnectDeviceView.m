@@ -8,7 +8,7 @@
 
 #import "WBConnectDeviceView.h"
 #import "WBMeasuringView.h"
-#import <ExternalAccessory/ExternalAccessory.h>
+#import "WBDataOperation.h"
 
 typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     WBConnectDeviceStateNormal,
@@ -219,13 +219,15 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 
 - (void)bleDidReceiveData:(unsigned char *)data length:(int)length {
     if (length >= 3) {
-        UInt8 replyCmd = data[0];
+//        UInt8 replyCmd = data[0];
         UInt8 data1 = data[1];
         UInt8 data2 = data[2];
         UInt16 value = data1 * 100 + data2;
         
+//        [[WBDataOperation shareInstance] bleDidReceiveData:value];
+        
 //        NSLog(@"cmd = %d, value = %d, length: %d", replyCmd, value, length);
-        NSLog(@"value = %4d, timestamp = %.3f", value, [[NSDate date] timeIntervalSince1970]);
+        NSLog(@"%4d,%.3f;", value, [[NSDate date] timeIntervalSince1970]);
     }
 }
 
