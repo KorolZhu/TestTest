@@ -18,7 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[UIDevice currentDevice] redirectConsoleLog];
+//    [[UIDevice currentDevice] redirectConsoleLog];
 
     [WBDatabaseService defaultService];
     

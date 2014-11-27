@@ -89,6 +89,7 @@
 		CEB79B3E1A05F92300714531 /* UIColor+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79B3D1A05F92300714531 /* UIColor+WB.m */; };
 		CEB79B451A06046600714531 /* WBScoreDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79B441A06046600714531 /* WBScoreDetailCell.m */; };
 		CEBC5C171A239F4B00FCFC0C /* NSDate+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBC5C161A239F4B00FCFC0C /* NSDate+WB.m */; };
+		CED1D14F1A2764B3002C66E9 /* WBDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1D14E1A2764B3002C66E9 /* WBDataOperation.m */; };
 		CED526811A1F885700016B4D /* WBHeartRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526801A1F885700016B4D /* WBHeartRateCell.m */; };
 		CED526841A1F888800016B4D /* WBBreathRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526831A1F888800016B4D /* WBBreathRateCell.m */; };
 		CED526891A1F89B500016B4D /* icon_average_respiration_rate.png in Resources */ = {isa = PBXBuildFile; fileRef = CED526851A1F89B500016B4D /* icon_average_respiration_rate.png */; };
@@ -244,6 +245,8 @@
 		CEB79B441A06046600714531 /* WBScoreDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBScoreDetailCell.m; sourceTree = "<group>"; };
 		CEBC5C151A239F4B00FCFC0C /* NSDate+WB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WB.h"; sourceTree = "<group>"; };
 		CEBC5C161A239F4B00FCFC0C /* NSDate+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WB.m"; sourceTree = "<group>"; };
+		CED1D14D1A2764B3002C66E9 /* WBDataOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDataOperation.h; sourceTree = "<group>"; };
+		CED1D14E1A2764B3002C66E9 /* WBDataOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDataOperation.m; sourceTree = "<group>"; };
 		CED5267F1A1F885700016B4D /* WBHeartRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHeartRateCell.h; sourceTree = "<group>"; };
 		CED526801A1F885700016B4D /* WBHeartRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBHeartRateCell.m; sourceTree = "<group>"; };
 		CED526821A1F888800016B4D /* WBBreathRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBreathRateCell.h; sourceTree = "<group>"; };
@@ -360,6 +363,7 @@
 				CED13A071A2369F000A121AF /* DB */,
 				CE4553E51A0F4E5400E417B7 /* WBUIKit */,
 				CE6DCB6C1A12344900F49843 /* BLE */,
+				CED1D14C1A276490002C66E9 /* WBDataOperation */,
 				CEB79A791A051AAB00714531 /* WristBand */,
 				CEB79A931A051AAB00714531 /* WristBandTests */,
 				CEAA436D1A09318A00EDBAF3 /* Frameworks */,
@@ -602,6 +606,16 @@
 			);
 			name = DB;
 			path = WristBand/DB;
+			sourceTree = "<group>";
+		};
+		CED1D14C1A276490002C66E9 /* WBDataOperation */ = {
+			isa = PBXGroup;
+			children = (
+				CED1D14D1A2764B3002C66E9 /* WBDataOperation.h */,
+				CED1D14E1A2764B3002C66E9 /* WBDataOperation.m */,
+			);
+			name = WBDataOperation;
+			path = WristBand/WBDataOperation;
 			sourceTree = "<group>";
 		};
 		CEDBA16A1A236E8A00A28AC4 /* Entity */ = {
@@ -874,6 +888,7 @@
 				CE4553F41A0F721C00E417B7 /* WBBaseCell.m in Sources */,
 				CEDBA1601A236DEB00A28AC4 /* WBDatabaseService.m in Sources */,
 				CEDBA18D1A23726B00A28AC4 /* WBPath.m in Sources */,
+				CED1D14F1A2764B3002C66E9 /* WBDataOperation.m in Sources */,
 				CE6DCB701A124BD400F49843 /* BLE.m in Sources */,
 				CEB79AD51A05285B00714531 /* WBMainViewController.m in Sources */,
 				CEB79B1F1A05D35E00714531 /* UIDevice+WB.m in Sources */,

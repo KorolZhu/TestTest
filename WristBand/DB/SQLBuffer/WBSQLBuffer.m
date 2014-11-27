@@ -481,7 +481,7 @@
     }
 
     if (self.limit) {
-        [sql appendFormat:@" LIMIT %ld", self.limit];
+        [sql appendFormat:@" LIMIT %ld", (long)self.limit];
     }
 
     return sql;
@@ -519,7 +519,7 @@
     }
 
     if (self.limit) {
-        [sql appendFormat:@" LIMIT %ld", self.limit];
+        [sql appendFormat:@" LIMIT %ld", (long)self.limit];
     }
 
     return sql;
@@ -633,9 +633,9 @@
 
     if (self.limit) {
         if (self.offset) {
-            [sql appendFormat:@" LIMIT %ld, %ld", self.offset, self.limit];
+            [sql appendFormat:@" LIMIT %ld, %ld", (long)self.offset, (long)self.limit];
         } else {
-            [sql appendFormat:@" LIMIT %ld", self.limit];
+            [sql appendFormat:@" LIMIT %ld", (long)self.limit];
         }
     }
 
