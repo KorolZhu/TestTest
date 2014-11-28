@@ -62,6 +62,7 @@
 		451F30411A271395002BE9A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451F30401A271395002BE9A5 /* Images.xcassets */; };
 		451F30431A2713A3002BE9A5 /* test.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 451F30421A2713A3002BE9A5 /* test.rtf */; };
 		45B75E6E1A11F1D0001AF044 /* UINavigationBar+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */; };
+		45D6F4EB1A281DAA00815F90 /* WBSleepStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F4EA1A281DAA00815F90 /* WBSleepStage.m */; };
 		CE4553E81A0F4E8200E417B7 /* WBHitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553E71A0F4E8200E417B7 /* WBHitTestView.m */; };
 		CE4553EB1A0F5D7800E417B7 /* WBContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553EA1A0F5D7800E417B7 /* WBContainViewController.m */; };
 		CE4553EE1A0F67ED00E417B7 /* WBSleepInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553ED1A0F67ED00E417B7 /* WBSleepInfo.m */; };
@@ -179,8 +180,11 @@
 		451F300B1A271377002BE9A5 /* tip_icon_sheep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_icon_sheep@2x.png"; sourceTree = "<group>"; };
 		451F30401A271395002BE9A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		451F30421A2713A3002BE9A5 /* test.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test.rtf; sourceTree = "<group>"; };
+		458666E41A287BB900D4B2BD /* WBLogicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBLogicType.h; sourceTree = "<group>"; };
 		45B75E6C1A11F1D0001AF044 /* UINavigationBar+WB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+WB.h"; sourceTree = "<group>"; };
 		45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+WB.m"; sourceTree = "<group>"; };
+		45D6F4E91A281DAA00815F90 /* WBSleepStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSleepStage.h; sourceTree = "<group>"; };
+		45D6F4EA1A281DAA00815F90 /* WBSleepStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSleepStage.m; sourceTree = "<group>"; };
 		51713049B41943CF9271265A /* Pods-WristBand.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WristBand.release.xcconfig"; path = "Pods/Target Support Files/Pods-WristBand/Pods-WristBand.release.xcconfig"; sourceTree = "<group>"; };
 		CE4553E61A0F4E8200E417B7 /* WBHitTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHitTestView.h; sourceTree = "<group>"; };
 		CE4553E71A0F4E8200E417B7 /* WBHitTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBHitTestView.m; sourceTree = "<group>"; };
@@ -510,6 +514,8 @@
 				CE4553F01A0F68E800E417B7 /* WBSleepScore.m */,
 				CED1D1501A276F34002C66E9 /* WBDataItem.h */,
 				CED1D1511A276F34002C66E9 /* WBDataItem.m */,
+				45D6F4E91A281DAA00815F90 /* WBSleepStage.h */,
+				45D6F4EA1A281DAA00815F90 /* WBSleepStage.m */,
 			);
 			name = BusinessEntity;
 			path = WristBand/BusinessEntity;
@@ -561,6 +567,7 @@
 				CE6DCB721A124EAB00F49843 /* WBSingleton.h */,
 				CEDBA18B1A23726B00A28AC4 /* WBPath.h */,
 				CEDBA18C1A23726B00A28AC4 /* WBPath.m */,
+				458666E41A287BB900D4B2BD /* WBLogicType.h */,
 			);
 			name = Common;
 			path = WristBand/Common;
@@ -912,6 +919,7 @@
 				CED1D14F1A2764B3002C66E9 /* WBDataOperation.m in Sources */,
 				CE6DCB701A124BD400F49843 /* BLE.m in Sources */,
 				CEB79AD51A05285B00714531 /* WBMainViewController.m in Sources */,
+				45D6F4EB1A281DAA00815F90 /* WBSleepStage.m in Sources */,
 				CEB79B1F1A05D35E00714531 /* UIDevice+WB.m in Sources */,
 				CEB79ADA1A0528F300714531 /* WBMainView.m in Sources */,
 				CEB79ACA1A05249200714531 /* WBSleepPoint.m in Sources */,
@@ -1032,7 +1040,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4707235f-d335-4a3e-b34d-cf06c5cc86c6";
+				PROVISIONING_PROFILE = "75bd898c-98d6-49dd-a966-f9258e8c7a38";
 			};
 			name = Debug;
 		};
@@ -1047,7 +1055,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4707235f-d335-4a3e-b34d-cf06c5cc86c6";
+				PROVISIONING_PROFILE = "75bd898c-98d6-49dd-a966-f9258e8c7a38";
 			};
 			name = Release;
 		};

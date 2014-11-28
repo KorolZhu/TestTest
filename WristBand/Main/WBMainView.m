@@ -275,13 +275,14 @@
     if (array.count > 0) {
         WBSleepPoint *point = array.firstObject;
         switch (point.state) {
-            case WBSleepPointStateNormal:
+            case WBSleepStageTypeAway:
                 return [UIColor whiteColor];
                 break;
-            case WBSleepPointStateInbed:
+            case WBSleepStageTypeAwake:
                 return RGB(175,176,160);
                 break;
-            case WBSleepPointStateFallAsleep:
+            case WBSleepStageTypeFallasleepDeep:
+			case WBSleepStageTypeFallasleepLight:
                 return RGB(63,164,191);
                 break;
             default:

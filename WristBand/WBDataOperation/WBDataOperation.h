@@ -13,8 +13,12 @@
 
 WB_AS_SINGLETON(WBDataOperation, shareInstance)
 
+- (void)startSleep;
+
 - (void)bleDidReceiveData:(UInt16)value;
 
 - (void)analysing;
+
+- (NSArray *)querySleepData;
 
 @end

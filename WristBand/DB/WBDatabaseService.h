@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class WBDatabaseTransaction;
+#import "WBDatabaseTransaction.h"
 
 @interface WBDatabaseService : NSObject
 

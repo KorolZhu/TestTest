@@ -7,7 +7,6 @@
 //
 
 #import "WBDatabaseService.h"
-#import "WBDatabaseTransaction.h"
 #import "FMDatabaseQueue.h"
 #import "WBFMDatabase.h"
 #import "FMDatabaseQueue.h"

@@ -152,6 +152,8 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 }
 
 - (void)connectDeviceClick {
+//	[[WBDataOperation shareInstance] startSleep];
+
     self.state = WBConnectDeviceStateConnecting;
     
     if (BLEShareInstance.activePeripheral)
@@ -189,7 +191,9 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
         [self.superview addSubview:measuringView];
         [measuringView startAnimation];
     }
-    
+
+//	[[WBDataOperation shareInstance] startSleep];
+	
     self.state = WBConnectDeviceStateNormal;
     
     writeTimer = [NSTimer scheduledTimerWithTimeInterval:0.2f target:self selector:@selector(writeTimer:) userInfo:nil repeats:YES];

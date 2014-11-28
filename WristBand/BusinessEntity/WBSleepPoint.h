@@ -8,18 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, WBSleepPointState) {
-    WBSleepPointStateNormal = 0,      // start sleep, but not in bed
-    WBSleepPointStateInbed,           // in bed , but not fall asleep
-    WBSleepPointStateFallAsleep,      // fall asleep
-};
-
 @interface WBSleepPoint : NSObject
 
 @property (nonatomic)NSTimeInterval time;
 @property (nonatomic)NSInteger hour;
 @property (nonatomic)NSInteger minute;
 @property (nonatomic)float sleepValue;
-@property (nonatomic)WBSleepPointState state;
+@property (nonatomic)WBSleepStageType state;
 
 @end

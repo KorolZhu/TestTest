@@ -19,10 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[UIDevice currentDevice] redirectConsoleLog];
-
+//    [[UIDevice currentDevice] redirectConsoleLog];
+//
+//	[[WBDataOperation shareInstance] startSleep];
 //    [[WBDataOperation shareInstance] analysing];
-    
+	
     [WBDatabaseService defaultService];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
