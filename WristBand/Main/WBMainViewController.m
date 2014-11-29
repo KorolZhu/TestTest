@@ -131,67 +131,68 @@ static NSString *CollectionCellIdentifier = @"collectionCellIdentifier";
 #pragma mark - Sleep data
 
 - (void)initDummyData {
-	self.sleepInfos = [NSArray arrayWithArray:[[WBDataOperation shareInstance] querySleepData]];
+//	self.sleepInfos = [NSArray arrayWithArray:[[WBDataOperation shareInstance] querySleepData]];
     
-//    NSMutableArray *mutableArr = [NSMutableArray array];
-//    
-//    for (int i = 0; i < 3; i++) {
-//        WBSleepInfo *sleepInfo = [[WBSleepInfo alloc] init];
-//        sleepInfo.time = [[NSDate date] timeIntervalSince1970];
-//        
-//        WBSleepScore *score = [[WBSleepScore alloc] init];
-//        score.amountOfSleep = 68 + i * 18;
-//        score.gotupFromBed = 10 + i * 1;
-//        score.sleepVSAwake = -5 - i * 3;
-//        score.wakingEvents = - i;
-//        score.sleepLatency = -8 + i * 4;
-//        score.snoring = - i;
-//        sleepInfo.sleepScore = score;
-//        
-//        sleepInfo.improvementIdeas = [NSString stringWithFormat:@"%d Exercise regularly", i];
-//        sleepInfo.improvementIdeasDetail = [NSString stringWithFormat:@"%d Aerobic exercise in the afternoon or at least 3 hours efore going to bed is good for sleep", i];
-//        
-//        sleepInfo.totalSleepTime = (4 + i) * 3600 + 47 * 60;
-//        
-//        NSMutableArray *array = [NSMutableArray array];
-//        
-//        NSMutableArray *inbedArray = [NSMutableArray array];
-//        NSMutableArray *fallAsleepArray1 = [NSMutableArray array];
-//        NSMutableArray *normalArray = [NSMutableArray array];
-//        NSMutableArray *fallAsleepArray2 = [NSMutableArray array];
-//        
-//        NSDate *date = [NSDate dateWithTimeInterval:-28 * 3600 sinceDate:[NSDate date]];
-//        for (int i = 0; i  < 15 * 60; i+=10) {
-//            WBSleepPoint *sleepPoint = [[WBSleepPoint alloc] init];
-//            sleepPoint.time = [[date dateByAddingTimeInterval:i * 60] timeIntervalSince1970];
-//            if (i < 100) {
-//                sleepPoint.state = WBSleepPointStateInbed;
-//                [inbedArray addObject:sleepPoint];
-//            } else if (i < 600) {
-//                sleepPoint.state = WBSleepPointStateFallAsleep;
-//                [fallAsleepArray1 addObject:sleepPoint];
-//            } else if (i < 800){
-//                sleepPoint.state = WBSleepPointStateNormal;
-//                [normalArray addObject:sleepPoint];
-//            } else {
-//                sleepPoint.state = WBSleepPointStateFallAsleep;
-//                [fallAsleepArray2 addObject:sleepPoint];
-//            }
-//            
-//            sleepPoint.sleepValue = arc4random() % 15 + 15;
-//        }
-//        [array addObject:inbedArray];
-//        [array addObject:fallAsleepArray1];
-//        [array addObject:normalArray];
-//        [array addObject:fallAsleepArray2];
-//        
-//        sleepInfo.sleepPoints = [NSArray arrayWithArray:array];
-//        [sleepInfo setup];
-//        
-//        [mutableArr addObject:sleepInfo];
-//    }
-//    
-//    self.sleepInfos = [NSArray arrayWithArray:mutableArr];
+    NSMutableArray *mutableArr = [NSMutableArray array];
+    
+    for (int i = 0; i < 3; i++) {
+        WBSleepInfo *sleepInfo = [[WBSleepInfo alloc] init];
+        sleepInfo.time = [[NSDate date] timeIntervalSince1970];
+        
+        WBSleepScore *score = [[WBSleepScore alloc] init];
+        score.amountOfSleep = 68 + i * 18;
+        score.gotupFromBed = 10 + i * 1;
+        score.sleepVSAwake = -5 - i * 3;
+        score.wakingEvents = - i;
+        score.sleepLatency = -8 + i * 4;
+        score.snoring = - i;
+        sleepInfo.sleepScore = score;
+        
+        sleepInfo.improvementIdeas = [NSString stringWithFormat:@"%d Exercise regularly", i];
+        sleepInfo.improvementIdeasDetail = [NSString stringWithFormat:@"%d Aerobic exercise in the afternoon or at least 3 hours efore going to bed is good for sleep", i];
+        
+        sleepInfo.totalSleepTime = (4 + i) * 3600 + 47 * 60;
+        
+        NSMutableArray *array = [NSMutableArray array];
+        
+        NSMutableArray *awayArray = [NSMutableArray array];
+        NSMutableArray *awakeArray = [NSMutableArray array];
+        NSMutableArray *sleepArray = [NSMutableArray array];
+        
+        NSDate *date = [NSDate dateWithTimeInterval:-8 * 3600 sinceDate:[NSDate date]];
+        for (int i = 0; i  < 15 * 60; i+=30) {
+            WBSleepPoint *sleepPoint = [[WBSleepPoint alloc] init];
+            sleepPoint.time = [[date dateByAddingTimeInterval:i * 60] timeIntervalSince1970];
+            if (i < 50) {
+                sleepPoint.state = WBSleepStageTypeAway;
+                sleepPoint.sleepValue = 15.0f;
+                [awayArray addObject:sleepPoint];
+            } else if (i < 100) {
+                sleepPoint.state = WBSleepStageTypeAwake;
+                sleepPoint.sleepValue = 15.0f;
+                [awakeArray addObject:sleepPoint];
+            } else {
+                sleepPoint.state =  (arc4random() % 2 == 1) ? WBSleepStageTypeFallasleepLight : WBSleepStageTypeFallasleepDeep;
+                [sleepArray addObject:sleepPoint];
+                if (sleepPoint.state == WBSleepStageTypeFallasleepDeep) {
+                    sleepPoint.sleepValue = 30.0f;
+                } else {
+                    sleepPoint.sleepValue = arc4random() % 15 + 15;
+                }
+            }
+            
+        }
+        [array addObject:awayArray];
+        [array addObject:awakeArray];
+        [array addObject:sleepArray];
+        
+        sleepInfo.sleepPoints = [NSArray arrayWithArray:array];
+        [sleepInfo setup];
+        
+        [mutableArr addObject:sleepInfo];
+    }
+    
+    self.sleepInfos = [NSArray arrayWithArray:mutableArr];
 }
 
 - (void)mainViewDidScroll:(WBMainView *)mainView {

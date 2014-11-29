@@ -113,7 +113,7 @@
 }
 
 - (void)stopMeasuringButtonClick {
-    [[WBDataOperation shareInstance] analysing];
+    [[WBDataOperation shareInstance] stopSleep];
     
     stopMeasuringButton.enabled = NO;
     [[BLEShareInstance CM] cancelPeripheralConnection:BLEShareInstance.activePeripheral];

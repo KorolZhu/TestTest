@@ -23,4 +23,14 @@
     return formatString;
 }
 
++ (NSInteger)currentHour {
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit| NSMinuteCalendarUnit;
+    NSCalendar *calendar;
+    calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *comps = [calendar components:unitFlags fromDate:[NSDate date]];
+    NSInteger hour = [comps hour];
+    return hour;
+}
+
 @end

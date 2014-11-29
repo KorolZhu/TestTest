@@ -13,10 +13,5 @@
 @property (nonatomic)WBSleepStageType type;
 @property (nonatomic)double startTimeStamp;
 @property (nonatomic)double endTimeStamp;
-@property (nonatomic)double timeInterval;
-@property (nonatomic)NSInteger startTag;
-@property (nonatomic)NSInteger endTag;
-
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

@@ -19,12 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [[UIDevice currentDevice] redirectConsoleLog];
-//
-//	[[WBDataOperation shareInstance] startSleep];
-//    [[WBDataOperation shareInstance] analysing];
-	
-    [WBDatabaseService defaultService];
+//    WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] init];
+//    sqlbuffer.DELELTE(@"SLEEPSTAGE").WHERE(@"1=1");
+//    WBDatabaseTransaction *transaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:sqlbuffer];
+//    [[WBDatabaseService defaultService] writeWithTransaction:transaction completionBlock:^{}];
+    
+
+    [[UIDevice currentDevice] redirectConsoleLog];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

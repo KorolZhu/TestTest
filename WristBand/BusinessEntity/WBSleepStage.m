@@ -10,16 +10,4 @@
 
 @implementation WBSleepStage
 
-- (double)timeInterval {
-	return _endTimeStamp - _startTimeStamp;
-}
-
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-	self = [super init];
-	if (self) {
-	}
-	
-	return self;
-}
-
 @end

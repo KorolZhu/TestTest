@@ -152,8 +152,6 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 }
 
 - (void)connectDeviceClick {
-//	[[WBDataOperation shareInstance] startSleep];
-
     self.state = WBConnectDeviceStateConnecting;
     
     if (BLEShareInstance.activePeripheral)
@@ -192,23 +190,21 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
         [measuringView startAnimation];
     }
 
-//	[[WBDataOperation shareInstance] startSleep];
+	[[WBDataOperation shareInstance] startSleep];
 	
     self.state = WBConnectDeviceStateNormal;
     
     writeTimer = [NSTimer scheduledTimerWithTimeInterval:0.2f target:self selector:@selector(writeTimer:) userInfo:nil repeats:YES];
 }
 
--(void)bleDidUpdateRSSI:(NSNumber *)rssi {
-    NSLog(@"rssi = %d", rssi.intValue);
-}
-
 -(void)writeTimer:(NSTimer *)timer {
     UInt8 buf[] = {0x07};
     NSData *data = [[NSData alloc] initWithBytes:buf length:1];
     [BLEShareInstance write:data];
+}
+
+- (void)bleDidWriteValue {
     
-//    [BLEShareInstance readRSSI];
 }
 
 - (void)bleDidDisconnect {
@@ -217,20 +213,14 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     self.state = WBConnectDeviceStateNormal;
 }
 
-- (void)bleDidWriteValue {
-//    [BLEShareInstance read];
-}
-
 - (void)bleDidReceiveData:(unsigned char *)data length:(int)length {
     if (length >= 3) {
-//        UInt8 replyCmd = data[0];
         UInt8 data1 = data[1];
         UInt8 data2 = data[2];
         UInt16 value = data1 * 100 + data2;
         
-//        [[WBDataOperation shareInstance] bleDidReceiveData:value];
+        [[WBDataOperation shareInstance] bleDidReceiveData:value];
         
-//        NSLog(@"cmd = %d, value = %d, length: %d", replyCmd, value, length);
         NSLog(@"%4d,%.3f;", value, [[NSDate date] timeIntervalSince1970]);
     }
 }

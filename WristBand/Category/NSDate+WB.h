@@ -12,4 +12,6 @@
 
 - (NSString *)stringWithFormat:(NSString *)format;
 
++ (NSInteger)currentHour;
+
 @end

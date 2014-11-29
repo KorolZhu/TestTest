@@ -13,11 +13,12 @@
 #import "WBDatabaseService.h"
 #import "WBSleepInfo.h"
 #import "WBSleepPoint.h"
+#import "WBPath.h"
 
 @interface WBDataOperation ()
 {
     NSMutableString *mutableString;
-	NSInteger dateymd;
+	NSInteger currentDateymd;
 }
 
 @end
@@ -36,206 +37,246 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
 }
 
 - (void)startSleep {
-	NSString *date = [[NSDate date] stringWithFormat:@"yyyyMMdd"];
-	dateymd = [date longLongValue];
-	NSTimeInterval timestamp = [[NSDate date] timeIntervalSince1970];
+    // 判断当前是否大于12点，大于则当前睡眠时间计入下一天
+    NSInteger hour = [NSDate currentHour];
+    if (hour > 12) {
+        NSDate *nextDay = [[NSDate date] dateByAddingTimeInterval:12 * 3600];
+        NSString *date = [nextDay stringWithFormat:@"yyyyMMdd"];
+        currentDateymd = [date integerValue];
+    } else {
+        NSString *date = [[NSDate date] stringWithFormat:@"yyyyMMdd"];
+        currentDateymd = [date integerValue];
+    }
+    
 	WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] init];
-	sqlbuffer.SELECT(@"*").FROM(@"SLEEP").WHERE([NSString stringWithFormat:@"%@=%ld", @"DATEYMD", (long)dateymd]);
+	sqlbuffer.SELECT(@"*").FROM(@"SLEEP").WHERE([NSString stringWithFormat:@"%@=%ld", @"DATEYMD", (long)currentDateymd]);
 	WBDatabaseTransaction *transaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:sqlbuffer];
-	[[WBDatabaseService defaultService] readWithTransaction:transaction completionBlock:^{
-		if (transaction.resultSet.resultArray.count == 0) {
-			WBSQLBuffer *insertSqlbuffer = [[WBSQLBuffer alloc] init];
-			insertSqlbuffer.INSERT(@"SLEEP").SET(@"DATEYMD",@(dateymd)).SET(@"STARTTIME",@(timestamp));
-			WBDatabaseTransaction *insertTransaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:insertSqlbuffer];
-			[[WBDatabaseService defaultService] writeWithTransaction:insertTransaction completionBlock:^{
-				if (insertTransaction.resultSet.resultCode == HTDatabaseResultSucceed) {
-					
-				}
-			}];
-		}
-	}];
+    [[WBDatabaseService defaultService] readWithTransaction:transaction completionBlock:^{}];
+    if (transaction.resultSet.resultArray.count == 0) {
+        WBSQLBuffer *insertSqlbuffer = [[WBSQLBuffer alloc] init];
+        insertSqlbuffer.INSERT(@"SLEEP").SET(@"DATEYMD",@(currentDateymd)).SET(@"STARTTIME",@([[NSDate date] timeIntervalSince1970]));
+        WBDatabaseTransaction *insertTransaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:insertSqlbuffer];
+        [[WBDatabaseService defaultService] writeWithTransaction:insertTransaction completionBlock:^{}];
+    }
+}
+
+- (void)stopSleep {
+    if (mutableString.length > 0) {
+        NSString *documentPath = [WBPath documentPath];
+        NSString *dataPath = [documentPath stringByAppendingFormat:@"/%@.dat", @(currentDateymd).stringValue];
+        NSData *dataToAppend = [mutableString dataUsingEncoding:NSUTF8StringEncoding];
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:dataPath]) {
+            [dataToAppend writeToFile:dataPath atomically:YES];
+        } else {
+            NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:dataPath];
+            [fileHandle seekToEndOfFile];
+            
+            [fileHandle writeData:dataToAppend];
+            [fileHandle closeFile];
+        }
+        
+        [mutableString deleteCharactersInRange:NSMakeRange(0, mutableString.length)];
+    }
+    
+    WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] init];
+    sqlbuffer.UPDATE(@"SLEEP").SET(@"ENDTIME", @([[NSDate date] timeIntervalSince1970])).WHERE([NSString stringWithFormat:@"%@=%ld", @"DATEYMD", (long)currentDateymd]);
+    WBDatabaseTransaction *transaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:sqlbuffer];
+    [[WBDatabaseService defaultService] writeWithTransaction:transaction completionBlock:^{}];
+    
+    [self analysing];
 }
 
 - (void)bleDidReceiveData:(UInt16)value {
     NSString *string = [NSString stringWithFormat:@"%4d,%.3f;", value, [[NSDate date] timeIntervalSince1970]];
     [mutableString appendString:string];
+    
+    if (mutableString.length > 1000) {
+        NSString *documentPath = [WBPath documentPath];
+        NSString *dataPath = [documentPath stringByAppendingFormat:@"/%@.dat", @(currentDateymd).stringValue];
+        NSString *stringToAppend = [mutableString substringToIndex:1000];
+        NSData *dataToAppend = [stringToAppend dataUsingEncoding:NSUTF8StringEncoding];
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:dataPath]) {
+            [dataToAppend writeToFile:dataPath atomically:YES];
+        } else {
+            NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:dataPath];
+            [fileHandle seekToEndOfFile];
+            
+            [fileHandle writeData:dataToAppend];
+            [fileHandle closeFile];
+        }
+        
+        [mutableString deleteCharactersInRange:NSMakeRange(0, 1000)];
+    }
 }
 
 - (void)analysing {
-	NSMutableArray *sleepStagesArray = [NSMutableArray array];
-	
-    NSString *string = [[NSString alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"test2" ofType:@"rtf"] encoding:NSUTF8StringEncoding error:NULL];
-//    NSArray *dataArray = [mutableString componentsSeparatedByString:@";"];
-    NSArray *dataArray = [string componentsSeparatedByString:@";"];
+    NSString *documentPath = [WBPath documentPath];
+    NSString *dataPath = [documentPath stringByAppendingFormat:@"/%@.dat", @(currentDateymd).stringValue];
+    NSString *dataString = [[NSString alloc] initWithContentsOfFile:dataPath encoding:NSUTF8StringEncoding error:NULL];
+    if (dataString.length < 2 * 60 * 5) {
+        return;
+    }
     
-    NSMutableArray *intervalArray = [NSMutableArray array];
+    NSArray *dataArray = [dataString componentsSeparatedByString:@";"];
+    NSMutableArray *sleepStages = [NSMutableArray array];
     
-    // 算出每两个值之间的差值
+    NSInteger startIndex = 0;
+    WBDataItem *firstItem = [[WBDataItem alloc] initWithString:dataArray.firstObject];
     for (NSInteger i = 0; i < dataArray.count; i++) {
         NSString *string = [dataArray objectAtIndex:i];
         WBDataItem *item = [[WBDataItem alloc] initWithString:string];
         
-        if (i + 1 < dataArray.count) {
-            NSString *string1 = [dataArray objectAtIndex:i + 1];
-            WBDataItem *item1 = [[WBDataItem alloc] initWithString:string1];
+        // to bed 时间
+        if (item.timeStamp - firstItem.timeStamp > 5 * 60) {
+            // 更新to bed的时间
+            WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] init];
+            sqlbuffer.UPDATE(@"SLEEP").SET(@"TOBEDTIME", @(item.timeStamp)).WHERE([NSString stringWithFormat:@"%@=%ld", @"DATEYMD", (long)currentDateymd]);
+            WBDatabaseTransaction *transaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:sqlbuffer];
+            [[WBDatabaseService defaultService] writeWithTransaction:transaction completionBlock:^{}];
             
-            [intervalArray addObject:@(ABS(item1.value - item.value))];
+            // 添加空白区域
+            WBDataItem *firstItem = [[WBDataItem alloc] initWithString:dataArray.firstObject];
+            WBSleepStage *sleepStage = [[WBSleepStage alloc] init];
+            sleepStage.type = WBSleepStageTypeAway;
+            sleepStage.startTimeStamp = firstItem.timeStamp;
+            sleepStage.endTimeStamp = item.timeStamp;
+            [sleepStages addObject:sleepStage];
+            
+            startIndex = i;
+            
+            break;
         }
     }
     
-    NSMutableArray *tempDataArray = [NSMutableArray arrayWithArray:dataArray];
-    NSMutableArray *tempIntervalArray = [NSMutableArray arrayWithArray:intervalArray];
-	
-	
-    // 找出空载的时间: 平均值少于18,时间大于15秒
-    for (NSInteger i = 0; i < intervalArray.count; ) {
-        long long total = 0;
-        
-        NSInteger j = i;
-        do {
-            UInt16 interval = [[intervalArray objectAtIndex:j] integerValue];
-            total += interval;
-            j++;
-        } while (total / (float)(j - i) < 18 && j < intervalArray.count);
-        
-//        NSLog(@"j - i = %d , j = %d, intervale = %ld", j - i, j, [[intervalArray objectAtIndex:j] integerValue]);
-
-        if (j - i >= 15 * 5) {
-			WBDataItem *item1 = [[WBDataItem alloc] initWithString:[dataArray objectAtIndex:i]];
-			WBDataItem *item2 = [[WBDataItem alloc] initWithString:[dataArray objectAtIndex:j - i - 1]];
-			WBSleepStage *sleepStage = [[WBSleepStage alloc] init];
-			sleepStage.type = WBSleepStageTypeAway;
-			sleepStage.startTimeStamp = item1.timeStamp;
-			sleepStage.endTimeStamp = item2.timeStamp;
-			[sleepStagesArray addObject:sleepStage];
-			
-            [tempDataArray removeObjectsInRange:NSMakeRange(i, j - i)];
-            [tempIntervalArray removeObjectsInRange:NSMakeRange(i, j - i)];
+    firstItem = nil;
+    for (NSInteger i = startIndex; i < dataArray.count; i++) {
+        NSString *string = [dataArray objectAtIndex:i];
+        WBDataItem *item = [[WBDataItem alloc] initWithString:string];
+        if (!firstItem) {
+            firstItem = item;
         }
         
-        if (j >= intervalArray.count - 10) {
+        if (item.timeStamp - firstItem.timeStamp > 5 * 60) {
+            // 添加灰色区域
+            WBSleepStage *sleepStage = [[WBSleepStage alloc] init];
+            sleepStage.type = WBSleepStageTypeAwake;
+            sleepStage.startTimeStamp = firstItem.timeStamp;
+            sleepStage.endTimeStamp = item.timeStamp;
+            [sleepStages addObject:sleepStage];
+            
+            startIndex = i;
+            
             break;
+            
+        }
+    }
+    
+    firstItem = nil;
+    for (NSInteger i = startIndex; i < dataArray.count; i++) {
+        NSString *string = [dataArray objectAtIndex:i];
+        WBDataItem *item = [[WBDataItem alloc] initWithString:string];
+        if (!firstItem) {
+            firstItem = item;
         }
         
-        i = j;
-        
+        if (item.timeStamp - firstItem.timeStamp > 5 * 60) {
+            // 添加蓝色区域
+            WBSleepStage *sleepStage = [[WBSleepStage alloc] init];
+            sleepStage.type = (arc4random() % 2 == 1) ? WBSleepStageTypeFallasleepDeep : WBSleepStageTypeFallasleepLight;
+            sleepStage.startTimeStamp = firstItem.timeStamp;
+            sleepStage.endTimeStamp = item.timeStamp;
+            [sleepStages addObject:sleepStage];
+            
+            firstItem = nil;
+        }
     }
-	
-    dataArray = [NSArray arrayWithArray:tempDataArray];
-	
-    // 找出醒着的时间，五分钟之内<100,>1800的次数超过50次
-	NSInteger Lessthan100 = 0;
-	NSInteger greaterThan1800 = 0;
-	WBDataItem *startDataItem = nil;
-	NSInteger startIndex = 0;
-	WBSleepStage *lastSleepStage = nil;
-    for (NSInteger i = 0; i < dataArray.count; i++) {
-		NSString *string = [dataArray objectAtIndex:i];
-		WBDataItem *item = [[WBDataItem alloc] initWithString:string];
-		if (!startDataItem) {
-			startDataItem = item;
-			startIndex = i;
-		}
-		
-		if (item.timeStamp - startDataItem.timeStamp > 5 * 60) {
-			WBSleepStage *sleepStage = nil;
-			if (Lessthan100 + greaterThan1800 > 50) {
-				sleepStage = [[WBSleepStage alloc] init];
-				sleepStage.type = WBSleepStageTypeAwake;
-				sleepStage.startTimeStamp = startDataItem.timeStamp;
-				sleepStage.endTimeStamp = item.timeStamp;
-				sleepStage.startTag = startIndex;
-				sleepStage.endTag = i;
-			}
-			
-			if (!sleepStage) {
-				if (lastSleepStage) {
-					[sleepStagesArray addObject:lastSleepStage];
-					[tempDataArray removeObjectsInRange:NSMakeRange(lastSleepStage.startTag, lastSleepStage.endTag - lastSleepStage.startTag)];
-					lastSleepStage = nil;
-				}
-			} else {
-				if (!lastSleepStage) {
-					lastSleepStage = sleepStage;
-				} else {
-					if (sleepStage.startTimeStamp - lastSleepStage.endTimeStamp <= 2 * 60) {
-						lastSleepStage.endTimeStamp = sleepStage.endTimeStamp;
-						lastSleepStage.endTag = i;
-					} else {
-						[sleepStagesArray addObject:lastSleepStage];
-						[tempDataArray removeObjectsInRange:NSMakeRange(lastSleepStage.startTag, lastSleepStage.endTag - lastSleepStage.startTag)];
-						lastSleepStage = sleepStage;
-					}
-				}
-			}
-			
-			startDataItem = nil;
-			Lessthan100 = 0;
-			greaterThan1800 = 0;
-			
-			continue;
-		}
-		
-		if (item.value < 100) {
-			Lessthan100++;
-		} else if (item.value > 1800) {
-			greaterThan1800++;
-		}
+    
+    WBMutableSQLBuffer *mutableSqlBuffer = [[WBMutableSQLBuffer alloc] init];
+    for (WBSleepStage *sleepStage in sleepStages) {
+        WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] init];
+        sqlbuffer.INSERT(@"SLEEPSTAGE")
+        .SET(@"DATEYMD",@(currentDateymd))
+        .SET(@"ENDTIME",@(sleepStage.endTimeStamp))
+        .SET(@"STARTTIME",@(sleepStage.startTimeStamp))
+        .SET(@"STAGE",@(sleepStage.type));
+        [mutableSqlBuffer addBuffer:sqlbuffer];
     }
-	
-	if (lastSleepStage) {
-		[sleepStagesArray addObject:lastSleepStage];
-		[tempDataArray removeObjectsInRange:NSMakeRange(lastSleepStage.startTag, lastSleepStage.endTag - lastSleepStage.startTag)];
-	}
-	
-	dataArray = [NSArray arrayWithArray:tempDataArray];
-	
-	// 找出深睡的时间，电压值在<850,1150>之间变化
-	
-	startDataItem = nil;
-	startIndex = 0;
-	for (NSInteger i = 0; i < dataArray.count; i++) {
-		NSString *string = [dataArray objectAtIndex:i];
-		WBDataItem *item = [[WBDataItem alloc] initWithString:string];
-		if (!startDataItem) {
-			startDataItem = item;
-			startIndex = i;
-		}
-		if (item.value >= 800 && item.value <= 1200) {
-			continue;
-		} else {
-			if (i - startIndex >= 1 * 30 * 5) {
-				WBSleepStage *sleepStage = [[WBSleepStage alloc] init];
-				sleepStage.type = WBSleepStageTypeFallasleepDeep;
-				sleepStage.startTimeStamp = startDataItem.timeStamp;
-				sleepStage.endTimeStamp = item.timeStamp;
-				[sleepStagesArray addObject:sleepStage];
-			}
-			startDataItem = nil;
-			startIndex = 0;
-		}
-	}
-	
-	// 其余的就是浅睡的时间
-	WBMutableSQLBuffer *mutableSqlBuffer = [[WBMutableSQLBuffer alloc] init];
-	for (WBSleepStage *sleepStage in sleepStagesArray) {
-		WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] init];
-		sqlbuffer.INSERT(@"SLEEPSTAGE")
-		.SET(@"DATEYMD",@(dateymd))
-		.SET(@"ENDTIME",@(sleepStage.endTimeStamp))
-		.SET(@"STARTTIME",@(sleepStage.startTimeStamp))
-		.SET(@"STAGE",@(sleepStage.type));
-		[mutableSqlBuffer addBuffer:sqlbuffer];
-	}
-	
-	WBDatabaseTransaction *insertTransaction = [[WBDatabaseTransaction alloc] initWithMutalbeSQLBuffer:mutableSqlBuffer];
-	[[WBDatabaseService defaultService] writeWithTransaction:insertTransaction completionBlock:^{
-		if (insertTransaction.resultSet.resultCode == HTDatabaseResultSucceed) {
-			
-		}
-	}];
-	
+    
+    WBDatabaseTransaction *insertTransaction = [[WBDatabaseTransaction alloc] initWithMutalbeSQLBuffer:mutableSqlBuffer];
+    [[WBDatabaseService defaultService] writeWithTransaction:insertTransaction completionBlock:^{
+        if (insertTransaction.resultSet.resultCode == HTDatabaseResultSucceed) {
+            NSLog(@"Analysing succeed");
+        }
+    }];
+    
+    
+//    // 得分计算
+//    WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] init];
+//    sqlbuffer.INSERT(@"SLEEPPROPERTY")
+//    .SET(@"DATEYMD",@(currentDateymd))
+//    .SET(@"AMOUNTOFSLEEP",@(100))
+//    .SET(@"SLEEPVSAWAKE",@(10))
+//    .SET(@"SLEEPLATENCY",@(10))
+//    .SET(@"GOTUP",@(10))
+//    .SET(@"WAKINGEVENTS",@(10))
+//    .SET(@"SNORING",@(10))
+//    .SET(@"TOTAL",@(10))
+//    .SET(@"BPM",@(10))
+//    .SET(@"BREATHSPM",@(10));
+//    WBDatabaseTransaction *insertTransaction = [[WBDatabaseTransaction alloc] initWithMutalbeSQLBuffer:mutableSqlBuffer];
+//    [[WBDatabaseService defaultService] writeWithTransaction:insertTransaction completionBlock:^{
+//        if (insertTransaction.resultSet.resultCode == HTDatabaseResultSucceed) {
+//            NSLog(@"Analysing succeed");
+//        }
+//    }];
 
+    
+//    NSInteger startIndex = 0;
+//    for (NSInteger i = 0; i < dataArray.count; i++) {
+//        NSString *string = [dataArray objectAtIndex:i];
+//        WBDataItem *item = [[WBDataItem alloc] initWithString:string];
+//        
+//        if (item.value > 2000) {
+//            // 更新to bed的时间
+//            WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] init];
+//            sqlbuffer.UPDATE(@"SLEEP").SET(@"TOBEDTIME", @(item.timeStamp)).WHERE([NSString stringWithFormat:@"%@=%ld", @"DATEYMD", (long)currentDateymd]);
+//            WBDatabaseTransaction *transaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:sqlbuffer];
+//            [[WBDatabaseService defaultService] writeWithTransaction:transaction completionBlock:^{}];
+//            
+//            // 添加空白区域
+//            WBDataItem *firstItem = [[WBDataItem alloc] initWithString:dataArray.firstObject];
+//            WBSleepStage *sleepStage = [[WBSleepStage alloc] init];
+//            sleepStage.type = WBSleepStageTypeAway;
+//            sleepStage.startTimeStamp = firstItem.timeStamp;
+//            sleepStage.endTimeStamp = item.timeStamp;
+//            [sleepStages addObject:sleepStage];
+//            
+//            startIndex = i;
+//            break;
+//        } else if (i == dataArray.count - 1) {
+//            // 添加空白区域
+//            WBDataItem *firstItem = [[WBDataItem alloc] initWithString:dataArray.firstObject];
+//            WBSleepStage *sleepStage = [[WBSleepStage alloc] init];
+//            sleepStage.type = WBSleepStageTypeAway;
+//            sleepStage.startTimeStamp = firstItem.timeStamp;
+//            sleepStage.endTimeStamp = item.timeStamp;
+//            [sleepStages addObject:sleepStage];
+//            
+//            startIndex = i;
+//        }
+//    }
+//    
+//    for (NSInteger i = startIndex; i < dataArray.count; i++) {
+//        // 找出第一次入睡的时间，电压值在<850,1150>之间变化
+//        NSString *string = [dataArray objectAtIndex:i];
+//        WBDataItem *item = [[WBDataItem alloc] initWithString:string];
+//        
+//        
+//
+//    }
+    
 }
 
 - (NSArray *)querySleepData {
@@ -247,9 +288,9 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
 	WBDatabaseTransaction *transaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:sqlbuffer];
 	[[WBDatabaseService defaultService] readWithTransaction:transaction completionBlock:^{}];
 	for (NSDictionary *dictionary in transaction.resultSet.resultArray) {
-		NSInteger tempDateymd = [[dictionary objectForKey:@"DATEYMD"] longLongValue];
+		NSInteger tempDateymd = [[dictionary objectForKey:@"DATEYMD"] integerValue];
 		WBSQLBuffer *stageSqlbuffer = [[WBSQLBuffer alloc] init];
-		stageSqlbuffer.SELECT(@"*").FROM(@"SLEEPSTAGE").WHERE([NSString stringWithFormat:@"%@=%ld",@"DATEYMD", tempDateymd]).ORDERBY(@"STARTTIME",ASC);
+		stageSqlbuffer.SELECT(@"*").FROM(@"SLEEPSTAGE").WHERE([NSString stringWithFormat:@"%@=%ld",@"DATEYMD", (long)(long)tempDateymd]).ORDERBY(@"STARTTIME",ASC);
 		WBDatabaseTransaction *stageTransaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:stageSqlbuffer];
 		[[WBDatabaseService defaultService] readWithTransaction:stageTransaction completionBlock:^{}];
 		
@@ -299,8 +340,9 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
 			[array addObject:pointAray];
 		}
 		
-		
-		sleepInfo.sleepPoints = [NSArray arrayWithArray:array];
+        if (array.count > 0) {
+            sleepInfo.sleepPoints = [NSArray arrayWithArray:array];
+        }
 		[sleepInfo setup];
 		
 		[mutableArr addObject:sleepInfo];

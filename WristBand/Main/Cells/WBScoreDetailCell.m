@@ -240,7 +240,7 @@
     if (sleepVSAwake > 0) {
         sleepVSAwakeString = [NSString stringWithFormat:@"+%d", sleepVSAwake];
     } else if (sleepVSAwake < 0){
-        sleepVSAwakeString = [NSString stringWithFormat:@"-%d", sleepVSAwake];
+        sleepVSAwakeString = [NSString stringWithFormat:@"%d", sleepVSAwake];
     } else {
         sleepVSAwakeString = @"0";
     }
@@ -252,7 +252,7 @@
     if (sleepLatency > 0) {
         sleepLatencyString = [NSString stringWithFormat:@"+%d", sleepLatency];
     } else if (sleepVSAwake < 0){
-        sleepLatencyString = [NSString stringWithFormat:@"-%d", sleepLatency];
+        sleepLatencyString = [NSString stringWithFormat:@"%d", sleepLatency];
     } else {
         sleepLatencyString = @"0";
     }
@@ -264,7 +264,7 @@
     if (gotup > 0) {
         gotupString = [NSString stringWithFormat:@"+%d", gotup];
     } else if (gotup < 0){
-        gotupString = [NSString stringWithFormat:@"-%d", gotup];
+        gotupString = [NSString stringWithFormat:@"%d", gotup];
     } else {
         gotupString = @"0";
     }
@@ -276,7 +276,7 @@
     if (wakingEvents > 0) {
         wakingEventsString = [NSString stringWithFormat:@"+%d", wakingEvents];
     } else if (wakingEvents < 0){
-        wakingEventsString = [NSString stringWithFormat:@"-%d", wakingEvents];
+        wakingEventsString = [NSString stringWithFormat:@"%d", wakingEvents];
     } else {
         wakingEventsString = @"0";
     }
@@ -289,7 +289,7 @@
     if (snoring > 0) {
         snoringString = [NSString stringWithFormat:@"+%d", snoring];
     } else if (snoring < 0){
-        snoringString = [NSString stringWithFormat:@"-%d", snoring];
+        snoringString = [NSString stringWithFormat:@"%d", snoring];
     } else {
         snoringString = @"0";
     }
