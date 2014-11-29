@@ -3,6 +3,7 @@ DATEYMD integer PRIMARY KEY DEFAULT 0,
 ENDTIME float,
 STARTTIME float,
 TOBEDTIME float,
+FALLASLEEPTIME float,
 TIMEZONE varchar);
 CREATE TABLE IF NOT EXISTS SLEEPSTAGE (
 DATEYMD integer,
@@ -19,5 +20,6 @@ GOTUP integer,
 WAKINGEVENTS integer,
 SNORING integer,
 TOTAL integer,
+TOTALSLEEPTIME float,
 BPM integer,
 BREATHSPM integer);

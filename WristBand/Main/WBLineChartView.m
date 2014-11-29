@@ -161,7 +161,7 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
             label.layer.cornerRadius = 5.0f;
             label.clipsToBounds = YES;
             if (info.state == WBSleepStageTypeAwake) {
-                label.text = @"To bed 18:30";
+                label.text =  @"To bed 18:30";
             } else {
                 label.text = @"Fall asleep in 30 min";
             }

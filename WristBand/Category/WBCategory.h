@@ -16,5 +16,6 @@
 #import "UINavigationBar+WB.h"
 #import "NSString+WB.h"
 #import "NSDate+WB.h"
+#import "NSDictionary+WB.h"
 
 #endif

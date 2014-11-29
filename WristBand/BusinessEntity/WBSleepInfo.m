@@ -15,11 +15,20 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     _timeString = [dateFormatter stringFromDate:date];
-    _goalPercent = _totalSleepTime / (7.0f * 3600);
+    if (_toBedTime > 0) {
+        NSDate *toBedDate = [NSDate dateWithTimeIntervalSince1970:self.toBedTime];
+        _toBedTimeString = [NSString stringWithFormat:@"To bed %@", [NSDate detailDate:toBedDate]];
+    }
+    
+    if (_toBedTime > 0 && _fallAsleepTime > 0) {
+        NSTimeInterval interval = _fallAsleepTime - _toBedTime;
+        _fallAsleepInTimeString = [NSString stringWithFormat:@"Fall asleep in %@", [NSDate formatSeconds:interval]];
+    }
+    _goalPercent = _totalSleepTime / ([[NSUserDefaults standardUserDefaults] floatForKey:WBSleepTimeGoal] * 3 * 3600 + 6 * 3600);
     int hour = _totalSleepTime / 3600;
     int minute = (long)_totalSleepTime % 3600 / 60.0f;
     _totalSleepTimeString = [NSString stringWithFormat:@"%d h %d min", hour, minute];
-    _goalPercentString = [NSString stringWithFormat:@"%.0f%% of goal", 100 * _totalSleepTime / (7.0f * 3600)];
+    _goalPercentString = [NSString stringWithFormat:@"%.0f%% of goal", 100 * _goalPercent];
 }
 
 @end

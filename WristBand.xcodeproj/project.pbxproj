@@ -100,6 +100,9 @@
 		CED1D14F1A2764B3002C66E9 /* WBDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1D14E1A2764B3002C66E9 /* WBDataOperation.m */; };
 		CED1D1521A276F34002C66E9 /* WBDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1D1511A276F34002C66E9 /* WBDataItem.m */; };
 		CED1D1541A279689002C66E9 /* test2.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CED1D1531A279689002C66E9 /* test2.rtf */; };
+		CED1D1561A29996E002C66E9 /* test3.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CED1D1551A29996E002C66E9 /* test3.rtf */; };
+		CED1D1591A29BA03002C66E9 /* NSDictionary+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1D1581A29BA03002C66E9 /* NSDictionary+WB.m */; };
+		CED1D15B1A2A0A73002C66E9 /* test4.txt in Resources */ = {isa = PBXBuildFile; fileRef = CED1D15A1A2A0A73002C66E9 /* test4.txt */; };
 		CED526811A1F885700016B4D /* WBHeartRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526801A1F885700016B4D /* WBHeartRateCell.m */; };
 		CED526841A1F888800016B4D /* WBBreathRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526831A1F888800016B4D /* WBBreathRateCell.m */; };
 		CEDBA15D1A236CA900A28AC4 /* NSString+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDBA15C1A236CA900A28AC4 /* NSString+WB.m */; };
@@ -264,6 +267,10 @@
 		CED1D1501A276F34002C66E9 /* WBDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDataItem.h; sourceTree = "<group>"; };
 		CED1D1511A276F34002C66E9 /* WBDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDataItem.m; sourceTree = "<group>"; };
 		CED1D1531A279689002C66E9 /* test2.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test2.rtf; sourceTree = "<group>"; };
+		CED1D1551A29996E002C66E9 /* test3.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test3.rtf; sourceTree = "<group>"; };
+		CED1D1571A29BA03002C66E9 /* NSDictionary+WB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+WB.h"; sourceTree = "<group>"; };
+		CED1D1581A29BA03002C66E9 /* NSDictionary+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+WB.m"; sourceTree = "<group>"; };
+		CED1D15A1A2A0A73002C66E9 /* test4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test4.txt; sourceTree = "<group>"; };
 		CED5267F1A1F885700016B4D /* WBHeartRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHeartRateCell.h; sourceTree = "<group>"; };
 		CED526801A1F885700016B4D /* WBHeartRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBHeartRateCell.m; sourceTree = "<group>"; };
 		CED526821A1F888800016B4D /* WBBreathRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBreathRateCell.h; sourceTree = "<group>"; };
@@ -495,6 +502,8 @@
 		CEB79AAB1A051D9900714531 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CED1D15A1A2A0A73002C66E9 /* test4.txt */,
+				CED1D1551A29996E002C66E9 /* test3.rtf */,
 				CED1D1531A279689002C66E9 /* test2.rtf */,
 				451F30421A2713A3002BE9A5 /* test.rtf */,
 				451F2FD71A271377002BE9A5 /* Image */,
@@ -591,6 +600,8 @@
 				CEDBA15C1A236CA900A28AC4 /* NSString+WB.m */,
 				CEBC5C151A239F4B00FCFC0C /* NSDate+WB.h */,
 				CEBC5C161A239F4B00FCFC0C /* NSDate+WB.m */,
+				CED1D1571A29BA03002C66E9 /* NSDictionary+WB.h */,
+				CED1D1581A29BA03002C66E9 /* NSDictionary+WB.m */,
 			);
 			name = Category;
 			path = WristBand/Category;
@@ -791,6 +802,7 @@
 				451F30341A271377002BE9A5 /* icon_x.png in Resources */,
 				451F30181A271377002BE9A5 /* checkbox_smart_normal_disabled.png in Resources */,
 				451F30371A271377002BE9A5 /* score_breakdown@2x.png in Resources */,
+				CED1D15B1A2A0A73002C66E9 /* test4.txt in Resources */,
 				CED1D1541A279689002C66E9 /* test2.rtf in Resources */,
 				451F30161A271377002BE9A5 /* checkbox_smart_normal.png in Resources */,
 				451F302A1A271377002BE9A5 /* icon_heart_wide.png in Resources */,
@@ -819,6 +831,7 @@
 				451F301D1A271377002BE9A5 /* Default@2x.png in Resources */,
 				451F301C1A271377002BE9A5 /* Default-568h@2x.png in Resources */,
 				451F302C1A271377002BE9A5 /* icon_idea.png in Resources */,
+				CED1D1561A29996E002C66E9 /* test3.rtf in Resources */,
 				451F30121A271377002BE9A5 /* center_image_default.png in Resources */,
 				451F30231A271377002BE9A5 /* icon_arrow_right_white@2x.png in Resources */,
 				451F30151A271377002BE9A5 /* center_image_pressed@2x.png in Resources */,
@@ -918,6 +931,7 @@
 				CEDBA18D1A23726B00A28AC4 /* WBPath.m in Sources */,
 				CED1D14F1A2764B3002C66E9 /* WBDataOperation.m in Sources */,
 				CE6DCB701A124BD400F49843 /* BLE.m in Sources */,
+				CED1D1591A29BA03002C66E9 /* NSDictionary+WB.m in Sources */,
 				CEB79AD51A05285B00714531 /* WBMainViewController.m in Sources */,
 				45D6F4EB1A281DAA00815F90 /* WBSleepStage.m in Sources */,
 				CEB79B1F1A05D35E00714531 /* UIDevice+WB.m in Sources */,
@@ -1040,7 +1054,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4707235f-d335-4a3e-b34d-cf06c5cc86c6";
+				PROVISIONING_PROFILE = "35131dfd-355b-4520-bf65-36c61772feb6";
 			};
 			name = Debug;
 		};
@@ -1055,7 +1069,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4707235f-d335-4a3e-b34d-cf06c5cc86c6";
+				PROVISIONING_PROFILE = "35131dfd-355b-4520-bf65-36c61772feb6";
 			};
 			name = Release;
 		};

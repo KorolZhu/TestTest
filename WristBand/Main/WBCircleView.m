@@ -78,7 +78,11 @@
 
 - (void)setTotalScore:(int)totalScore {
     _totalScore = totalScore;
-    totalScoreLabel.text = @(totalScore).stringValue;
+//    _totalScore = 90;
+    if (_totalScore < 0) {
+        _totalScore = 0;
+    }
+    totalScoreLabel.text = @(_totalScore).stringValue;
 }
 
 - (void)reloadData {
@@ -104,7 +108,7 @@
     if (!bezierPath) {
         bezierPath = [UIBezierPath bezierPath];
         if (self.totalScore >= 100) {
-            firstEndAngle = M_PI * 3;
+            firstEndAngle = M_PI * 3 / 2;
         } else {
             firstEndAngle = self.totalScore / 100.0f * M_PI * 2 - M_PI_2;
         }
@@ -126,9 +130,9 @@
 - (void)startAnimating2 {
     if (!bezierPath2) {
         bezierPath2 = [UIBezierPath bezierPath];
-        CGFloat startAngle = firstEndAngle + KPaddingAngle;
-        CGFloat endAngle = M_PI_2 * 3 - KPaddingAngle;
-        if (endAngle <= startAngle) {
+        CGFloat startAngle = firstEndAngle + (_totalScore == 0 ? 0 : KPaddingAngle);
+        CGFloat endAngle = M_PI_2 * 3 -  (_totalScore == 0 ? 0 : KPaddingAngle);
+        if (endAngle < startAngle) {
             return;
         }
         
@@ -152,7 +156,7 @@
 {
     CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     basicAnimation.removedOnCompletion = NO;
-    basicAnimation.duration = 0.7f;
+    basicAnimation.duration = _totalScore == 0 ? 0.0f : 0.7f;
     basicAnimation.delegate = self;
     basicAnimation.fromValue = [NSNumber numberWithInteger:0];
     basicAnimation.toValue = [NSNumber numberWithInteger:1];

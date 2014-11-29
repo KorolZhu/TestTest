@@ -14,4 +14,8 @@
 
 + (NSInteger)currentHour;
 
++ (NSString *)detailDate:(NSDate *)date;
+
++ (NSString *)formatSeconds:(NSTimeInterval)seconds;
+
 @end

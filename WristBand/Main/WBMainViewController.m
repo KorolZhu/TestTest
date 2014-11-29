@@ -94,6 +94,7 @@ static NSString *CollectionCellIdentifier = @"collectionCellIdentifier";
     [_connectDeviceView autoSetDimension:ALDimensionHeight toSize:IPHONE_HEIGHT + 43.0f + 64.0f];
     [_connectDeviceView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.view];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataAnalysingFinished) name:WBDataAnalysingFinishedNotification object:nil];
     [self test];
     
 }
@@ -130,8 +131,14 @@ static NSString *CollectionCellIdentifier = @"collectionCellIdentifier";
 
 #pragma mark - Sleep data
 
+- (void)dataAnalysingFinished {
+    [self initDummyData];
+}
+
 - (void)initDummyData {
-//	self.sleepInfos = [NSArray arrayWithArray:[[WBDataOperation shareInstance] querySleepData]];
+	self.sleepInfos = [NSArray arrayWithArray:[[WBDataOperation shareInstance] querySleepData]];
+    [self.collectionView reloadData];
+    return;
     
     NSMutableArray *mutableArr = [NSMutableArray array];
     
@@ -160,7 +167,7 @@ static NSString *CollectionCellIdentifier = @"collectionCellIdentifier";
         NSMutableArray *sleepArray = [NSMutableArray array];
         
         NSDate *date = [NSDate dateWithTimeInterval:-8 * 3600 sinceDate:[NSDate date]];
-        for (int i = 0; i  < 15 * 60; i+=30) {
+        for (int i = 0; i  < 15 * 60; i+=20) {
             WBSleepPoint *sleepPoint = [[WBSleepPoint alloc] init];
             sleepPoint.time = [[date dateByAddingTimeInterval:i * 60] timeIntervalSince1970];
             if (i < 50) {
@@ -175,7 +182,7 @@ static NSString *CollectionCellIdentifier = @"collectionCellIdentifier";
                 sleepPoint.state =  (arc4random() % 2 == 1) ? WBSleepStageTypeFallasleepLight : WBSleepStageTypeFallasleepDeep;
                 [sleepArray addObject:sleepPoint];
                 if (sleepPoint.state == WBSleepStageTypeFallasleepDeep) {
-                    sleepPoint.sleepValue = 30.0f;
+                    sleepPoint.sleepValue = arc4random() % 3 + 27;
                 } else {
                     sleepPoint.sleepValue = arc4random() % 15 + 15;
                 }

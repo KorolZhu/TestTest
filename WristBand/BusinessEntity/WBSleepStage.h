@@ -14,4 +14,6 @@
 @property (nonatomic)double startTimeStamp;
 @property (nonatomic)double endTimeStamp;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

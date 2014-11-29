@@ -92,16 +92,16 @@
 }
 
 - (void)configCell {
-    heartRateLabel.text = @"47bpm";
+    heartRateLabel.text = [NSString stringWithFormat:@"%ldbpm", (long)self.sleepInfo.bpm];
     goalLabel.text = @"Usual level";
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
     
+    float percent = self.sleepInfo.bpm / 65.0f;
     CGRect frame = progressBackView.frame;
-    frame.size.width = progressBackView.width * (self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent);
+    frame.size.width = progressBackView.width * (percent > 1.0f ? 1.0f : percent);
     progressView.frame = frame;
-    
 }
 
 - (CGFloat)cellHeight {

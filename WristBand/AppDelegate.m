@@ -23,9 +23,16 @@
 //    sqlbuffer.DELELTE(@"SLEEPSTAGE").WHERE(@"1=1");
 //    WBDatabaseTransaction *transaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:sqlbuffer];
 //    [[WBDatabaseService defaultService] writeWithTransaction:transaction completionBlock:^{}];
+//
+    [[WBDataOperation shareInstance] startSleep];
+    [[WBDataOperation shareInstance] stopSleep];
+//    [[WBDataOperation shareInstance] analysing];
     
+    NSLog(@"%@", NSHomeDirectory());
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{WBSleepTimeGoal: @(2/3.0f)}];
 
-    [[UIDevice currentDevice] redirectConsoleLog];
+//    [[UIDevice currentDevice] redirectConsoleLog];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

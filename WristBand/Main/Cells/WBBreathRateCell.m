@@ -81,14 +81,15 @@
 }
 
 - (void)configCell {
-    breathsRateLabel.text = @"16.5 breaths per min";
+    breathsRateLabel.text = [NSString stringWithFormat:@"%ld breaths per min", self.sleepInfo.breathspm];
     goalLabel.text = @"Usual level";
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
     
+    float percent = self.sleepInfo.breathspm / 20.0f;
     CGRect frame = progressBackView.frame;
-    frame.size.width = progressBackView.width * (self.sleepInfo.goalPercent > 1.0f ? 1.0f : self.sleepInfo.goalPercent);
+    frame.size.width = progressBackView.width * (percent > 1.0f ? 1.0f : percent);
     progressView.frame = frame;
     
 }

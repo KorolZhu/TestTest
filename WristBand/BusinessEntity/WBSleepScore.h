@@ -10,13 +10,13 @@
 
 @interface WBSleepScore : NSObject
 
-@property (nonatomic,assign)int amountOfSleep;
-@property (nonatomic,assign)int sleepVSAwake;
-@property (nonatomic,assign)int sleepLatency;
-@property (nonatomic,assign)int gotupFromBed;
-@property (nonatomic,assign)int wakingEvents;
-@property (nonatomic,assign)int snoring;
+@property (nonatomic,assign)NSInteger amountOfSleep;
+@property (nonatomic,assign)NSInteger sleepVSAwake;
+@property (nonatomic,assign)NSInteger sleepLatency;
+@property (nonatomic,assign)NSInteger gotupFromBed;
+@property (nonatomic,assign)NSInteger wakingEvents;
+@property (nonatomic,assign)NSInteger snoring;
 
-@property (nonatomic,readonly)int totalScore;
+@property (nonatomic,readonly)NSInteger totalScore;
 
 @end

@@ -16,4 +16,6 @@ typedef enum {
 	WBSleepStageTypeFallasleepLight,
 }WBSleepStageType;
 
+#define WBSleepTimeGoal @"sleepTimeGoal"
+
 #endif

@@ -66,6 +66,10 @@
     _tableView.backgroundView = nil;
     [self.view addSubview:_tableView];
     [_tableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+    
+    sleepGoalCell = [[WBSettingSleepGoalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sleepGoalCellIdentifier"];
+    
+    sleepTipsCell = [[WBSettingSleepTipsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sleepTipsCellIdentifier"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,8 +104,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *imageCellIdentifier = @"imageCellIdentifier";
     static NSString *personalInfoCellIdentifier = @"personalInfoCellIdentifier";
-    static NSString *sleepGoalCellIdentifier = @"sleepGoalCellIdentifier";
-    static NSString *sleepTipsCellIdentifier = @"sleepTipsCellIdentifier";
     UITableViewCell *cell;
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:imageCellIdentifier];
@@ -120,16 +122,8 @@
             cell = [[WBSettingPersonalInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personalInfoCellIdentifier];
         }
     } else if (indexPath.section == 2) {
-        sleepGoalCell = [tableView dequeueReusableCellWithIdentifier:sleepGoalCellIdentifier];
-        if (!sleepGoalCell) {
-            sleepGoalCell = [[WBSettingSleepGoalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sleepGoalCellIdentifier];
-        }
         cell = sleepGoalCell;
     } else if (indexPath.section == 3) {
-        sleepTipsCell = [tableView dequeueReusableCellWithIdentifier:sleepGoalCellIdentifier];
-        if (!sleepTipsCell) {
-            sleepTipsCell = [[WBSettingSleepTipsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sleepTipsCellIdentifier];
-        }
         cell = sleepTipsCell;
     }
     

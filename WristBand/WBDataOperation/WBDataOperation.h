@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "WBSingleton.h"
 
+extern NSString * const WBDataAnalysingFinishedNotification;
+
 @interface WBDataOperation : NSObject
 
 WB_AS_SINGLETON(WBDataOperation, shareInstance)

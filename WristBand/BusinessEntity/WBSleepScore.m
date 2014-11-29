@@ -10,7 +10,7 @@
 
 @implementation WBSleepScore
 
-- (int)totalScore {
+- (NSInteger)totalScore {
     return _amountOfSleep +
     _sleepVSAwake +
     _sleepLatency +

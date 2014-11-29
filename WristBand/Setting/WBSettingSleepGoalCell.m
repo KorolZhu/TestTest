@@ -48,13 +48,13 @@
         sleepTimeGoalLabel.backgroundColor = [UIColor clearColor];
         sleepTimeGoalLabel.textColor = [UIColor whiteColor];
         sleepTimeGoalLabel.font = [UIFont boldSystemFontOfSize:16.0f];
-        sleepTimeGoalLabel.text = NSLocalizedString(@"Sleep time goal", nil);
         [backView addSubview:sleepTimeGoalLabel];
         [sleepTimeGoalLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:5.0f];
         [sleepTimeGoalLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10.0f];
         
         UISlider *slider = [[UISlider alloc] init];
-        slider.value = 0.5f;
+        [slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+        slider.value = [[NSUserDefaults standardUserDefaults] floatForKey:WBSleepTimeGoal];
         [backView addSubview:slider];
         [slider autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:sleepTimeGoalLabel withOffset:5.0f];
         [slider autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10.0f];
@@ -78,7 +78,18 @@
     
 }
 
+- (void)sliderValueChanged:(UISlider *)slider {
+    [[NSUserDefaults standardUserDefaults] setFloat:slider.value forKey:WBSleepTimeGoal];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    float goalTime = 6 * 3600 + 3 * 3600 * slider.value;
+    sleepTimeGoalLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Sleep time goal", nil), [NSDate formatSeconds:goalTime]];
+}
+
 - (void)configCell {
+    float goalTime = 6 * 3600 + 3 * 3600 * [[NSUserDefaults standardUserDefaults] floatForKey:WBSleepTimeGoal];
+    sleepTimeGoalLabel.text = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Sleep time goal", nil), [NSDate formatSeconds:goalTime]];
+    
     [self setNeedsLayout];
     [self layoutIfNeeded];
 }
