@@ -290,6 +290,7 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
         sleepInfo.time = [[dateFormatter dateFromString:[[dictionary objectForKey:@"DATEYMD"] stringValue]] timeIntervalSince1970];
         sleepInfo.toBedTime = [dictionary floatForKey:@"TOBEDTIME"];
         sleepInfo.fallAsleepTime = [[dictionary objectForKey:@"FALLASLEEPTIME"] floatValue];
+        sleepInfo.gotupTime = [[dictionary objectForKey:@"ENDTIME"] floatValue];
         sleepInfo.bpm = [[dictionary objectForKey:@"BPM"] integerValue];
         sleepInfo.breathspm = [[dictionary objectForKey:@"BREATHSPM"] integerValue];
         sleepInfo.totalSleepTime = [[dictionary objectForKey:@"TOTALSLEEPTIME"] floatValue];
@@ -306,7 +307,6 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
         sleepInfo.improvementIdeas = [NSString stringWithFormat:@"Exercise regularly"];
         sleepInfo.improvementIdeasDetail = [NSString stringWithFormat:@"Aerobic exercise in the afternoon or at least 3 hours efore going to bed is good for sleep"];
         
-		
 
 		NSMutableArray *array = [NSMutableArray array];
 		

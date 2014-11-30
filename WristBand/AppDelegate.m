@@ -24,8 +24,8 @@
 //    WBDatabaseTransaction *transaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:sqlbuffer];
 //    [[WBDatabaseService defaultService] writeWithTransaction:transaction completionBlock:^{}];
 //
-    [[WBDataOperation shareInstance] startSleep];
-    [[WBDataOperation shareInstance] stopSleep];
+//    [[WBDataOperation shareInstance] startSleep];
+//    [[WBDataOperation shareInstance] stopSleep];
 //    [[WBDataOperation shareInstance] analysing];
     
     NSLog(@"%@", NSHomeDirectory());

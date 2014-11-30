@@ -15,6 +15,8 @@
 @property (nonatomic,assign)NSTimeInterval toBedTime;
 @property (nonatomic,strong)NSString *toBedTimeString;
 @property (nonatomic,assign)NSTimeInterval fallAsleepTime;
+@property (nonatomic,assign)NSTimeInterval gotupTime;
+@property (nonatomic,strong)NSString *gotupString;
 @property (nonatomic,strong)NSString* fallAsleepInTimeString;
 @property (nonatomic,readonly)NSString *timeString;
 @property (nonatomic,strong)WBSleepScore *sleepScore;

@@ -24,6 +24,12 @@
         NSTimeInterval interval = _fallAsleepTime - _toBedTime;
         _fallAsleepInTimeString = [NSString stringWithFormat:@"Fall asleep in %@", [NSDate formatSeconds:interval]];
     }
+    
+    if (_gotupTime > 0) {
+        NSDate *gotupDate = [NSDate dateWithTimeIntervalSince1970:self.gotupTime];
+        _gotupString = [NSString stringWithFormat:@"Got up %@", [NSDate detailDate:gotupDate]];
+    }
+    
     _goalPercent = _totalSleepTime / ([[NSUserDefaults standardUserDefaults] floatForKey:WBSleepTimeGoal] * 3 * 3600 + 6 * 3600);
     int hour = _totalSleepTime / 3600;
     int minute = (long)_totalSleepTime % 3600 / 60.0f;

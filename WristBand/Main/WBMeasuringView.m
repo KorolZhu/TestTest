@@ -13,6 +13,9 @@
 {
     UIView *alarmView;
     UILabel *alarmoffLabel;
+    UILabel *alarmTimeLabel;
+    UISwitch *alarmSwitch;
+    UILabel *alarmDescLabel;
     UIView *lineView;
     UIView *backView;
     UILabel *measuringLabel;
@@ -36,13 +39,30 @@
         alarmView.backgroundColor = [UIColor clearColor];
         [self addSubview:alarmView];
         
-        alarmoffLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 43.0f, 200.0f, 16.0f)];
+        alarmoffLabel = [[UILabel alloc] initWithFrame:CGRectMake(25.0f, 43.0f, 200.0f, 16.0f)];
         alarmoffLabel.textAlignment = NSTextAlignmentLeft;
+        alarmoffLabel.textColor = RGB(139,138,138);
         alarmoffLabel.backgroundColor = [UIColor clearColor];
         alarmoffLabel.textColor = [UIColor whiteColor];
         alarmoffLabel.font = [UIFont boldSystemFontOfSize:12.0f];
         alarmoffLabel.text = NSLocalizedString(@"ALARM OFF", nil);
         [alarmView addSubview:alarmoffLabel];
+        
+        alarmTimeLabel = [[UILabel alloc] init];
+        alarmTimeLabel.textAlignment = NSTextAlignmentLeft;
+        alarmTimeLabel.backgroundColor = [UIColor clearColor];
+        alarmTimeLabel.textColor = RGB(139,138,138);
+        alarmTimeLabel.font = [UIFont boldSystemFontOfSize:35.0f];
+        alarmTimeLabel.text = [NSDate detailDate:[NSDate date]];
+        [alarmView addSubview:alarmTimeLabel];
+        [alarmTimeLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:alarmoffLabel withOffset:10.0f];
+        [alarmTimeLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10.0f];
+        [alarmTimeLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:25.0f];
+        
+        alarmSwitch = [[UISwitch alloc] init];
+        [alarmView addSubview:alarmSwitch];
+        [alarmSwitch autoAlignAxis:ALAxisHorizontal toSameAxisOfView:alarmTimeLabel];
+        [alarmSwitch autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:25.0f];
         
         lineView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 173.0f, IPHONE_WIDTH, 0.5f)];
         lineView.backgroundColor = [UIColor whiteColor];

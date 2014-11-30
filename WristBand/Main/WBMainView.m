@@ -56,9 +56,6 @@
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.font = [UIFont systemFontOfSize:25.0f];
         titleLabel.textColor = RGB(87,104,106);
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"MM-dd-yyyy"];
-        titleLabel.text = [dateFormatter stringFromDate:[NSDate date]];
         [tableHeaderView addSubview:titleLabel];
         
         lineView = [[UIView alloc] initWithFrame:CGRectMake((tableHeaderView.width - 154.0f) / 2.0f, tableHeaderView.height - 2.0f, 154.0f, 2.0f)];
@@ -136,6 +133,10 @@
 - (void)reuse {
     circleView.totalScore = _sleepInfo.sleepScore.totalScore;
     [circleView reloadData];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+    titleLabel.text = [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:self.sleepInfo.time]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

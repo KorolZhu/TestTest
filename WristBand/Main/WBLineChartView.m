@@ -145,34 +145,34 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
         }
     }
     
-    for (int i = 0; i < [self.dataSource numberOfSectionsInLineChartView:self]; i++) {
-        NSArray *arr = [self.dataSource lineChartView:self sleepInfosAtSection:i];
-        if (arr.count >= 1) {
-            WBSleepPoint *info = arr.firstObject;
-            if (info.state == WBSleepStageTypeAway) {
-                continue;
-            }
-            CGPoint point = [self pointForSleepInfo:info];
-            UILabel *label = [[UILabel alloc] init];
-            label.tag = 900;
-            label.textAlignment = NSTextAlignmentCenter;
-            label.backgroundColor = [self.dataSource lineChartView:self fillColorAtSection:i];
-            label.font = [UIFont systemFontOfSize:12.0f];
-            label.layer.cornerRadius = 5.0f;
-            label.clipsToBounds = YES;
-            if (info.state == WBSleepStageTypeAwake) {
-                label.text =  @"To bed 18:30";
-            } else {
-                label.text = @"Fall asleep in 30 min";
-            }
-            label.textColor = [UIColor whiteColor];
-            [self addSubview:label];
-            label.left = kWBChartViewLeft + kWBChartViewWidth + 30.0f;
-            label.top = point.y;
-            label.width = 150.0f;
-            label.height = 35.0f;
-        }
-    }
+//    for (int i = 0; i < [self.dataSource numberOfSectionsInLineChartView:self]; i++) {
+//        NSArray *arr = [self.dataSource lineChartView:self sleepInfosAtSection:i];
+//        if (arr.count >= 1) {
+//            WBSleepPoint *info = arr.firstObject;
+//            if (info.state == WBSleepStageTypeAway) {
+//                continue;
+//            }
+//            CGPoint point = [self pointForSleepInfo:info];
+//            UILabel *label = [[UILabel alloc] init];
+//            label.tag = 900;
+//            label.textAlignment = NSTextAlignmentCenter;
+//            label.backgroundColor = [self.dataSource lineChartView:self fillColorAtSection:i];
+//            label.font = [UIFont systemFontOfSize:12.0f];
+//            label.layer.cornerRadius = 5.0f;
+//            label.clipsToBounds = YES;
+//            if (info.state == WBSleepStageTypeAwake) {
+//                label.text =  @"To bed 18:30";
+//            } else {
+//                label.text = @"Fall asleep in 30 min";
+//            }
+//            label.textColor = [UIColor whiteColor];
+//            [self addSubview:label];
+//            label.left = kWBChartViewLeft + kWBChartViewWidth + 30.0f;
+//            label.top = point.y;
+//            label.width = 150.0f;
+//            label.height = 35.0f;
+//        }
+//    }
 }
 
 - (NSInteger)sectionForSleepInfo:(WBSleepPoint *)sleepPoint {

@@ -49,7 +49,7 @@
     NSInteger hour = [comps hour];
     NSInteger minute = [comps minute];
     
-    NSString *dateStr = [NSString stringWithFormat:@"%2ld:%2ld",(long)hour,(long)minute];
+    NSString *dateStr = [NSString stringWithFormat:@"%02ld:%02ld",(long)hour,(long)minute];
 
     return dateStr;
 }
