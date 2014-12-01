@@ -13,6 +13,7 @@
 - (NSString *)stringForKey:(id)key;
 - (BOOL)boolForKey:(id)key;
 - (int)intForKey:(id)key;
+- (NSInteger)integerForKey:(id)key;
 - (uint)uintForKey:(id)key;
 - (double)doubleForKey:(id)key;
 - (float)floatForKey:(id)key;

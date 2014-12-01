@@ -13,6 +13,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
+		self.dateYMD = [dictionary integerForKey:@"DATEYMD"];
         self.startTimeStamp = [[dictionary objectForKey:@"STARTTIME"] doubleValue];
         self.endTimeStamp = [[dictionary objectForKey:@"ENDTIME"] doubleValue];
         self.type = [[dictionary objectForKey:@"STAGE"] intValue];

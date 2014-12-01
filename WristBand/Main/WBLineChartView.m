@@ -90,6 +90,9 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
     } else {
         totalHour += self.endHour - self.startHour;
     }
+	if (totalHour == 0) {
+		totalHour = 1;
+	}
     self.totalHour = totalHour;
     
     [self setNeedsLayout];
@@ -236,21 +239,29 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
             
         } else {
             CGPoint currentPoint = point;
-            
-            CGPoint mid1 = [self calculateMidPointForPoint:_previousPoint andPoint:_prePreviousPoint];
-            CGPoint mid2 = [self calculateMidPointForPoint:currentPoint andPoint:_previousPoint];
-            
-            if (idx > 1) {
-                [bezierpath addLineToPoint:mid1];
-            }
-            [bezierpath addQuadCurveToPoint:mid2 controlPoint:_previousPoint];
-            
-            _prePreviousPoint = _previousPoint;
-            _previousPoint = point;
-            
-            currentEndPoint = mid2;
+			
+			if (currentPoint.x == _previousPoint.x) {
+				[bezierpath addLineToPoint:currentPoint];
+				_prePreviousPoint = _previousPoint;
+				_previousPoint = point;
+				
+				currentEndPoint = currentPoint;
+			} else {
+				CGPoint mid1 = [self calculateMidPointForPoint:_previousPoint andPoint:_prePreviousPoint];
+				CGPoint mid2 = [self calculateMidPointForPoint:currentPoint andPoint:_previousPoint];
+				
+				if (idx > 1) {
+					[bezierpath addLineToPoint:mid1];
+				}
+				[bezierpath addQuadCurveToPoint:mid2 controlPoint:_previousPoint];
+				
+				_prePreviousPoint = _previousPoint;
+				_previousPoint = point;
+				
+				currentEndPoint = mid2;
+			}
         }
-        
+		
         NSInteger section = [self sectionForSleepInfo:info];
         if (section >= 0) {
             [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, currentEndPoint.y)];

@@ -61,6 +61,8 @@
 		451F303F1A271377002BE9A5 /* tip_icon_sheep@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451F300B1A271377002BE9A5 /* tip_icon_sheep@2x.png */; };
 		451F30411A271395002BE9A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451F30401A271395002BE9A5 /* Images.xcassets */; };
 		451F30431A2713A3002BE9A5 /* test.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 451F30421A2713A3002BE9A5 /* test.rtf */; };
+		4521FEE11A2C101800C3DCE3 /* 20141201.dat in Resources */ = {isa = PBXBuildFile; fileRef = 4521FEE01A2C101800C3DCE3 /* 20141201.dat */; };
+		4521FEE31A2C51DD00C3DCE3 /* 20141130.dat in Resources */ = {isa = PBXBuildFile; fileRef = 4521FEE21A2C51DD00C3DCE3 /* 20141130.dat */; };
 		45B75E6E1A11F1D0001AF044 /* UINavigationBar+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */; };
 		45D6F4EB1A281DAA00815F90 /* WBSleepStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F4EA1A281DAA00815F90 /* WBSleepStage.m */; };
 		CE4553E81A0F4E8200E417B7 /* WBHitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553E71A0F4E8200E417B7 /* WBHitTestView.m */; };
@@ -102,7 +104,6 @@
 		CED1D1541A279689002C66E9 /* test2.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CED1D1531A279689002C66E9 /* test2.rtf */; };
 		CED1D1561A29996E002C66E9 /* test3.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CED1D1551A29996E002C66E9 /* test3.rtf */; };
 		CED1D1591A29BA03002C66E9 /* NSDictionary+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = CED1D1581A29BA03002C66E9 /* NSDictionary+WB.m */; };
-		CED1D15B1A2A0A73002C66E9 /* test4.txt in Resources */ = {isa = PBXBuildFile; fileRef = CED1D15A1A2A0A73002C66E9 /* test4.txt */; };
 		CED526811A1F885700016B4D /* WBHeartRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526801A1F885700016B4D /* WBHeartRateCell.m */; };
 		CED526841A1F888800016B4D /* WBBreathRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED526831A1F888800016B4D /* WBBreathRateCell.m */; };
 		CEDBA15D1A236CA900A28AC4 /* NSString+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDBA15C1A236CA900A28AC4 /* NSString+WB.m */; };
@@ -183,6 +184,8 @@
 		451F300B1A271377002BE9A5 /* tip_icon_sheep@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_icon_sheep@2x.png"; sourceTree = "<group>"; };
 		451F30401A271395002BE9A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		451F30421A2713A3002BE9A5 /* test.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test.rtf; sourceTree = "<group>"; };
+		4521FEE01A2C101800C3DCE3 /* 20141201.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20141201.dat; sourceTree = "<group>"; };
+		4521FEE21A2C51DD00C3DCE3 /* 20141130.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20141130.dat; sourceTree = "<group>"; };
 		458666E41A287BB900D4B2BD /* WBLogicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBLogicType.h; sourceTree = "<group>"; };
 		45B75E6C1A11F1D0001AF044 /* UINavigationBar+WB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+WB.h"; sourceTree = "<group>"; };
 		45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+WB.m"; sourceTree = "<group>"; };
@@ -270,7 +273,6 @@
 		CED1D1551A29996E002C66E9 /* test3.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test3.rtf; sourceTree = "<group>"; };
 		CED1D1571A29BA03002C66E9 /* NSDictionary+WB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+WB.h"; sourceTree = "<group>"; };
 		CED1D1581A29BA03002C66E9 /* NSDictionary+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+WB.m"; sourceTree = "<group>"; };
-		CED1D15A1A2A0A73002C66E9 /* test4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test4.txt; sourceTree = "<group>"; };
 		CED5267F1A1F885700016B4D /* WBHeartRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHeartRateCell.h; sourceTree = "<group>"; };
 		CED526801A1F885700016B4D /* WBHeartRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBHeartRateCell.m; sourceTree = "<group>"; };
 		CED526821A1F888800016B4D /* WBBreathRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBreathRateCell.h; sourceTree = "<group>"; };
@@ -502,7 +504,8 @@
 		CEB79AAB1A051D9900714531 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				CED1D15A1A2A0A73002C66E9 /* test4.txt */,
+				4521FEE01A2C101800C3DCE3 /* 20141201.dat */,
+				4521FEE21A2C51DD00C3DCE3 /* 20141130.dat */,
 				CED1D1551A29996E002C66E9 /* test3.rtf */,
 				CED1D1531A279689002C66E9 /* test2.rtf */,
 				451F30421A2713A3002BE9A5 /* test.rtf */,
@@ -802,9 +805,9 @@
 				451F30341A271377002BE9A5 /* icon_x.png in Resources */,
 				451F30181A271377002BE9A5 /* checkbox_smart_normal_disabled.png in Resources */,
 				451F30371A271377002BE9A5 /* score_breakdown@2x.png in Resources */,
-				CED1D15B1A2A0A73002C66E9 /* test4.txt in Resources */,
 				CED1D1541A279689002C66E9 /* test2.rtf in Resources */,
 				451F30161A271377002BE9A5 /* checkbox_smart_normal.png in Resources */,
+				4521FEE31A2C51DD00C3DCE3 /* 20141130.dat in Resources */,
 				451F302A1A271377002BE9A5 /* icon_heart_wide.png in Resources */,
 				451F302D1A271377002BE9A5 /* icon_idea@2x.png in Resources */,
 				451F30101A271377002BE9A5 /* button_background_image_night.png in Resources */,
@@ -829,6 +832,7 @@
 				451F302F1A271377002BE9A5 /* icon_measuring_spinner@2x.png in Resources */,
 				451F30381A271377002BE9A5 /* sleep_achievement_icon.png in Resources */,
 				451F301D1A271377002BE9A5 /* Default@2x.png in Resources */,
+				4521FEE11A2C101800C3DCE3 /* 20141201.dat in Resources */,
 				451F301C1A271377002BE9A5 /* Default-568h@2x.png in Resources */,
 				451F302C1A271377002BE9A5 /* icon_idea.png in Resources */,
 				CED1D1561A29996E002C66E9 /* test3.rtf in Resources */,

@@ -10,9 +10,11 @@
 
 @interface WBSleepStage : NSObject
 
+@property (nonatomic)NSInteger dateYMD;
 @property (nonatomic)WBSleepStageType type;
 @property (nonatomic)double startTimeStamp;
 @property (nonatomic)double endTimeStamp;
+@property (nonatomic)NSInteger deepValue;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

@@ -65,9 +65,27 @@
     return -1;
 }
 
+- (NSInteger)integerForKey:(id)key {
+	id object = [self objectForKey:key];
+	
+	if (object && ![object isKindOfClass:[NSNull class]]) {
+		if ([object isKindOfClass:[NSNumber class]]) {
+			NSNumber *number = object;
+			return number.integerValue;
+		}
+		
+		if ([object isKindOfClass:[NSString class]]) {
+			NSString *string = object;
+			return string.integerValue;
+		}
+	}
+	
+	return -1;
+}
+
 - (uint)uintForKey:(id)key {
     id object = [self objectForKey:key];
-    
+	
     if (object && ![object isKindOfClass:[NSNull class]]) {
         if ([object isKindOfClass:[NSNumber class]]) {
             NSNumber *number = object;
