@@ -10,7 +10,7 @@
 
 @interface WBCircleView : UIView
 
-@property (nonatomic,assign)int totalScore;
+@property (nonatomic,assign)NSInteger totalScore;
 
 @property (nonatomic,strong)UIImageView *backImageView;
 @property (nonatomic,strong)UITapGestureRecognizer *tapGestureRecognizer;

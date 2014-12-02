@@ -262,6 +262,10 @@
 
 #pragma mark - Line chart data
 
+- (WBSleepInfo *)sleepInfoOfLineChartView:(WBLineChartView *)lineChartView {
+    return self.sleepInfo;
+}
+
 - (NSInteger)numberOfSectionsInLineChartView:(WBLineChartView *)lineChartView {
     return self.sleepInfo.sleepPoints.count;
 }

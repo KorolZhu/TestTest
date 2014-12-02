@@ -53,7 +53,7 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
         currentDateymd = [date integerValue];
     }
 	
-//	currentDateymd = 20141201;
+//	currentDateymd = 20141130;
 	
 	WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] init];
 	sqlbuffer.SELECT(@"*").FROM(@"SLEEP").WHERE([NSString stringWithFormat:@"%@=%ld", @"DATEYMD", (long)currentDateymd]);
@@ -332,7 +332,7 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyyMMdd"];
     
-	NSString *sql = @"SELECT * FROM SLEEP , SLEEPPROPERTY WHERE SLEEP.DATEYMD = SLEEPPROPERTY.DATEYMD";
+	NSString *sql = @"SELECT * FROM SLEEP , SLEEPPROPERTY WHERE SLEEP.DATEYMD = SLEEPPROPERTY.DATEYMD ORDER BY SLEEP.DATEYMD ASC";
 	WBSQLBuffer *sqlbuffer = [[WBSQLBuffer alloc] initWithSQL:sql];
 	WBDatabaseTransaction *transaction = [[WBDatabaseTransaction alloc] initWithSQLBuffer:sqlbuffer];
 	[[WBDatabaseService defaultService] readWithTransaction:transaction completionBlock:^{}];
@@ -390,7 +390,8 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
 			
             // 合并相同的点
             if (lastSleepPoint) {
-                if (sleepPoint.state == lastSleepPoint.state) {
+                if (sleepPoint.state == lastSleepPoint.state ||
+                    (sleepPoint.state >= WBSleepStageTypeFallasleepDeep && sleepPoint.state >= WBSleepStageTypeFallasleepDeep)) {
                     NSMutableArray *lastSegment = array.lastObject;
                     if (sleepPoint.time - lastSleepPoint.time > WBAnalyseTimeInterval) {
                         [lastSegment addObject:sleepPoint];
@@ -400,6 +401,16 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
                     lastSleepPoint = sleepPoint2;
 
                     continue;
+                } else {
+                    if (sleepPoint.time - lastSleepPoint.time < 60) {
+                        NSMutableArray *pointAray = [NSMutableArray array];
+                        [pointAray addObject:sleepPoint2];
+                        
+                        [array addObject:pointAray];
+                        lastSleepPoint = sleepPoint2;
+                        
+                        continue;
+                    }
                 }
             }
             

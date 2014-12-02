@@ -148,6 +148,84 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
         }
     }
     
+    CGFloat bottom = 0.0f;
+    
+    WBSleepInfo *sleepInfo = [self.dataSource sleepInfoOfLineChartView:self];
+    if (sleepInfo.toBedTimeString.length > 0) {
+        WBSleepPoint *info = [[WBSleepPoint alloc] init];
+        info.time = sleepInfo.toBedTime;
+        
+        CGPoint point = [self pointForSleepInfo:info];
+        UILabel *label = [[UILabel alloc] init];
+        label.tag = 900;
+        label.textAlignment = NSTextAlignmentCenter;
+        label.backgroundColor = RGB(175,176,161);
+        label.font = [UIFont systemFontOfSize:12.0f];
+        label.layer.cornerRadius = 5.0f;
+        label.clipsToBounds = YES;
+        label.text = sleepInfo.toBedTimeString;
+        label.textColor = [UIColor whiteColor];
+        [self addSubview:label];
+        label.left = kWBChartViewLeft + kWBChartViewWidth + 30.0f;
+        label.top = point.y - 17.0f;
+        label.width = IPHONE_WIDTH - label.left - 35.0f;
+        label.height = 35.0f;
+        
+        bottom = label.bottom;
+    }
+    
+    if (sleepInfo.fallAsleepInTimeString.length > 0) {
+        WBSleepPoint *info = [[WBSleepPoint alloc] init];
+        info.time = sleepInfo.fallAsleepTime;
+        
+        CGPoint point = [self pointForSleepInfo:info];
+        UILabel *label = [[UILabel alloc] init];
+        label.tag = 900;
+        label.textAlignment = NSTextAlignmentCenter;
+        label.backgroundColor = RGB(63,164,192);
+        label.font = [UIFont systemFontOfSize:12.0f];
+        label.layer.cornerRadius = 5.0f;
+        label.clipsToBounds = YES;
+        label.text = sleepInfo.fallAsleepInTimeString;
+        label.textColor = [UIColor whiteColor];
+        [self addSubview:label];
+        label.left = kWBChartViewLeft + kWBChartViewWidth + 30.0f;
+        label.top = point.y - 17.0f;
+        if (label.top < bottom) {
+            label.top = bottom + 5.0f;
+        }
+        label.width = IPHONE_WIDTH - label.left - 35.0f;
+        label.height = 35.0f;
+        
+        bottom = label.bottom;
+    }
+    
+    if (sleepInfo.gotupString.length > 0) {
+        WBSleepPoint *info = [[WBSleepPoint alloc] init];
+        info.time = sleepInfo.gotupTime;
+        
+        CGPoint point = [self pointForSleepInfo:info];
+        UILabel *label = [[UILabel alloc] init];
+        label.tag = 900;
+        label.textAlignment = NSTextAlignmentCenter;
+        label.backgroundColor = [UIColor whiteColor];
+        label.font = [UIFont systemFontOfSize:12.0f];
+        label.layer.cornerRadius = 5.0f;
+        label.clipsToBounds = YES;
+        label.text = sleepInfo.gotupString;
+        label.textColor = [UIColor grayColor];
+        [self addSubview:label];
+        label.left = kWBChartViewLeft + kWBChartViewWidth + 30.0f;
+        label.top = point.y - 17.0f;
+        if (label.top < bottom) {
+            label.top = bottom + 5.0f;
+        }
+        label.width = IPHONE_WIDTH - label.left - 35.0f;
+        label.height = 35.0f;
+    }
+    
+    
+    
 //    for (int i = 0; i < [self.dataSource numberOfSectionsInLineChartView:self]; i++) {
 //        NSArray *arr = [self.dataSource lineChartView:self sleepInfosAtSection:i];
 //        if (arr.count >= 1) {

@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WBSleepInfo.h"
 
 @class WBLineChartView;
 
 @protocol WBLineChartViewDataSource <NSObject>
 
 @required
+
+- (WBSleepInfo *)sleepInfoOfLineChartView:(WBLineChartView *)lineChartView;
 
 - (NSInteger)numberOfSectionsInLineChartView:(WBLineChartView *)lineChartView;
 

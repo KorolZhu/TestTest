@@ -76,7 +76,7 @@
     return self;
 }
 
-- (void)setTotalScore:(int)totalScore {
+- (void)setTotalScore:(NSInteger)totalScore {
     _totalScore = totalScore;
 //    _totalScore = 90;
     if (_totalScore < 0) {
