@@ -65,6 +65,8 @@
 		4521FEE31A2C51DD00C3DCE3 /* 20141130.dat in Resources */ = {isa = PBXBuildFile; fileRef = 4521FEE21A2C51DD00C3DCE3 /* 20141130.dat */; };
 		45B75E6E1A11F1D0001AF044 /* UINavigationBar+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */; };
 		45D6F4EB1A281DAA00815F90 /* WBSleepStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F4EA1A281DAA00815F90 /* WBSleepStage.m */; };
+		CE3FF6471A31FC1600DF85D7 /* HTDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3FF6461A31FC1600DF85D7 /* HTDatePicker.m */; };
+		CE3FF64A1A31FC3D00DF85D7 /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3FF6491A31FC3D00DF85D7 /* AMBlurView.m */; };
 		CE4553E81A0F4E8200E417B7 /* WBHitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553E71A0F4E8200E417B7 /* WBHitTestView.m */; };
 		CE4553EB1A0F5D7800E417B7 /* WBContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553EA1A0F5D7800E417B7 /* WBContainViewController.m */; };
 		CE4553EE1A0F67ED00E417B7 /* WBSleepInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553ED1A0F67ED00E417B7 /* WBSleepInfo.m */; };
@@ -192,6 +194,10 @@
 		45D6F4E91A281DAA00815F90 /* WBSleepStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSleepStage.h; sourceTree = "<group>"; };
 		45D6F4EA1A281DAA00815F90 /* WBSleepStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSleepStage.m; sourceTree = "<group>"; };
 		51713049B41943CF9271265A /* Pods-WristBand.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WristBand.release.xcconfig"; path = "Pods/Target Support Files/Pods-WristBand/Pods-WristBand.release.xcconfig"; sourceTree = "<group>"; };
+		CE3FF6451A31FC1600DF85D7 /* HTDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDatePicker.h; sourceTree = "<group>"; };
+		CE3FF6461A31FC1600DF85D7 /* HTDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDatePicker.m; sourceTree = "<group>"; };
+		CE3FF6481A31FC3D00DF85D7 /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
+		CE3FF6491A31FC3D00DF85D7 /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
 		CE4553E61A0F4E8200E417B7 /* WBHitTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHitTestView.h; sourceTree = "<group>"; };
 		CE4553E71A0F4E8200E417B7 /* WBHitTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBHitTestView.m; sourceTree = "<group>"; };
 		CE4553E91A0F5D7800E417B7 /* WBContainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBContainViewController.h; sourceTree = "<group>"; };
@@ -398,6 +404,10 @@
 				CE4553EA1A0F5D7800E417B7 /* WBContainViewController.m */,
 				CE4553E61A0F4E8200E417B7 /* WBHitTestView.h */,
 				CE4553E71A0F4E8200E417B7 /* WBHitTestView.m */,
+				CE3FF6481A31FC3D00DF85D7 /* AMBlurView.h */,
+				CE3FF6491A31FC3D00DF85D7 /* AMBlurView.m */,
+				CE3FF6451A31FC1600DF85D7 /* HTDatePicker.h */,
+				CE3FF6461A31FC1600DF85D7 /* HTDatePicker.m */,
 			);
 			name = WBUIKit;
 			path = WristBand/WBUIKit;
@@ -902,6 +912,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6DCB6B1A10EDF600F49843 /* WBCollectionViewCell.m in Sources */,
+				CE3FF6471A31FC1600DF85D7 /* HTDatePicker.m in Sources */,
 				CEAA43371A07C99900EDBAF3 /* WBImprovementViewController.m in Sources */,
 				CE4553E81A0F4E8200E417B7 /* WBHitTestView.m in Sources */,
 				CEB79B3E1A05F92300714531 /* UIColor+WB.m in Sources */,
@@ -934,6 +945,7 @@
 				CEDBA1601A236DEB00A28AC4 /* WBDatabaseService.m in Sources */,
 				CEDBA18D1A23726B00A28AC4 /* WBPath.m in Sources */,
 				CED1D14F1A2764B3002C66E9 /* WBDataOperation.m in Sources */,
+				CE3FF64A1A31FC3D00DF85D7 /* AMBlurView.m in Sources */,
 				CE6DCB701A124BD400F49843 /* BLE.m in Sources */,
 				CED1D1591A29BA03002C66E9 /* NSDictionary+WB.m in Sources */,
 				CEB79AD51A05285B00714531 /* WBMainViewController.m in Sources */,

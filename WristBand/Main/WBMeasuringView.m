@@ -8,8 +8,9 @@
 
 #import "WBMeasuringView.h"
 #import "WBDataOperation.h"
+#import "HTDatePicker.h"
 
-@interface WBMeasuringView ()
+@interface WBMeasuringView ()<HTDatePickerDelegate>
 {
     UIView *alarmView;
     UILabel *alarmoffLabel;
@@ -24,6 +25,8 @@
     CABasicAnimation *rotationAnimation;
     
     NSLayoutConstraint *backViewTopConstraint;
+    
+    HTDatePicker *datePicker;
 }
 
 @end
@@ -54,6 +57,9 @@
         alarmTimeLabel.textColor = RGB(139,138,138);
         alarmTimeLabel.font = [UIFont boldSystemFontOfSize:35.0f];
         alarmTimeLabel.text = [NSDate detailDate:[NSDate date]];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(timeTap)];
+        alarmTimeLabel.userInteractionEnabled = YES;
+        [alarmTimeLabel addGestureRecognizer:tapGesture];
         [alarmView addSubview:alarmTimeLabel];
         [alarmTimeLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:alarmoffLabel withOffset:10.0f];
         [alarmTimeLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10.0f];
@@ -108,6 +114,13 @@
         [stopMeasuringButton autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [stopMeasuringButton autoSetDimension:ALDimensionHeight toSize:43.0f];
         
+        datePicker = [[HTDatePicker alloc] initWithFrame:CGRectMake(0, self.height, IPHONE_WIDTH, 260) date:[NSDate date]];
+        datePicker.hidden = YES;
+        datePicker.delegate = self;
+        [self addSubview:datePicker];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataAnalysingFinished) name:WBDataAnalysingFinishedNotification object:nil];
+        
     }
     
     return self;
@@ -132,11 +145,25 @@
     [animationView.layer removeAnimationForKey:@"rotationAnimation"];
 }
 
+- (void)timeTap {
+    [self showDatePicker:datePicker.hidden];
+}
+
+- (void)dataAnalysingFinished {
+    [[GCDQueue mainQueue] queueBlock:^{
+        if (!datePicker.hidden) {
+            [self showDatePicker:NO];
+        }
+        [self alertView:nil clickedButtonAtIndex:0];
+    }];
+}
+
 - (void)stopMeasuringButtonClick {
-    [[WBDataOperation shareInstance] stopSleep];
-    
     stopMeasuringButton.enabled = NO;
-    [[BLEShareInstance CM] cancelPeripheralConnection:BLEShareInstance.activePeripheral];
+    
+    if (BLEShareInstance.activePeripheral) {
+        [[BLEShareInstance CM] cancelPeripheralConnection:BLEShareInstance.activePeripheral];
+    }
     
     alarmView.hidden = YES;
     measuringLabel.text = NSLocalizedString(@"Analyzing", nil);
@@ -144,7 +171,10 @@
     
     [self updateConstraintsIfNeeded];
     
-    [self performSelector:@selector(alertView:clickedButtonAtIndex:) withObject:nil afterDelay:1.5f];
+    [[GCDQueue globalQueue] queueBlock:^{
+      [[WBDataOperation shareInstance] stopSleep];
+    }];
+
 }
 
 - (void)bleDidDisconnect {
@@ -170,6 +200,32 @@
                          [self reset];
                      }
      ];
+}
+
+#pragma mark - HTDatePickerDelegate
+
+- (void)datePickerCancel {
+    [self showDatePicker:NO];
+}
+
+- (void)datePickerFinished:(NSDate *)date {
+    alarmTimeLabel.text = [NSDate detailDate:date];
+    [self showDatePicker:NO];
+}
+
+- (void)showDatePicker:(BOOL)show {
+    datePicker.hidden = NO;
+    [UIView animateWithDuration:0.3 animations:^{
+        if (show) {
+            datePicker.top = self.height - datePicker.height;
+        } else {
+            datePicker.top = self.height;
+        }
+    } completion:^(BOOL finished) {
+        if (!show) {
+            datePicker.hidden = YES;
+        }
+    }];
 }
 
 @end

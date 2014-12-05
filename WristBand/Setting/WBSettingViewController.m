@@ -88,8 +88,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        WBPersonalInfoViewController *viewController = [[WBPersonalInfoViewController alloc] initWithStyle:UITableViewStyleGrouped];
-        [self.navigationController pushViewController:viewController animated:YES];
+//        WBPersonalInfoViewController *viewController = [[WBPersonalInfoViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//        [self.navigationController pushViewController:viewController animated:YES];
     }
 }
 
