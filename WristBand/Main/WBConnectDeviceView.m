@@ -164,8 +164,8 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     if (BLEShareInstance.peripherals)
         BLEShareInstance.peripherals = nil;
     
-    [BLEShareInstance findBLEPeripherals:2];
-    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(scanPeripheraTimer) userInfo:nil repeats:NO];
+    [BLEShareInstance findBLEPeripherals:3];
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(scanPeripheraTimer) userInfo:nil repeats:NO];
 }
 
 - (void)scanPeripheraTimer {
@@ -194,7 +194,7 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 	
     self.state = WBConnectDeviceStateNormal;
     
-    writeTimer = [NSTimer scheduledTimerWithTimeInterval:0.2f target:self selector:@selector(writeTimer:) userInfo:nil repeats:YES];
+    writeTimer = [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(writeTimer:) userInfo:nil repeats:YES];
 }
 
 -(void)writeTimer:(NSTimer *)timer {
@@ -214,15 +214,7 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 }
 
 - (void)bleDidReceiveData:(unsigned char *)data length:(int)length {
-    if (length >= 3) {
-        UInt8 data1 = data[1];
-        UInt8 data2 = data[2];
-        UInt16 value = data1 * 100 + data2;
-        
-        [[WBDataOperation shareInstance] bleDidReceiveData:value];
-        
-        NSLog(@"%4d,%.3f;", value, [[NSDate date] timeIntervalSince1970]);
-    }
+    [[WBDataOperation shareInstance] bleDidReceiveData:data length:length];
 }
 
 @end

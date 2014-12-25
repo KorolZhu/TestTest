@@ -89,8 +89,19 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
     [self analysing];
 }
 
-- (void)bleDidReceiveData:(UInt16)value {
-    NSString *string = [NSString stringWithFormat:@"%4d,%.3f;", value, [[NSDate date] timeIntervalSince1970]];
+- (void)bleDidReceiveData:(unsigned char *)data length:(int)length {
+    if (length < 4) {
+        return;
+    }
+    
+    UInt8 temp = data[0];
+    UInt8 sleepState = temp >> 4;
+    UInt8 snoring = temp & 15;
+    UInt8 breath = data[1];
+    UInt8 heart = data[2];
+    UInt8 turnover = data[3];
+    
+    NSString *string = [NSString stringWithFormat:@"%d,%d,%d,%d,%d,%.3f;", sleepState, snoring, breath, heart, turnover, [[NSDate date] timeIntervalSince1970]];
     [mutableString appendString:string];
     
     if (mutableString.length > 1000) {

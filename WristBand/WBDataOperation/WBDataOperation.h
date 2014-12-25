@@ -20,7 +20,7 @@ WB_AS_SINGLETON(WBDataOperation, shareInstance)
 
 - (void)analysing;
 
-- (void)bleDidReceiveData:(UInt16)value;
+- (void)bleDidReceiveData:(unsigned char *)data length:(int)length;
 
 - (NSArray *)querySleepData;
 
