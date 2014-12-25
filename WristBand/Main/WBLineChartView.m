@@ -114,8 +114,20 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
     [self drawSegementTime];
 }
 
-- (CGPoint)calculateMidPointForPoint:(CGPoint)p1 andPoint:(CGPoint)p2 {
-    return CGPointMake((p1.x + p2.x) / 2.0, (p1.y + p2.y) / 2.0);
+static CGPoint midPointForPoints(CGPoint p1, CGPoint p2) {
+	return CGPointMake((p1.x + p2.x) / 2, (p1.y + p2.y) / 2);
+}
+
+static CGPoint controlPointForPoints(CGPoint p1, CGPoint p2) {
+	CGPoint controlPoint = midPointForPoints(p1, p2);
+	CGFloat diffY = abs(p2.x - controlPoint.x);
+	
+	if (p1.x < p2.x)
+		controlPoint.x += diffY;
+	else if (p1.x > p2.x)
+		controlPoint.x -= diffY;
+	
+	return controlPoint;
 }
 
 - (CGPoint)pointForSleepInfo:(WBSleepPoint *)info {
@@ -299,9 +311,9 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
     UIBezierPath *bezierpath = [UIBezierPath bezierPath];
     
     __block CGPoint lastEndPoint;
-    __block CGPoint currentEndPoint;
-    
-    __block CGPoint _prePreviousPoint = CGPointZero;
+//    __block CGPoint currentEndPoint;
+//    
+//    __block CGPoint _prePreviousPoint = CGPointZero;
     __block CGPoint _previousPoint = CGPointZero;
     
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -309,50 +321,54 @@ CGFloat static const kWBVerticalSeperateViewWidth = 15.0f;
         CGPoint point = [self pointForSleepInfo:info];
         
         if (idx == 0) {
-            lastEndPoint = point;
-            
             [bezierpath moveToPoint:point];
-            _prePreviousPoint = CGPointMake(kWBChartViewLeft, point.y);
-            _previousPoint = point;
-            
+			_previousPoint = point;
+			
+			lastEndPoint = point;
         } else {
             CGPoint currentPoint = point;
 			
-			if (currentPoint.x == _previousPoint.x) {
-				[bezierpath addLineToPoint:currentPoint];
-				_prePreviousPoint = _previousPoint;
-				_previousPoint = point;
-				
-				currentEndPoint = currentPoint;
-			} else {
-				CGPoint mid1 = [self calculateMidPointForPoint:_previousPoint andPoint:_prePreviousPoint];
-				CGPoint mid2 = [self calculateMidPointForPoint:currentPoint andPoint:_previousPoint];
-				
-				if (idx > 1) {
-					[bezierpath addLineToPoint:mid1];
-				}
-				[bezierpath addQuadCurveToPoint:mid2 controlPoint:_previousPoint];
-				
-				_prePreviousPoint = _previousPoint;
-				_previousPoint = point;
-				
-				currentEndPoint = mid2;
-			}
+			CGPoint midPoint = midPointForPoints(_previousPoint, currentPoint);;
+			[bezierpath addQuadCurveToPoint:midPoint controlPoint:controlPointForPoints(midPoint, _previousPoint)];
+			[bezierpath addQuadCurveToPoint:currentPoint controlPoint:controlPointForPoints(midPoint, currentPoint)];
+			
+			_previousPoint = currentPoint;
+			
+//			if (currentPoint.x == _previousPoint.x) {
+//				[bezierpath addLineToPoint:currentPoint];
+//				_prePreviousPoint = _previousPoint;
+//				_previousPoint = point;
+//				
+//				currentEndPoint = currentPoint;
+//			} else {
+//				CGPoint mid1 = [self calculateMidPointForPoint:_previousPoint andPoint:_prePreviousPoint];
+//				CGPoint mid2 = [self calculateMidPointForPoint:currentPoint andPoint:_previousPoint];
+//				
+//				if (idx > 1) {
+//					[bezierpath addLineToPoint:mid1];
+//				}
+//				[bezierpath addQuadCurveToPoint:mid2 controlPoint:_previousPoint];
+//				
+//				_prePreviousPoint = _previousPoint;
+//				_previousPoint = point;
+//				
+//				currentEndPoint = mid2;
+//			}
         }
 		
         NSInteger section = [self sectionForSleepInfo:info];
         if (section >= 0) {
-            [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, currentEndPoint.y)];
+            [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, _previousPoint.y)];
             [bezierpath addLineToPoint:CGPointMake(kWBChartViewLeft, lastEndPoint.y)];
             
-            lastEndPoint = currentEndPoint;
+            lastEndPoint = _previousPoint;
             
             [[self.dataSource lineChartView:self fillColorAtSection:section] setFill];
             [bezierpath closePath];
             [bezierpath fill];
             
             [bezierpath removeAllPoints];
-            [bezierpath moveToPoint:currentEndPoint];
+            [bezierpath moveToPoint:_previousPoint];
         }
     }];
     

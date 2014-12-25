@@ -402,7 +402,7 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
             // 合并相同的点
             if (lastSleepPoint) {
                 if (sleepPoint.state == lastSleepPoint.state ||
-                    (sleepPoint.state >= WBSleepStageTypeFallasleepDeep && sleepPoint.state >= WBSleepStageTypeFallasleepDeep)) {
+                    (sleepPoint.state >= WBSleepStageTypeFallasleepDeep && lastSleepPoint.state >= WBSleepStageTypeFallasleepDeep)) {
                     NSMutableArray *lastSegment = array.lastObject;
                     if (sleepPoint.time - lastSleepPoint.time > WBAnalyseTimeInterval) {
                         [lastSegment addObject:sleepPoint];
