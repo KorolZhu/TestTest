@@ -23,8 +23,6 @@
 		451F30191A271377002BE9A5 /* checkbox_smart_normal_disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451F2FE51A271377002BE9A5 /* checkbox_smart_normal_disabled@2x.png */; };
 		451F301A1A271377002BE9A5 /* dark_navigation_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 451F2FE61A271377002BE9A5 /* dark_navigation_bar.png */; };
 		451F301B1A271377002BE9A5 /* dark_navigation_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451F2FE71A271377002BE9A5 /* dark_navigation_bar@2x.png */; };
-		451F301C1A271377002BE9A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451F2FE81A271377002BE9A5 /* Default-568h@2x.png */; };
-		451F301D1A271377002BE9A5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451F2FE91A271377002BE9A5 /* Default@2x.png */; };
 		451F301E1A271377002BE9A5 /* icon_acount.png in Resources */ = {isa = PBXBuildFile; fileRef = 451F2FEA1A271377002BE9A5 /* icon_acount.png */; };
 		451F301F1A271377002BE9A5 /* icon_acount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451F2FEB1A271377002BE9A5 /* icon_acount@2x.png */; };
 		451F30201A271377002BE9A5 /* icon_acount_edit_acount.png in Resources */ = {isa = PBXBuildFile; fileRef = 451F2FEC1A271377002BE9A5 /* icon_acount_edit_acount.png */; };
@@ -63,6 +61,7 @@
 		451F30431A2713A3002BE9A5 /* test.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 451F30421A2713A3002BE9A5 /* test.rtf */; };
 		4521FEE11A2C101800C3DCE3 /* 20141201.dat in Resources */ = {isa = PBXBuildFile; fileRef = 4521FEE01A2C101800C3DCE3 /* 20141201.dat */; };
 		4521FEE31A2C51DD00C3DCE3 /* 20141130.dat in Resources */ = {isa = PBXBuildFile; fileRef = 4521FEE21A2C51DD00C3DCE3 /* 20141130.dat */; };
+		4573D3AF1A4BAAAC0079F327 /* WBDataItem2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4573D3AE1A4BAAAC0079F327 /* WBDataItem2.m */; };
 		45B75E6E1A11F1D0001AF044 /* UINavigationBar+WB.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */; };
 		45D6F4EB1A281DAA00815F90 /* WBSleepStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D6F4EA1A281DAA00815F90 /* WBSleepStage.m */; };
 		CE3FF6471A31FC1600DF85D7 /* HTDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3FF6461A31FC1600DF85D7 /* HTDatePicker.m */; };
@@ -89,7 +88,6 @@
 		CEAA436C1A092E6D00EDBAF3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAA436B1A092E6D00EDBAF3 /* CoreBluetooth.framework */; };
 		CEB79A7D1A051AAB00714531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79A7C1A051AAB00714531 /* main.m */; };
 		CEB79A801A051AAB00714531 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79A7F1A051AAB00714531 /* AppDelegate.m */; };
-		CEB79A971A051AAB00714531 /* WristBandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79A961A051AAB00714531 /* WristBandTests.m */; };
 		CEB79ACA1A05249200714531 /* WBSleepPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79AC91A05249200714531 /* WBSleepPoint.m */; };
 		CEB79ACE1A0527E300714531 /* WBSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79ACD1A0527E300714531 /* WBSettingViewController.m */; };
 		CEB79AD41A05285B00714531 /* WBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB79AD11A05285B00714531 /* WBLineChartView.m */; };
@@ -121,16 +119,6 @@
 		FBACAE75B9070C53672BEEF6 /* libPods-WristBand.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F46EBEA34800CB67344ACAE9 /* libPods-WristBand.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CEB79A911A051AAB00714531 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEB79A6F1A051AAB00714531 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEB79A761A051AAB00714531;
-			remoteInfo = WristBand;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		451F2FD81A271377002BE9A5 /* button_background_image_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_background_image_day.png; sourceTree = "<group>"; };
 		451F2FD91A271377002BE9A5 /* button_background_image_day@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_background_image_day@2x.png"; sourceTree = "<group>"; };
@@ -148,8 +136,6 @@
 		451F2FE51A271377002BE9A5 /* checkbox_smart_normal_disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_smart_normal_disabled@2x.png"; sourceTree = "<group>"; };
 		451F2FE61A271377002BE9A5 /* dark_navigation_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_navigation_bar.png; sourceTree = "<group>"; };
 		451F2FE71A271377002BE9A5 /* dark_navigation_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark_navigation_bar@2x.png"; sourceTree = "<group>"; };
-		451F2FE81A271377002BE9A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		451F2FE91A271377002BE9A5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		451F2FEA1A271377002BE9A5 /* icon_acount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_acount.png; sourceTree = "<group>"; };
 		451F2FEB1A271377002BE9A5 /* icon_acount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_acount@2x.png"; sourceTree = "<group>"; };
 		451F2FEC1A271377002BE9A5 /* icon_acount_edit_acount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_acount_edit_acount.png; sourceTree = "<group>"; };
@@ -188,6 +174,8 @@
 		451F30421A2713A3002BE9A5 /* test.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test.rtf; sourceTree = "<group>"; };
 		4521FEE01A2C101800C3DCE3 /* 20141201.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20141201.dat; sourceTree = "<group>"; };
 		4521FEE21A2C51DD00C3DCE3 /* 20141130.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20141130.dat; sourceTree = "<group>"; };
+		4573D3AD1A4BAAAC0079F327 /* WBDataItem2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDataItem2.h; sourceTree = "<group>"; };
+		4573D3AE1A4BAAAC0079F327 /* WBDataItem2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDataItem2.m; sourceTree = "<group>"; };
 		458666E41A287BB900D4B2BD /* WBLogicType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBLogicType.h; sourceTree = "<group>"; };
 		45B75E6C1A11F1D0001AF044 /* UINavigationBar+WB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+WB.h"; sourceTree = "<group>"; };
 		45B75E6D1A11F1D0001AF044 /* UINavigationBar+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+WB.m"; sourceTree = "<group>"; };
@@ -238,12 +226,11 @@
 		CEAA435F1A09188400EDBAF3 /* WBMeasuringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMeasuringView.m; sourceTree = "<group>"; };
 		CEAA43691A092E6700EDBAF3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		CEAA436B1A092E6D00EDBAF3 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		CEB79A771A051AAB00714531 /* WristBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB79A771A051AAB00714531 /* iRousing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRousing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB79A7B1A051AAB00714531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB79A7C1A051AAB00714531 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CEB79A7E1A051AAB00714531 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEB79A7F1A051AAB00714531 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CEB79A901A051AAB00714531 /* WristBandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WristBandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB79A951A051AAB00714531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB79A961A051AAB00714531 /* WristBandTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WristBandTests.m; sourceTree = "<group>"; };
 		CEB79AC81A05249200714531 /* WBSleepPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSleepPoint.h; sourceTree = "<group>"; };
@@ -258,7 +245,7 @@
 		CEB79AD91A0528F300714531 /* WBMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBMainView.m; sourceTree = "<group>"; };
 		CEB79ADB1A05374200714531 /* WBCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBCircleView.h; sourceTree = "<group>"; };
 		CEB79ADC1A05374200714531 /* WBCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBCircleView.m; sourceTree = "<group>"; };
-		CEB79ADF1A053F7000714531 /* WristBand-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WristBand-Prefix.pch"; sourceTree = "<group>"; };
+		CEB79ADF1A053F7000714531 /* iRousing-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRousing-Prefix.pch"; sourceTree = "<group>"; };
 		CEB79AE11A05D26E00714531 /* WBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBMacros.h; sourceTree = "<group>"; };
 		CEB79B1D1A05D35E00714531 /* UIDevice+WB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+WB.h"; sourceTree = "<group>"; };
 		CEB79B1E1A05D35E00714531 /* UIDevice+WB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+WB.m"; sourceTree = "<group>"; };
@@ -318,13 +305,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEB79A8D1A051AAB00714531 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -348,8 +328,6 @@
 				451F2FE51A271377002BE9A5 /* checkbox_smart_normal_disabled@2x.png */,
 				451F2FE61A271377002BE9A5 /* dark_navigation_bar.png */,
 				451F2FE71A271377002BE9A5 /* dark_navigation_bar@2x.png */,
-				451F2FE81A271377002BE9A5 /* Default-568h@2x.png */,
-				451F2FE91A271377002BE9A5 /* Default@2x.png */,
 				451F2FEA1A271377002BE9A5 /* icon_acount.png */,
 				451F2FEB1A271377002BE9A5 /* icon_acount@2x.png */,
 				451F2FEC1A271377002BE9A5 /* icon_acount_edit_acount.png */,
@@ -465,8 +443,7 @@
 		CEB79A781A051AAB00714531 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEB79A771A051AAB00714531 /* WristBand.app */,
-				CEB79A901A051AAB00714531 /* WristBandTests.xctest */,
+				CEB79A771A051AAB00714531 /* iRousing.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -489,7 +466,7 @@
 			children = (
 				CEB79A7B1A051AAB00714531 /* Info.plist */,
 				CEB79A7C1A051AAB00714531 /* main.m */,
-				CEB79ADF1A053F7000714531 /* WristBand-Prefix.pch */,
+				CEB79ADF1A053F7000714531 /* iRousing-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -538,6 +515,8 @@
 				CED1D1511A276F34002C66E9 /* WBDataItem.m */,
 				45D6F4E91A281DAA00815F90 /* WBSleepStage.h */,
 				45D6F4EA1A281DAA00815F90 /* WBSleepStage.m */,
+				4573D3AD1A4BAAAC0079F327 /* WBDataItem2.h */,
+				4573D3AE1A4BAAAC0079F327 /* WBDataItem2.m */,
 			);
 			name = BusinessEntity;
 			path = WristBand/BusinessEntity;
@@ -718,9 +697,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CEB79A761A051AAB00714531 /* WristBand */ = {
+		CEB79A761A051AAB00714531 /* iRousing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEB79A9A1A051AAB00714531 /* Build configuration list for PBXNativeTarget "WristBand" */;
+			buildConfigurationList = CEB79A9A1A051AAB00714531 /* Build configuration list for PBXNativeTarget "iRousing" */;
 			buildPhases = (
 				0E1C68D0958AA0C2613C803E /* Check Pods Manifest.lock */,
 				CEB79A731A051AAB00714531 /* Sources */,
@@ -732,28 +711,10 @@
 			);
 			dependencies = (
 			);
-			name = WristBand;
+			name = iRousing;
 			productName = WristBand;
-			productReference = CEB79A771A051AAB00714531 /* WristBand.app */;
+			productReference = CEB79A771A051AAB00714531 /* iRousing.app */;
 			productType = "com.apple.product-type.application";
-		};
-		CEB79A8F1A051AAB00714531 /* WristBandTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEB79A9D1A051AAB00714531 /* Build configuration list for PBXNativeTarget "WristBandTests" */;
-			buildPhases = (
-				CEB79A8C1A051AAB00714531 /* Sources */,
-				CEB79A8D1A051AAB00714531 /* Frameworks */,
-				CEB79A8E1A051AAB00714531 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CEB79A921A051AAB00714531 /* PBXTargetDependency */,
-			);
-			name = WristBandTests;
-			productName = WristBandTests;
-			productReference = CEB79A901A051AAB00714531 /* WristBandTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -772,13 +733,9 @@
 							};
 						};
 					};
-					CEB79A8F1A051AAB00714531 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = CEB79A761A051AAB00714531;
-					};
 				};
 			};
-			buildConfigurationList = CEB79A721A051AAB00714531 /* Build configuration list for PBXProject "WristBand" */;
+			buildConfigurationList = CEB79A721A051AAB00714531 /* Build configuration list for PBXProject "iRousing" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -791,8 +748,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEB79A761A051AAB00714531 /* WristBand */,
-				CEB79A8F1A051AAB00714531 /* WristBandTests */,
+				CEB79A761A051AAB00714531 /* iRousing */,
 			);
 		};
 /* End PBXProject section */
@@ -841,9 +797,7 @@
 				451F30131A271377002BE9A5 /* center_image_default@2x.png in Resources */,
 				451F302F1A271377002BE9A5 /* icon_measuring_spinner@2x.png in Resources */,
 				451F30381A271377002BE9A5 /* sleep_achievement_icon.png in Resources */,
-				451F301D1A271377002BE9A5 /* Default@2x.png in Resources */,
 				4521FEE11A2C101800C3DCE3 /* 20141201.dat in Resources */,
-				451F301C1A271377002BE9A5 /* Default-568h@2x.png in Resources */,
 				451F302C1A271377002BE9A5 /* icon_idea.png in Resources */,
 				CED1D1561A29996E002C66E9 /* test3.rtf in Resources */,
 				451F30121A271377002BE9A5 /* center_image_default.png in Resources */,
@@ -861,13 +815,6 @@
 				451F30111A271377002BE9A5 /* button_background_image_night@2x.png in Resources */,
 				451F302E1A271377002BE9A5 /* icon_measuring_spinner.png in Resources */,
 				451F30431A2713A3002BE9A5 /* test.rtf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEB79A8E1A051AAB00714531 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,6 +886,7 @@
 				CEDBA15D1A236CA900A28AC4 /* NSString+WB.m in Sources */,
 				CEDBA1951A237FD200A28AC4 /* WBFMDatabase.m in Sources */,
 				CEDBA16D1A236E9700A28AC4 /* WBEntityBase.m in Sources */,
+				4573D3AF1A4BAAAC0079F327 /* WBDataItem2.m in Sources */,
 				CEB79ACE1A0527E300714531 /* WBSettingViewController.m in Sources */,
 				CE5414371A0624010013A450 /* WBTotalSleepTimeCell.m in Sources */,
 				CE4553F41A0F721C00E417B7 /* WBBaseCell.m in Sources */,
@@ -963,23 +911,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEB79A8C1A051AAB00714531 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEB79A971A051AAB00714531 /* WristBandTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CEB79A921A051AAB00714531 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CEB79A761A051AAB00714531 /* WristBand */;
-			targetProxy = CEB79A911A051AAB00714531 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CEB79A981A051AAB00714531 /* Debug */ = {
@@ -1063,13 +995,14 @@
 			baseConfigurationReference = D011C310E94C038EA5552F97 /* Pods-WristBand.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: LAP WA NGAI (BGM9PW4869)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: LAP WA NGAI (BGM9PW4869)";
-				GCC_PREFIX_HEADER = "WristBand/WristBand-Prefix.pch";
+				GCC_PREFIX_HEADER = "WristBand/iRousing-Prefix.pch";
 				INFOPLIST_FILE = WristBand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iRousing;
 				PROVISIONING_PROFILE = "35131dfd-355b-4520-bf65-36c61772feb6";
 			};
 			name = Debug;
@@ -1079,54 +1012,21 @@
 			baseConfigurationReference = 51713049B41943CF9271265A /* Pods-WristBand.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: LAP WA NGAI (BGM9PW4869)";
-				GCC_PREFIX_HEADER = "WristBand/WristBand-Prefix.pch";
+				GCC_PREFIX_HEADER = "WristBand/iRousing-Prefix.pch";
 				INFOPLIST_FILE = WristBand/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iRousing;
 				PROVISIONING_PROFILE = "35131dfd-355b-4520-bf65-36c61772feb6";
-			};
-			name = Release;
-		};
-		CEB79A9E1A051AAB00714531 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WristBandTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WristBand.app/WristBand";
-			};
-			name = Debug;
-		};
-		CEB79A9F1A051AAB00714531 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WristBandTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WristBand.app/WristBand";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CEB79A721A051AAB00714531 /* Build configuration list for PBXProject "WristBand" */ = {
+		CEB79A721A051AAB00714531 /* Build configuration list for PBXProject "iRousing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEB79A981A051AAB00714531 /* Debug */,
@@ -1135,20 +1035,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEB79A9A1A051AAB00714531 /* Build configuration list for PBXNativeTarget "WristBand" */ = {
+		CEB79A9A1A051AAB00714531 /* Build configuration list for PBXNativeTarget "iRousing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEB79A9B1A051AAB00714531 /* Debug */,
 				CEB79A9C1A051AAB00714531 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CEB79A9D1A051AAB00714531 /* Build configuration list for PBXNativeTarget "WristBandTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEB79A9E1A051AAB00714531 /* Debug */,
-				CEB79A9F1A051AAB00714531 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

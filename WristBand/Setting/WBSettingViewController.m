@@ -94,7 +94,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -116,14 +116,16 @@
             [imageView autoSetDimensionsToSize:CGSizeMake(42.0f, 43.0f)];
             [imageView autoCenterInSuperview];
         }
-    } else if (indexPath.section == 1) {
-        cell = [tableView dequeueReusableCellWithIdentifier:personalInfoCellIdentifier];
-        if (!cell) {
-            cell = [[WBSettingPersonalInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personalInfoCellIdentifier];
-        }
-    } else if (indexPath.section == 2) {
+    }
+//	else if (indexPath.section == 1) {
+//		cell = [tableView dequeueReusableCellWithIdentifier:personalInfoCellIdentifier];
+//        if (!cell) {
+//            cell = [[WBSettingPersonalInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personalInfoCellIdentifier];
+//        }
+//    }
+	else if (indexPath.section == 1) {
         cell = sleepGoalCell;
-    } else if (indexPath.section == 3) {
+    } else if (indexPath.section == 2) {
         cell = sleepTipsCell;
     }
     
@@ -135,16 +137,16 @@
         return 73.0f;
     }
     
+//    if (indexPath.section == 1) {
+//        return 60.0f;
+//    }
+	
     if (indexPath.section == 1) {
-        return 60.0f;
-    }
-    
-    if (indexPath.section == 2) {
         [sleepGoalCell configCell];
         return [sleepGoalCell cellHeight];
     }
     
-    if (indexPath.section == 3) {
+    if (indexPath.section == 2) {
         [sleepTipsCell configCell];
         return [sleepTipsCell cellHeight];
     }

@@ -524,7 +524,7 @@ WB_DEF_SINGLETON(BLE, shareInstance);
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    unsigned char data[20];
+    unsigned char data[4];
     
     static unsigned char buf[512];
     static int len = 0;
@@ -537,12 +537,12 @@ WB_DEF_SINGLETON(BLE, shareInstance);
             data_len = characteristic.value.length;
             [characteristic.value getBytes:data length:data_len];
             
-            if (data_len == 20)
+            if (data_len >= 4)
             {
-                memcpy(&buf[len], data, 20);
+                memcpy(&buf[len], data, 4);
                 len += data_len;
                 
-                if (len >= 20)
+                if (len >= 4)
                 {
                     [[self delegate] bleDidReceiveData:buf length:len];
                     len = 0;
