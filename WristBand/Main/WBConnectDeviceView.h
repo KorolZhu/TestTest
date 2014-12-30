@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class WBConnectDeviceView;
+@class WBMeasuringView;
 
 @protocol WBConnectDeviceViewDelegate <NSObject>
 
@@ -18,6 +19,7 @@
 
 @interface WBConnectDeviceView : UIView
 
+@property (nonatomic,strong)WBMeasuringView *measuringView;
 @property (nonatomic,strong)UIButton *startSleepingButton;
 @property (nonatomic,strong)UIButton *cancelButton;
 @property (nonatomic,strong)UIPanGestureRecognizer *panGestureRecognizer;

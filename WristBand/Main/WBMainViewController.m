@@ -132,7 +132,10 @@ static NSString *CollectionCellIdentifier = @"collectionCellIdentifier";
 #pragma mark - Sleep data
 
 - (void)dataAnalysingFinished {
-    [self initDummyData];
+    [[GCDQueue mainQueue] queueBlock:^{
+        [self initDummyData];
+        [_connectDeviceView.measuringView dataAnalysingFinished];
+    }];
 }
 
 - (void)initDummyData {

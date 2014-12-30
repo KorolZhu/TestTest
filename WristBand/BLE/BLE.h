@@ -53,6 +53,7 @@ WB_AS_SINGLETON(BLE, shareInstance)
 
 -(void) controlSetup;
 -(int) findBLEPeripherals:(int) timeout;
+-(int) findBLEPeripherals;
 -(void) connectPeripheral:(CBPeripheral *)peripheral;
 
 -(UInt16) swap:(UInt16) s;

@@ -12,5 +12,7 @@
 
 - (void)startAnimation;
 - (void)bleDidDisconnect;
+- (BOOL)isAnimating;
+- (void)dataAnalysingFinished;
 
 @end

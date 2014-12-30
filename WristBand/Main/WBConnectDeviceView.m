@@ -9,6 +9,7 @@
 #import "WBConnectDeviceView.h"
 #import "WBMeasuringView.h"
 #import "WBDataOperation.h"
+#import "SWAccessoryPickerView.h"
 
 typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     WBConnectDeviceStateNormal,
@@ -16,15 +17,15 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     WBConnectDeviceStateConnected,
 };
 
-@interface WBConnectDeviceView ()<BLEDelegate>
+@interface WBConnectDeviceView ()<BLEDelegate,SWAccessoryPickerViewDelegate>
 {
     UIView *barView;
     UIButton *connectDeviceButton;
     UIActivityIndicatorView *activityIndicatorView;
-    
-    WBMeasuringView *measuringView;
-    
+        
     NSTimer *writeTimer;
+    
+    SWAccessoryPickerView *accessoryPickerView;
 }
 
 @property (nonatomic)WBConnectDeviceState state;
@@ -152,7 +153,16 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 }
 
 - (void)connectDeviceClick {
-    self.state = WBConnectDeviceStateConnecting;
+    if (!accessoryPickerView) {
+        accessoryPickerView = [[SWAccessoryPickerView alloc] initWithFrame:CGRectMake(22.0f, 100.0f, IPHONE_WIDTH - 44.0f, IPHONE_HEIGHT - 200.0f)];
+        accessoryPickerView.title = NSLocalizedString(@"请选择蓝牙设备", nil);
+        accessoryPickerView.delegate = self;
+    }
+    
+    [accessoryPickerView show];
+    [accessoryPickerView setDataSource:nil];
+    
+//    self.state = WBConnectDeviceStateConnecting;
     
     if (BLEShareInstance.activePeripheral)
         if([BLE shareInstance].activePeripheral.state == CBPeripheralStateConnected)
@@ -164,8 +174,37 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
     if (BLEShareInstance.peripherals)
         BLEShareInstance.peripherals = nil;
     
-    [BLEShareInstance findBLEPeripherals:3];
-    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(scanPeripheraTimer) userInfo:nil repeats:NO];
+//    [BLEShareInstance findBLEPeripherals:3];
+//    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(scanPeripheraTimer) userInfo:nil repeats:NO];
+    
+    [BLEShareInstance findBLEPeripherals];
+    [BLEShareInstance addObserver:self forKeyPath:@"peripherals" options: NSKeyValueObservingOptionNew context:NULL];
+}
+
+- (void)accessoryPickerView:(SWAccessoryPickerView *)pickerView didSelectPeripheral:(CBPeripheral *)peripheral {
+    [BLEShareInstance removeObserver:self forKeyPath:@"peripherals"];
+    [BLEShareInstance.CM stopScan];
+    [accessoryPickerView hide];
+    [BLEShareInstance connectPeripheral:[BLEShareInstance.peripherals objectAtIndex:0]];
+    self.state = WBConnectDeviceStateConnecting;
+}
+
+- (void)accessoryPickerViewDidCancel:(SWAccessoryPickerView *)pickerView {
+    [BLEShareInstance removeObserver:self forKeyPath:@"peripherals"];
+    [BLEShareInstance.CM stopScan];
+    [accessoryPickerView hide];
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"peripherals"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (accessoryPickerView.isVisible) {
+                accessoryPickerView.dataSource = [NSArray arrayWithArray:BLEShareInstance.peripherals];
+            }
+        });
+    }
 }
 
 - (void)scanPeripheraTimer {
@@ -179,22 +218,22 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 #pragma mark - BLEDelegate
 
 - (void)bleDidConnect {
-    if (!measuringView) {
-        measuringView = [[WBMeasuringView alloc] init];
+    if (!_measuringView) {
+        _measuringView = [[WBMeasuringView alloc] init];
     }
     
-    if (!measuringView.superview) {
+    if (!_measuringView.superview) {
         self.superview.top = IPHONE_HEIGHT;
-        measuringView.top = -IPHONE_HEIGHT;
-        [self.superview addSubview:measuringView];
-        [measuringView startAnimation];
+        _measuringView.top = -IPHONE_HEIGHT;
+        [self.superview addSubview:_measuringView];
+        [_measuringView startAnimation];
     }
 
 	[[WBDataOperation shareInstance] startSleep];
 	
     self.state = WBConnectDeviceStateNormal;
     
-    writeTimer = [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(writeTimer:) userInfo:nil repeats:YES];
+    writeTimer = [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(writeTimer:) userInfo:nil repeats:YES];
 }
 
 -(void)writeTimer:(NSTimer *)timer {
@@ -209,7 +248,7 @@ typedef NS_ENUM(NSUInteger, WBConnectDeviceState) {
 
 - (void)bleDidDisconnect {
     [writeTimer invalidate];
-    [measuringView bleDidDisconnect];
+    [_measuringView bleDidDisconnect];
     self.state = WBConnectDeviceStateNormal;
 }
 

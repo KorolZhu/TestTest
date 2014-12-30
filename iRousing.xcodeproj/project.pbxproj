@@ -72,6 +72,7 @@
 		CE4553F11A0F68E800E417B7 /* WBSleepScore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553F01A0F68E800E417B7 /* WBSleepScore.m */; };
 		CE4553F41A0F721C00E417B7 /* WBBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4553F31A0F721C00E417B7 /* WBBaseCell.m */; };
 		CE52184F1A0F3B4500650FB1 /* UIViewController+Container.m in Sources */ = {isa = PBXBuildFile; fileRef = CE52184E1A0F3B4500650FB1 /* UIViewController+Container.m */; };
+		CE5404E11A52DB1700A341B1 /* SWAccessoryPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5404E01A52DB1700A341B1 /* SWAccessoryPickerView.m */; };
 		CE5414241A061B920013A450 /* WBImprovementIdeaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5414231A061B920013A450 /* WBImprovementIdeaCell.m */; };
 		CE5414371A0624010013A450 /* WBTotalSleepTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5414361A0624010013A450 /* WBTotalSleepTimeCell.m */; };
 		CE6DCB6B1A10EDF600F49843 /* WBCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6DCB6A1A10EDF600F49843 /* WBCollectionViewCell.m */; };
@@ -198,6 +199,8 @@
 		CE4553F31A0F721C00E417B7 /* WBBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBaseCell.m; sourceTree = "<group>"; };
 		CE52184D1A0F3B4500650FB1 /* UIViewController+Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Container.h"; sourceTree = "<group>"; };
 		CE52184E1A0F3B4500650FB1 /* UIViewController+Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Container.m"; sourceTree = "<group>"; };
+		CE5404DF1A52DB1700A341B1 /* SWAccessoryPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWAccessoryPickerView.h; sourceTree = "<group>"; };
+		CE5404E01A52DB1700A341B1 /* SWAccessoryPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWAccessoryPickerView.m; sourceTree = "<group>"; };
 		CE5414221A061B920013A450 /* WBImprovementIdeaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBImprovementIdeaCell.h; sourceTree = "<group>"; };
 		CE5414231A061B920013A450 /* WBImprovementIdeaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBImprovementIdeaCell.m; sourceTree = "<group>"; };
 		CE5414351A0624010013A450 /* WBTotalSleepTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTotalSleepTimeCell.h; sourceTree = "<group>"; };
@@ -386,6 +389,8 @@
 				CE3FF6491A31FC3D00DF85D7 /* AMBlurView.m */,
 				CE3FF6451A31FC1600DF85D7 /* HTDatePicker.h */,
 				CE3FF6461A31FC1600DF85D7 /* HTDatePicker.m */,
+				CE5404DF1A52DB1700A341B1 /* SWAccessoryPickerView.h */,
+				CE5404E01A52DB1700A341B1 /* SWAccessoryPickerView.m */,
 			);
 			name = WBUIKit;
 			path = WristBand/WBUIKit;
@@ -898,6 +903,7 @@
 				CED1D1591A29BA03002C66E9 /* NSDictionary+WB.m in Sources */,
 				CEB79AD51A05285B00714531 /* WBMainViewController.m in Sources */,
 				45D6F4EB1A281DAA00815F90 /* WBSleepStage.m in Sources */,
+				CE5404E11A52DB1700A341B1 /* SWAccessoryPickerView.m in Sources */,
 				CEB79B1F1A05D35E00714531 /* UIDevice+WB.m in Sources */,
 				CEB79ADA1A0528F300714531 /* WBMainView.m in Sources */,
 				CEB79ACA1A05249200714531 /* WBSleepPoint.m in Sources */,

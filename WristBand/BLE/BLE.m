@@ -201,6 +201,27 @@ WB_DEF_SINGLETON(BLE, shareInstance);
     return 0; // Started scanning OK !
 }
 
+- (int)findBLEPeripherals {
+    if (self.CM.state != CBCentralManagerStatePoweredOn)
+    {
+        NSLog(@"CoreBluetooth not correctly initialized !");
+        NSLog(@"State = %d (%s)\r\n", (int)self.CM.state, [self centralManagerStateToString:self.CM.state]);
+        return -1;
+    }
+    
+    [self.peripherals removeAllObjects];
+    
+#if TARGET_OS_IPHONE
+    [self.CM scanForPeripheralsWithServices:[NSArray arrayWithObject:[CBUUID UUIDWithString:WRISTBAND_SERVICE_UUID]] options:nil];
+#else
+    [self.CM scanForPeripheralsWithServices:nil options:nil]; // Start scanning
+#endif
+    
+    NSLog(@"scanForPeripheralsWithServices");
+    
+    return 0; // Started scanning OK !
+}
+
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;
 {
     [[self delegate] bleDidDisconnect];
@@ -420,8 +441,11 @@ WB_DEF_SINGLETON(BLE, shareInstance);
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    if (!self.peripherals)
+    if (!self.peripherals) {
+        [self willChangeValueForKey:@"peripherals"];
         self.peripherals = [[NSMutableArray alloc] initWithObjects:peripheral,nil];
+        [self didChangeValueForKey:@"peripherals"];
+    }
     else
     {
         for(int i = 0; i < self.peripherals.count; i++)
@@ -433,14 +457,17 @@ WB_DEF_SINGLETON(BLE, shareInstance);
             
             if ([self UUIDSAreEqual:p.identifier UUID2:peripheral.identifier])
             {
+                [self willChangeValueForKey:@"peripherals"];
                 [self.peripherals replaceObjectAtIndex:i withObject:peripheral];
+                [self didChangeValueForKey:@"peripherals"];
                 NSLog(@"Duplicate UUID found updating...");
                 return;
             }
         }
-        
+        [self willChangeValueForKey:@"peripherals"];
         [self.peripherals addObject:peripheral];
-        
+        [self didChangeValueForKey:@"peripherals"];
+
         NSLog(@"New UUID, adding");
     }
     
@@ -524,33 +551,14 @@ WB_DEF_SINGLETON(BLE, shareInstance);
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    unsigned char data[4];
-    
-    static unsigned char buf[512];
-    static int len = 0;
-    NSInteger data_len;
-    
     if (!error)
     {
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:WRISTBAND_CHARACTERISTIC2_UUID]])
         {
-            data_len = characteristic.value.length;
-            [characteristic.value getBytes:data length:data_len];
-            
-            if (data_len >= 4)
-            {
-                memcpy(&buf[len], data, 4);
-                len += data_len;
-                
-                if (len >= 4)
-                {
-                    [[self delegate] bleDidReceiveData:buf length:len];
-                    len = 0;
-                }
-            }
-            else if (data_len < 20)
-            {
-                
+            if (characteristic.value.length >= 5) {
+                unsigned char data[5];
+                [characteristic.value getBytes:data length:5];
+                [[self delegate] bleDidReceiveData:data length:5];
             }
         }
     }

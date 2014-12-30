@@ -91,19 +91,21 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
 }
 
 - (void)bleDidReceiveData:(unsigned char *)data length:(int)length {
-    if (length < 4) {
+    if (length < 5) {
         return;
     }
     
-    UInt8 temp = data[0];
+    UInt8 temp = data[1];
     UInt8 sleepState = temp >> 4;
     UInt8 snoring = temp & 15;
-    UInt8 breath = data[1];
-    UInt8 heart = data[2];
-    UInt8 turnover = data[3];
+    UInt8 breath = data[2];
+    UInt8 heart = data[3];
+    UInt8 turnover = data[4];
     
     NSString *string = [NSString stringWithFormat:@"%d,%d,%d,%d,%d,%.3f;", sleepState, snoring, breath, heart, turnover, [[NSDate date] timeIntervalSince1970]];
     [mutableString appendString:string];
+    
+    NSLog(@"%@", string);
     
     if (mutableString.length > 1000) {
         NSString *documentPath = [WBPath documentPath];
@@ -253,7 +255,7 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
 				stage.startTimeStamp = startItem.timeStamp;
 				stage.endTimeStamp = item.timeStamp;
 				stage.type = WBSleepStageTypeFallasleepLight;
-				stage.deepValue = arc4random() % 15 + 15;
+				stage.deepValue = arc4random() % 15 + 12;
 				[sleepStages addObject:stage];
 			} else {
 				WBSleepStage *stage = [[WBSleepStage alloc] init];
@@ -282,6 +284,7 @@ WB_DEF_SINGLETON(WBDataOperation, shareInstance);
 		stage.startTimeStamp = firstItem.timeStamp;
 		stage.endTimeStamp = endItem.timeStamp;
 		stage.type = WBSleepStageTypeAway;
+        stage.deepValue = 15;
 		[sleepStages addObject:stage];
 	}
 	

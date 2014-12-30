@@ -27,6 +27,8 @@
     NSLayoutConstraint *backViewTopConstraint;
     
     HTDatePicker *datePicker;
+    
+    BOOL isAnimating;
 }
 
 @end
@@ -119,7 +121,9 @@
         datePicker.delegate = self;
         [self addSubview:datePicker];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataAnalysingFinished) name:WBDataAnalysingFinishedNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataAnalysingFinished) name:WBDataAnalysingFinishedNotification object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
         
     }
     
@@ -137,12 +141,18 @@
     [self updateConstraintsIfNeeded];
 }
 
+- (BOOL)isAnimating {
+    return isAnimating;
+}
+
 - (void)startAnimation {
     [animationView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    isAnimating = YES;
 }
 
 - (void)stopAnimation {
     [animationView.layer removeAnimationForKey:@"rotationAnimation"];
+    isAnimating = NO;
 }
 
 - (void)timeTap {
@@ -150,12 +160,10 @@
 }
 
 - (void)dataAnalysingFinished {
-    [[GCDQueue mainQueue] queueBlock:^{
-        if (!datePicker.hidden) {
-            [self showDatePicker:NO];
-        }
-        [self alertView:nil clickedButtonAtIndex:0];
-    }];
+    if (!datePicker.hidden) {
+        [self showDatePicker:NO];
+    }
+    [self alertView:nil clickedButtonAtIndex:0];
 }
 
 - (void)stopMeasuringButtonClick {
@@ -200,6 +208,13 @@
                          [self reset];
                      }
      ];
+}
+
+- (void)applicationDidBecomeActive {
+    if (isAnimating) {
+        [self stopAnimation];
+        [self startAnimation];
+    }
 }
 
 #pragma mark - HTDatePickerDelegate
